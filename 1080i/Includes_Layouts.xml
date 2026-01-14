@@ -605,7 +605,8 @@
             </include>
 
             <!-- No Indicator Text -->
-            <include content="Object_InfoCircle_Text_Top" condition="$PARAM[include_detailed_labels]">
+            <!-- PVR302: Object removed - Label control below used instead -->
+            <!-- include content="Object_InfoCircle_Text_Top" condition="$PARAM[include_detailed_labels]">
                 <param name="id">1</param>
                 <include condition="$PARAM[selected] + false">Color_SelectedText</include>
                 <label>$VAR[Label_PVRPrograms]</label>
@@ -614,8 +615,9 @@
                 <left>$PARAM[left_text]</left>
                 <right>40</right>
                 <visible>![ListItem.IsRecording | ListItem.HasTimer | [ListItem.IsPlayable + !Skin.HasSetting(Indicator.DisablePVRGuideCatchUp)]]</visible>
-            </include>
-            <include content="Object_InfoCircle_Text_Sub" condition="$PARAM[include_detailed_labels]">
+            </include -->
+            <!-- PVR302: Remove Genre -->
+            <!-- include content="Object_InfoCircle_Text_Sub" condition="$PARAM[include_detailed_labels]">
                 <param name="id">1</param>
                 <include condition="$PARAM[selected] + false">Color_SelectedText</include>
                 <label>$INFO[ListItem.Genre]</label>
@@ -624,21 +626,26 @@
                 <left>$PARAM[left_text]</left>
                 <right>40</right>
                 <visible>![ListItem.IsRecording | ListItem.HasTimer | [ListItem.IsPlayable + !Skin.HasSetting(Indicator.DisablePVRGuideCatchUp)]]</visible>
-            </include>
+            </include -->
             <control type="label" id="1">
-                <font>font_mini</font>
-                <label>$INFO[ListItem.Label]</label>
+                <!-- PVR302: font changed from font_mini -->
+                <font>font_mini_bold</font>
+                <!-- PVR302: label changed from $INFO[ListItem.Label] -->
+                <label>$VAR[Label_PVRPrograms]</label>
                 <align>left</align>
                 <left>$PARAM[left_text]</left>
                 <right>40</right>
                 <include condition="$PARAM[selected] + false">Color_SelectedText</include>
-                <textcolor>main_fg_70</textcolor>
-                <visible>![$PARAM[include_detailed_labels]]</visible>
+                <!-- PVR302: textcolor changed from main_fg_70 -->
+                <textcolor>main_fg_90</textcolor>
+                <!-- PVR302: visibility removed -->
+                <!-- visible>![$PARAM[include_detailed_labels]]</visible -->
                 <visible>![ListItem.IsRecording | ListItem.HasTimer | [ListItem.IsPlayable + !Skin.HasSetting(Indicator.DisablePVRGuideCatchUp)]]</visible>
             </control>
 
             <!-- Indicator Text -->
-            <include content="Object_InfoCircle_Text_Top" condition="$PARAM[include_detailed_labels]">
+            <!-- PVR302: Object removed - Label control below used instead -->
+            <!-- include content="Object_InfoCircle_Text_Top" condition="$PARAM[include_detailed_labels]">
                 <param name="id">1</param>
                 <include condition="$PARAM[selected] + false">Color_SelectedText</include>
                 <label>$VAR[Label_PVRPrograms]</label>
@@ -647,8 +654,9 @@
                 <left>$PARAM[left_text_slide]</left>
                 <right>40</right>
                 <visible>[ListItem.IsRecording | ListItem.HasTimer | [ListItem.IsPlayable + !Skin.HasSetting(Indicator.DisablePVRGuideCatchUp)]]</visible>
-            </include>
-            <include content="Object_InfoCircle_Text_Sub" condition="$PARAM[include_detailed_labels]">
+            </include -->
+            <!-- PVR302: Remove Genre -->
+            <!-- include content="Object_InfoCircle_Text_Sub" condition="$PARAM[include_detailed_labels]">
                 <param name="id">1</param>
                 <include condition="$PARAM[selected] + false">Color_SelectedText</include>
                 <label>$INFO[ListItem.Genre]</label>
@@ -657,16 +665,20 @@
                 <left>$PARAM[left_text_slide]</left>
                 <right>40</right>
                 <visible>[ListItem.IsRecording | ListItem.HasTimer | [ListItem.IsPlayable + !Skin.HasSetting(Indicator.DisablePVRGuideCatchUp)]]</visible>
-            </include>
+            </include -->
             <control type="label" id="1">
-                <font>font_mini</font>
-                <label>$INFO[ListItem.Label]</label>
+                <!-- PVR302: font changed from font_mini -->
+                <font>font_mini_bold</font>
+                <!-- PVR302: label changed from $INFO[ListItem.Label] -->
+                <label>$VAR[Label_PVRPrograms]</label>
                 <align>left</align>
                 <left>$PARAM[left_text_slide]</left>
                 <right>40</right>
                 <include condition="$PARAM[selected] + false">Color_SelectedText</include>
-                <textcolor>main_fg_70</textcolor>
-                <visible>![$PARAM[include_detailed_labels]]</visible>
+                <!-- PVR302: textcolor changed from main_fg_70 -->
+                <textcolor>main_fg_90</textcolor>
+                <!-- PVR302: visibility removed -->
+                <!-- visible>![$PARAM[include_detailed_labels]]</visible -->
                 <visible>[ListItem.IsRecording | ListItem.HasTimer | [ListItem.IsPlayable + !Skin.HasSetting(Indicator.DisablePVRGuideCatchUp)]]</visible>
             </control>
 
@@ -681,7 +693,8 @@
                     <include content="Object_ColorDiffuse" condition="$PARAM[selected] + false">
                         <param name="colordiffuse">$VAR[ColorSelected]</param>
                     </include>
-                    <colordiffuse>main_fg_70</colordiffuse>
+                    <!-- PVR302: colordiffuse changed from main_fg_70 -->
+                    <colordiffuse>main_fg_100</colordiffuse>
                     <texture>$VAR[Image_PVRGuide_Indicator]</texture>
                 </control>
             </control>
