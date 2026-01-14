@@ -50,6 +50,8 @@
                 <param name="fadetime">$PARAM[fadetime]</param>
                 <param name="diffuse">diffuse/flixart/flixart_new.png</param>
             </include>
+            <!-- PVR306: No artwork on EPG -->
+            <visible>!Window.IsVisible(10702)</visible>
         </definition>
     </include>
 
