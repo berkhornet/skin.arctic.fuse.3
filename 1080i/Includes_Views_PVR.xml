@@ -332,6 +332,37 @@
                 <visible>!Control.IsVisible(502)</visible>
                 <visible>!Control.IsVisible(503)</visible>
                 <include>Furniture_Header</include>
+                <!-- PVR310: START custom header for EPG plotbox -->                    
+                <control type="label">
+                    <height>15</height>                         
+                    <left>463</left>
+                    <bottom>120</bottom>
+                    <width>auto</width>
+                    <aligny>center</aligny>
+                    <align>left</align>                         
+                    <font>font_tiny_bold</font>                         
+                    <textcolor>main_fg_90</textcolor>
+                    <shadowcolor>main_bg_12</shadowcolor>
+                    <label>$VAR[TextPVRPlotboxHeader]</label>
+                    <visible>!String.IsEqual(ListItem.Title,ListItem.ChannelName)</visible>
+                    <visible>!Skin.HasSetting(Views.UseHalfPVRGuide)</visible>
+                </control>
+                <!-- PVR310: END custom header for EPG plotbox -->                    
+                <!-- PVR310: START custom textbox for EPG plotbox -->                      
+                <control type="textbox">
+                    <left>463</left>
+                    <bottom>25</bottom>
+                    <width>900</width>
+                    <height>80</height>
+                    <textcolor>main_fg_70</textcolor>
+                    <align>left</align>
+                    <font>font_tiny</font>
+                    <aligny>top</aligny>
+                    <label>$VAR[TextPVREPGProgramPlot]</label>
+                    <visible>!Skin.HasSetting(Views.UseHalfPVRGuide)</visible>
+                    <autoscroll delay="3500" time="3500" repeat="3500">Window.IsVisible(10702)</autoscroll>
+                </control>
+                <!-- PVR310: END custom plotbox for EPG -->
             </control>
             <control type="group">
                 <visible>Control.IsVisible(502) | Control.IsVisible(503)</visible>
