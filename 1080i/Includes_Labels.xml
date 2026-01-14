@@ -1019,7 +1019,8 @@
         <value condition="Window.IsVisible(filemanager)">$LOCALIZE[7]</value>
         <value condition="Window.IsVisible(MyMusicPlaylistEditor.xml)">$LOCALIZE[10503]</value>
         <value condition="Window.IsVisible(tvchannels)">$LOCALIZE[10700]</value>
-        <value condition="Window.IsVisible(tvguide)">$LOCALIZE[10702]</value>
+        <!-- PVR300: Replace $LOCALIZE[10702] to capitalise "guide" -->
+        <value condition="Window.IsVisible(tvguide)">TV Guide</value>
         <value condition="Window.IsVisible(tvrecordings)">$LOCALIZE[10701]</value>
         <value condition="Window.IsVisible(tvsearch)">$LOCALIZE[10704]</value>
         <value condition="Window.IsVisible(tvtimers)">$LOCALIZE[10703]</value>
