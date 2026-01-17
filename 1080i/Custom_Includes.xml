@@ -228,5 +228,26 @@
 
     <!-- MISC328: Expression for MISC328: Custom Layout Labels --> 
     <expression name="Home_Page">Window.IsVisible(10000) | Window.IsVisible(11101) | Window.IsVisible(1102) | Window.IsVisible(11103) | Window.IsVisible(11104)</expression>    
+
+    <!-- MISC352: Expressions and Variables for Custom Episode Type Banner-->
+    <expression name="Info_Line_Episode_Banner_Exists">String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.episode_type),series_premiere) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.episode_type),season_premiere) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.episode_type),mid_season_premiere) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.episode_type),series_finale) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.episode_type),season_finale) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.episode_type),mid_season_finale)</expression>
     
+    <variable name="Info_Line_Episode_Banner_Color">
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.episode_type),series_premiere)">$VAR[ColorBanner_series_premiere]</value>
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.episode_type),season_premiere)">$VAR[ColorBanner_season_premiere]</value>
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.episode_type),mid_season_premiere)">$VAR[ColorBanner_mid_season_premiere]</value>
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.episode_type),series_finale)">$VAR[ColorBanner_series_finale]</value>
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.episode_type),season_finale)">$VAR[ColorBanner_season_finale]</value>
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.episode_type),mid_season_finale)">$VAR[ColorBanner_mid_season_finale]</value>
+    </variable>
+
+    <variable name="Info_Line_Episode_Banner_Text">
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.episode_type),series_premiere)">$LOCALIZE[31210]</value>
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.episode_type),season_premiere)">$LOCALIZE[31211]</value>
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.episode_type),mid_season_premiere)">$LOCALIZE[31212]</value>
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.episode_type),series_finale)">$LOCALIZE[31214]</value>
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.episode_type),season_finale)">$LOCALIZE[31215]</value>
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.episode_type),mid_season_finale)">$LOCALIZE[31218]</value>
+    </variable>
+
 </includes>
