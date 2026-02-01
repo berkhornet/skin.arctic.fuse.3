@@ -661,8 +661,7 @@
         <definition>
             <control type="togglebutton">
                 <font>font_main_bold</font>
-                <!-- MISC358: Use Highlight colour for Home Page Menu items (was main_fg_30)-->
-                <textcolor>$VAR[ColorHighlight]</textcolor>
+                <textcolor>main_fg_30</textcolor>
                 <focusedcolor>$VAR[ColorSelected]</focusedcolor>
                 <label>$PARAM[name]</label>
                 <altlabel>[COLOR=$VAR[ColorSelected]]$PARAM[name][/COLOR]</altlabel>
