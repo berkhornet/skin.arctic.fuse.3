@@ -2563,7 +2563,8 @@
 
                 <!-- MISC328: No labels on Landscape Home Page widgets -->
                 <!-- MISC328: " + !$EXP[Home_Page]] | [Window.IsVisible(1102)]"  added to condition -->
-                <include content="Layout_Labels" condition="[![$PARAM[detailed]] + !$EXP[Home_Page]] | [Window.IsVisible(1102)]">
+                <!-- include content="Layout_Labels" condition="[![$PARAM[detailed]] + !$EXP[Home_Page]] | [Window.IsVisible(1102)]" -->
+                <include content="Layout_Labels" condition="[![$PARAM[detailed]] + !$EXP[Home_Page]]">
                     <param name="top">10</param>
                     <param name="item_h">$PARAM[item_h]</param>
                     <param name="affix">$PARAM[affix]</param>
