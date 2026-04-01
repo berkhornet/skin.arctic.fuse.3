@@ -1105,16 +1105,19 @@
       
         <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,plugin)">Videos: Addons: $INFO[Container.FolderName]</value>
         <!-- MISC308: Video Library TV Shows -->
-        <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,tvshows) + $EXP[Exp_View_512] + String.IsEqual(System.CurrentControlID,512)">TV Shows: [COLOR=main_fg_70]$INFO[ListItem.Title][/COLOR]</value>
+        <!-- value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,tvshows) + $EXP[Exp_View_512] + String.IsEqual(System.CurrentControlID,512)">TV Shows: [COLOR=main_fg_70]$INFO[ListItem.Title][/COLOR]</value -->
+        <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,tvshows) + $EXP[Exp_View_512] + String.IsEqual(System.CurrentControlID,512)">TV Shows</value>
         <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,tvshows)">TV Shows</value>
         <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,seasons)">TV Shows</value>
         <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,episodes)">TV Shows</value>
         <value condition="Window.IsVisible(10025) + String.Contains(Container.FolderPath,tv_show_collections)">TV Shows: Collections</value>
         <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,genres) + String.Contains(Container.FolderPath,tvshows)">TV Shows: Genres</value>
         <!-- MISC308: Video Library Movies -->
-        <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,movies) + $EXP[Exp_View_512] + String.IsEqual(System.CurrentControlID,512)">Movies: [COLOR=main_fg_70]$INFO[ListItem.Title][/COLOR]</value>
+        <!-- value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,movies) + $EXP[Exp_View_512] + String.IsEqual(System.CurrentControlID,512)">Movies: [COLOR=main_fg_70]$INFO[ListItem.Title][/COLOR]</value -->
+        <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,movies) + $EXP[Exp_View_512] + String.IsEqual(System.CurrentControlID,512)">Movies</value>
         <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,movies)">Movies</value>
-        <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,sets) + $EXP[Exp_View_512] + String.IsEqual(System.CurrentControlID,512)">Movies: Collections: [COLOR=main_fg_70]$INFO[ListItem.Title][/COLOR]</value>
+        <!-- value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,sets) + $EXP[Exp_View_512] + String.IsEqual(System.CurrentControlID,512)">Movies: Collections: [COLOR=main_fg_70]$INFO[ListItem.Title][/COLOR]</value -->
+        <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,sets) + $EXP[Exp_View_512] + String.IsEqual(System.CurrentControlID,512)">Movies: Collections</value>        
         <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,sets)">Movies: Collections</value>
         <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,genres) + String.Contains(Container.FolderPath,movies)">Movies: Genres</value>
         <!-- MISC308: Video Library Playlists -->
