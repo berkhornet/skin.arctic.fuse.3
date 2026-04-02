@@ -477,9 +477,12 @@
                 <control type="group">
                     <left>80</left>
                     <control type="label">
-                        <font>font_main_bold</font>
-                        <textcolor>main_fg_30</textcolor>
+                        <!-- MISC363: START Custom Home Page menu font -->
+                        <!-- font>font_main_bold</font -->
+                        <font>font_homemenu</font>
+                        <!-- MISC363: END Custom Home Page menu font -->
                         <!-- MISC358: Use Highlight colour for Home Page Menu items (was main_fg_30) (DISABLED) -->
+                        <textcolor>main_fg_30</textcolor>
                         <!-- textcolor>$VAR[ColorHighlight]</textcolor -->
                         <label>$INFO[Skin.String(HomeSwitcher.$PARAM[window].Name)]</label>
                         <left>30</left>
@@ -523,7 +526,10 @@
                 <control type="group">
                     <visible>Window.IsVisible($PARAM[window])</visible>
                     <control type="button">
-                        <font>font_main_bold</font>
+                        <!-- MISC363: START Custom Home Page menu font -->
+                        <!-- font>font_main_bold</font -->
+                        <font>font_homemenu</font>
+                        <!-- MISC363: END Custom Home Page menu font -->
                         <textcolor>00ffffff</textcolor>
                         <focusedcolor>00ffffff</focusedcolor>
                         <label>$INFO[Skin.String(HomeSwitcher.$PARAM[window].Name)]</label>
@@ -532,7 +538,10 @@
                         <visible>![$PARAM[use_icons]]</visible>
                     </control>
                     <control type="label">
-                        <font>font_main_bold</font>
+                        <!-- MISC363: START Custom Home Page menu font -->
+                        <!-- font>font_main_bold</font -->
+                        <font>font_homemenu</font>
+                        <!-- MISC363: END Custom Home Page menu font -->
                         <textcolor>$VAR[ColorSelected]</textcolor>
                         <label>$INFO[Skin.String(HomeSwitcher.$PARAM[window].Name)]</label>
                         <left>30</left>

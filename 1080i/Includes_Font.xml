@@ -27,6 +27,15 @@
                 <size>24</size>
                 <style>uppercase</style>
             </font>
+            
+            <!-- MISC363: START Custom Home Page menu font -->
+            <font>
+                <name>font_homemenu</name>
+                <filename>LeagueSpartan-ExtraBold.ttf</filename>
+                <size>34</size>
+                <style>uppercase</style>
+            </font>
+            <!-- MISC363: END Custom Home Page menu font -->
 
             <!-- Keyboard Symbol Font -->
             <font>
@@ -145,8 +154,7 @@
                 <filename>$PARAM[font_bold]</filename>
                 <size>$PARAM[size_midi_x2]</size>
             </font>
-            <!-- MISC362: Enable additional title fonts -->
-            <!-- <font -->
+
             <font>
                 <name>font_title_midi_1</name>
                 <filename>titles/LavishlyYours.ttf</filename>
