@@ -1087,6 +1087,7 @@
         <!-- MISC308: Music Headers -->
         <value condition="Window.IsVisible(10502) + String.IsEqual(Container.Content,artists)">Music: Artists</value>
         <value condition="Window.IsVisible(10502) + String.IsEqual(Container.Content,albums)">Music: Albums</value>
+        <value condition="Window.IsVisible(10502) + String.IsEqual(Container.Content,songs)">Music: Albums: $INFO[ListItem.Album]</value>
         <value condition="Window.IsVisible(10502) + String.IsEqual(Container.Content,musicvideos)">Music: Videos</value>
         <value condition="Window.IsVisible(10502) + String.IsEqual(Container.Content,playlists)">Music: Playlists</value>
         <value condition="Window.IsVisible(10502) + [String.IsEqual(Container.Content,addons) | !String.IsEmpty(Container.PluginName)]">Music: Addons</value>

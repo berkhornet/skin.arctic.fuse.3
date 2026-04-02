@@ -145,8 +145,9 @@
                 <filename>$PARAM[font_bold]</filename>
                 <size>$PARAM[size_midi_x2]</size>
             </font>
-
-            <!-- <font>
+            <!-- MISC362: Enable additional title fonts -->
+            <!-- <font -->
+            <font>
                 <name>font_title_midi_1</name>
                 <filename>titles/LavishlyYours.ttf</filename>
                 <linespacing>0.8</linespacing>
