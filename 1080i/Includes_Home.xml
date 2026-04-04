@@ -382,7 +382,7 @@
                     <orientation>vertical</orientation>
                     <!-- MISC364: START centre Side Menu icons -->
                     <!-- centerleft>0</centerleft -->
-                    <centerleft>-30</centerleft>
+                    <centerleft>-25</centerleft>
                     <!-- MISC364: END centre Side Menu icons -->
                     <width>80</width>
                     <itemgap>20</itemgap>
