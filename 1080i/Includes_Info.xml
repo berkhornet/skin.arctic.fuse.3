@@ -474,7 +474,21 @@
                     <textcolor>$PARAM[colordiffuse]_100</textcolor>
                 </control -->
                 <!-- MISC361: END disable Clearlogo and original text title controls -->
+                
                 <!-- MISC361: START revised text title controls -->
+                                
+                <!-- MISC364: START Info_Title prefix on Home Pages -->
+                <control type="label">
+                    <top>-140</top>
+                    <wrapmultiline>true</wrapmultiline>
+                    <label>$VAR[Info_Title_Prefix]</label>
+                    <font>font_homemenu</font>
+                    <aligny>center</aligny>
+                    <visible>$EXP[Home_Page]</visible>
+                    <textcolor>$PARAM[colordiffuse]_100</textcolor>
+                </control>
+                <!-- MISC364: END Info_Title prefix on Home Pages -->
+                
                 <control type="label">
                     <wrapmultiline>true</wrapmultiline>
                     <label>$INFO[$PARAM[container]$PARAM[listitem].TVShowTitle]</label>
