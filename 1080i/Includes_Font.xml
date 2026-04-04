@@ -154,7 +154,8 @@
                 <filename>$PARAM[font_bold]</filename>
                 <size>$PARAM[size_midi_x2]</size>
             </font>
-
+            <!-- MISC362: Enable additional title fonts -->
+            <!-- <font -->
             <font>
                 <name>font_title_midi_1</name>
                 <filename>titles/LavishlyYours.ttf</filename>
@@ -188,7 +189,9 @@
             <font>
                 <name>font_title_midi_6</name>
                 <filename>titles/Aboreto.ttf</filename>
-                <size>$PARAM[size_midi_x2]</size>
+                <!-- MISC362: change size from 64 to 56 -->
+                <!-- size>$PARAM[size_midi_x2]</size -->
+                <size>$PARAM[size_main_x2]</size>
             </font>
             <font>
                 <name>font_title_midi_7</name>
