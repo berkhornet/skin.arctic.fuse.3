@@ -380,7 +380,10 @@
             <control type="group">
                 <control type="grouplist">
                     <orientation>vertical</orientation>
-                    <centerleft>0</centerleft>
+                    <!-- MISC364: START centre Side Menu icons -->
+                    <!-- centerleft>0</centerleft -->
+                    <centerleft>-30</centerleft>
+                    <!-- MISC364: END centre Side Menu icons -->
                     <width>80</width>
                     <itemgap>20</itemgap>
                     <align>center</align>
