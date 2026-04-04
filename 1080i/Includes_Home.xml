@@ -380,10 +380,10 @@
             <control type="group">
                 <control type="grouplist">
                     <orientation>vertical</orientation>
-                    <!-- MISC364: START centre Side Menu icons -->
+                    <!-- MISC363: START centre Side Menu icons -->
                     <!-- centerleft>0</centerleft -->
                     <centerleft>-25</centerleft>
-                    <!-- MISC364: END centre Side Menu icons -->
+                    <!-- MISC363: END centre Side Menu icons -->
                     <width>80</width>
                     <itemgap>20</itemgap>
                     <align>center</align>
@@ -434,9 +434,11 @@
                 <width>80</width>
                 <control type="group">
                     <visible>Window.IsVisible($PARAM[window])</visible>
-                    <control type="image">
+                    <!-- MISC363: disable "selected" background -->
+                    <!-- selected background -->
+                    <!-- control type="image">
                         <include>Texture_Menu_Highlight_H</include>
-                    </control>
+                    </control -->
                     <control type="image">
                         <include>Home_Grouplist_Icon_Definition</include>
                         <texture background="true" colordiffuse="$VAR[ColorSelected]">$PARAM[icon]</texture>
@@ -635,9 +637,7 @@
                         <!-- font>font_main_bold</font -->
                         <font>font_homemenu</font>
                         <!-- MISC363: END Custom Home Page menu font -->
-                        <!-- MISC358: Use Highlight colour for Home Page Menu items (was main_fg_30) (DISABLED) -->
                         <textcolor>main_fg_30</textcolor>
-                        <!-- textcolor>$VAR[ColorHighlight]</textcolor -->
                         <label>$INFO[Skin.String(HomeSwitcher.$PARAM[window].Name)]</label>
                         <left>30</left>
                         <visible>![$PARAM[use_icons]]</visible>
@@ -679,18 +679,16 @@
                 <height>80</height>
                 <control type="group">
                     <visible>Window.IsVisible($PARAM[window])</visible>
-                    <control type="button">
-                        <!-- MISC363: START Custom Home Page menu font -->
-                        <!-- font>font_main_bold</font -->
-                        <font>font_homemenu</font>
-                        <!-- MISC363: END Custom Home Page menu font -->
+                    <!-- MISC363: disable "selected" texture -->
+                    <!-- control type="button">
+                        <font>font_main_bold</font>
                         <textcolor>00ffffff</textcolor>
                         <focusedcolor>00ffffff</focusedcolor>
                         <label>$INFO[Skin.String(HomeSwitcher.$PARAM[window].Name)]</label>
                         <width>auto</width>
                         <include>Texture_Highlight_Button_FakeFocus_H</include>
                         <visible>![$PARAM[use_icons]]</visible>
-                    </control>
+                    </control -->
                     <control type="label">
                         <!-- MISC363: START Custom Home Page menu font -->
                         <!-- font>font_main_bold</font -->
