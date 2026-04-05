@@ -475,20 +475,53 @@
                 </control -->
                 <!-- MISC361: END disable Clearlogo and original text title controls -->
                 
-                <!-- MISC361: START revised text title controls -->
-                                
-                <!-- MISC364: START Info_Title prefix on Home Pages -->
+                <!-- MISC364: START Info_Title prefix on Home Pages (Vertical Home Switcher) -->
                 <control type="label">
                     <top>-140</top>
                     <wrapmultiline>true</wrapmultiline>
                     <label>$VAR[Info_Title_Prefix]</label>
                     <font>font_homemenu</font>
                     <aligny>center</aligny>
-                    <visible>$EXP[Home_Page]</visible>
+                    <visible>$EXP[Home_Page] + Skin.HasSetting(HomeSwitcher.Vertical)</visible>
                     <textcolor>$PARAM[colordiffuse]_100</textcolor>
                 </control>
-                <!-- MISC364: END Info_Title prefix on Home Pages -->
-                
+                <!-- MISC364: END Info_Title prefix on Home Pages (Verical Home Switcher)  -->
+
+                <!-- MISC364: START Include Home Menu (Horizontal Home Switcher) -->
+                <control type="grouplist">
+                    <visible>$EXP[Home_Page] + !Skin.HasSetting(HomeSwitcher.Vertical) + !String.IsEqual(System.CurrentControlID,300)</visible>
+                    <include>Home_Reposition</include>
+                    <top>-70</top>
+                    <include content="Object_Left" condition="Skin.HasSetting(HomeSwitcher.EnableIcons)">
+                        <param name="left">-10</param>
+                    </include>
+                    <left>-20</left>
+                    <orientation>horizontal</orientation>
+                    <height>1130</height>
+                    <include content="Home_Object">
+                        <param name="window">home</param>
+                        <param name="id">00</param>
+                    </include>
+                    <include content="Home_Object" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1101.Toggle))">
+                        <param name="window">1101</param>
+                        <param name="id">01</param>
+                    </include>
+                    <include content="Home_Object" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1102.Toggle))">
+                        <param name="window">1102</param>
+                        <param name="id">02</param>
+                    </include>
+                    <include content="Home_Object" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1103.Toggle))">
+                        <param name="window">1103</param>
+                        <param name="id">03</param>
+                    </include>
+                    <include content="Home_Object" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1104.Toggle))">
+                        <param name="window">1104</param>
+                        <param name="id">04</param>
+                    </include>
+                </control>
+                <!-- MISC364: END Include Home Menu (Horizontal Home Switcher) -->
+
+                <!-- MISC361: START revised text title controls -->
                 <control type="label">
                     <wrapmultiline>true</wrapmultiline>
                     <label>$INFO[$PARAM[container]$PARAM[listitem].TVShowTitle]</label>
