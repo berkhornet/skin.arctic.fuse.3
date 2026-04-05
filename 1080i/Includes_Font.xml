@@ -189,9 +189,9 @@
             <font>
                 <name>font_title_midi_6</name>
                 <filename>titles/Aboreto.ttf</filename>
-                <!-- MISC362: change size from 64 to 56 -->
+                <!-- MISC362: change size from 64 to 43 (size_huge) -->
                 <!-- size>$PARAM[size_midi_x2]</size -->
-                <size>$PARAM[size_huge]</size>
+                <size>43</size>
             </font>
             <font>
                 <name>font_title_midi_7</name>

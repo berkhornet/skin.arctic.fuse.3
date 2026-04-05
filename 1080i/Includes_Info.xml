@@ -377,7 +377,7 @@
         <param name="left">40</param>
         <!-- MISC361: START extend title width from constant of 640 -->
         <!-- param name="width">info_title_w</param -->
-        <param name="width">1000</param>
+        <param name="width">1400</param>
         <!-- MISC361: END extend title width from constant of 640 -->
         <param name="listitem">ListItem</param>
         <param name="service">ListItem</param>
