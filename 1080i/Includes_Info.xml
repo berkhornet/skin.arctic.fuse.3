@@ -482,14 +482,14 @@
                     <label>$VAR[Info_Title_Prefix]</label>
                     <font>font_homemenu</font>
                     <aligny>center</aligny>
-                    <visible>$EXP[Home_Page] + Skin.HasSetting(HomeSwitcher.Vertical)</visible>
+                    <visible>[$EXP[Home_Page] + Skin.HasSetting(HomeSwitcher.Vertical)] | !Skin.HasSetting(custom.fullfakeheader)</visible>
                     <textcolor>$PARAM[colordiffuse]_100</textcolor>
                 </control>
                 <!-- MISC364: END Info_Title prefix on Home Pages (Verical Home Switcher)  -->
 
                 <!-- MISC364: START Include Home Menu (Horizontal Home Switcher) -->
                 <control type="grouplist">
-                    <visible>$EXP[Home_Page] + !Skin.HasSetting(HomeSwitcher.Vertical) + !String.IsEqual(System.CurrentControlID,300)</visible>
+                    <visible>$EXP[Home_Page] + !Skin.HasSetting(HomeSwitcher.Vertical) + !String.IsEqual(System.CurrentControlID,300) + Skin.HasSetting(custom.fullfakeheader)</visible>
                     <include>Home_Reposition</include>
                     <top>-70</top>
                     <include content="Object_Left" condition="Skin.HasSetting(HomeSwitcher.EnableIcons)">
