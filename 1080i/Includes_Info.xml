@@ -487,9 +487,9 @@
                 </control>
                 <!-- MISC364: END Info_Title prefix on Home Pages (Verical Home Switcher)  -->
 
-                <!-- MISC364: START Include Home Menu (Horizontal Home Switcher) -->
+                <!-- MISC364: START Include Home Menu (Horizontal Home Switcher, copied from Home_Switcher_Horz) -->
                 <control type="grouplist">
-                    <visible>$EXP[Home_Page] + !Skin.HasSetting(HomeSwitcher.Vertical) + !String.IsEqual(System.CurrentControlID,300) + Skin.HasSetting(custom.fullfakeheader)</visible>
+                    <visible>$EXP[Home_Page] + !Skin.HasSetting(HomeSwitcher.Vertical) + !String.IsEqual(System.CurrentControlID,300) + Skin.HasSetting(custom.fullfakeheader) + !Window.IsActive(11170)</visible>
                     <include>Home_Reposition</include>
                     <top>-70</top>
                     <include content="Object_Left" condition="Skin.HasSetting(HomeSwitcher.EnableIcons)">
@@ -519,7 +519,7 @@
                         <param name="id">04</param>
                     </include>
                 </control>
-                <!-- MISC364: END Include Home Menu (Horizontal Home Switcher) -->
+                <!-- MISC364: END Include Home Menu (Horizontal Home Switcher, copied from Home_Switcher_Horz) -->
 
                 <!-- MISC361: START revised text title controls -->
                 <control type="label">

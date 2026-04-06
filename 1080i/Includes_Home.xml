@@ -263,7 +263,9 @@
             <control type="image">
                 <include>Home_Fade_Animation</include>
                 <visible>!String.IsEmpty(Window(Home).Property(HomeSwitcher.IsVisible))</visible>
-                <visible>!Skin.HasSetting(HomeSwitcher.Vertical)</visible>
+                <!-- MISC364: START enable overlay for side menu -->
+                <!-- visible>!Skin.HasSetting(HomeSwitcher.Vertical)</visible -->
+                <!-- MISC364: END enable overlay for side menu -->
                 <texture colordiffuse="main_bg_70">background/combined_topmenu.png</texture>
                 <bottom>0</bottom>
             </control>
