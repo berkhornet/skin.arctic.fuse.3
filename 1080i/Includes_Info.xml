@@ -489,7 +489,7 @@
 
                 <!-- MISC364: START Include Home Menu (Horizontal Home Switcher, copied from Home_Switcher_Horz) -->
                 <control type="grouplist">
-                    <visible>$EXP[Home_Page] + !Skin.HasSetting(HomeSwitcher.Vertical) + !String.IsEqual(System.CurrentControlID,300) + Skin.HasSetting(custom.fullfakeheader) + !Window.IsActive(11170)</visible>
+                    <visible>$EXP[Home_Page] + !Skin.HasSetting(HomeSwitcher.Vertical) + !String.IsEqual(System.CurrentControlID,300) + !String.IsEqual(System.CurrentControlID,8001)  + !String.IsEqual(System.CurrentControlID,8002) + !String.IsEqual(System.CurrentControlID,8003) + !String.IsEqual(System.CurrentControlID,8004) + Skin.HasSetting(custom.fullfakeheader) + !Window.IsActive(11170)</visible>
                     <include>Home_Reposition</include>
                     <top>-70</top>
                     <include content="Object_Left" condition="Skin.HasSetting(HomeSwitcher.EnableIcons)">
