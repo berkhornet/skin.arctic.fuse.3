@@ -79,6 +79,20 @@
 
             <onclick condition="!Skin.HasSetting(HomeSwitcher.DisableHeader) + Skin.HasSetting(HomeSwitcher.DisableDate)">Skin.SetBool(HomeSwitcher.DisableHeader)</onclick>
         </include>
+        
+        <!-- MISC364: START Fake Menu Setting -->
+        <include content="Settings_Button" description="Custom Fake Header">
+            <param name="dialog">false</param>
+            <param name="window">skinsettings</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">900</param>
+            <param name="control">radiobutton</param>
+            <label>Custom Full Fake Header</label>
+            <onclick>Skin.ToggleSetting(Custom.FullFakeHeader)</onclick>
+            <selected>Skin.HasSetting(Custom.FullFakeHeader)</selected>
+            <visible>!Skin.HasSetting(HomeSwitcher.Vertical)</visible>
+        </include>
+        <!-- MISC364: END Fake Menu Setting -->
 
 
         <include content="Settings_Label" description="Layout">
