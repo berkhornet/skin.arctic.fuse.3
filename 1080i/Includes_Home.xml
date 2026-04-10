@@ -710,10 +710,16 @@
                         <!-- font>font_main_bold</font -->
                         <font>font_homemenu</font>
                         <!-- MISC363: END Custom Home Page menu font -->
-                        <textcolor>$VAR[ColorSelected]</textcolor>
+                        <!-- MISC363: START Use ColorHighlight -->
+                        <!-- textcolor>$VAR[ColorSelected]</textcolor -->
+                        <textcolor>$VAR[ColorHighlight]</textcolor>
+                        <!-- MISC363: END Use ColorHighlight -->
                         <label>$INFO[Skin.String(HomeSwitcher.$PARAM[window].Name)]</label>
                         <left>30</left>
-                        <visible>![$PARAM[use_icons]]</visible>
+                        <!-- MISC363: START do not highlight focuused item if Fake Header displayed in Info_Title -->
+                        <!-- visible>![$PARAM[use_icons]]</visible -->
+                        <visible>String.IsEqual(System.CurrentControlID,300) + ![$PARAM[use_icons]]</visible>
+                        <!-- MISC363: END do not highlight focuused item if Fake Header displayed in Info_Title -->
                     </control>
                     <control type="group">
                         <left>10</left>
