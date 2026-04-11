@@ -34,6 +34,7 @@
         <value condition="String.Contains(Skin.String(background.image),customisations) + String.Contains(Skin.String(background.image),Green)">ff80c782</value>
         <value condition="String.Contains(Skin.String(background.image),customisations) + String.Contains(Skin.String(background.image),Blue)">ff80d4fa</value>
         <value condition="String.Contains(Skin.String(background.image),customisations) + String.Contains(Skin.String(background.image),Red)">fff24236</value>
+        <value condition="String.Contains(Skin.String(background.image),blue)">ff80d4fa</value>
         <!-- MISC307: END ColorHighlight variable dependent upon background image --> 
         <value condition="!String.IsEmpty(Skin.String(focuscolor.name))">$INFO[Skin.String(focuscolor.name)]</value>
         <value>ffffffff</value>
