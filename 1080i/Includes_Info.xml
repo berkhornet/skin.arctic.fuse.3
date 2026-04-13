@@ -375,13 +375,16 @@
 
     <include name="Info_Title">
         <param name="left">40</param>
-        <!-- MISC361: START extend title width from constant of 640 -->
+        <!-- MISC361: START extend title width from constant of 640 to 1400 (matches Info_Panel_Dimensions) -->
         <!-- param name="width">info_title_w</param -->
         <param name="width">1400</param>
-        <!-- MISC361: END extend title width from constant of 640 -->
+        <!-- MISC361: END extend title width from constant of 640 to 1400 (matches Info_Panel_Dimensions)-->
         <param name="listitem">ListItem</param>
         <param name="service">ListItem</param>
-        <param name="wrapmultiline">true</param>
+        <!-- MISC361: START change wrapmultiline -->
+        <!-- param name="wrapmultiline">true</param -->       
+        <param name="wrapmultiline">false</param>
+        <!-- MISC361: END change wrapmultiline -->
         <param name="croplogo">Window.Property(TMDbHelper.ListItem.CropImage)</param>
         <definition>
             <control type="group">
@@ -525,7 +528,10 @@
                 <control type="group">
                     <top>60</top> <!-- Group and <top> added to enhance MISC364 -->
                     <control type="label">
-                        <wrapmultiline>true</wrapmultiline>
+                        <wrapmultiline>false</wrapmultiline>
+                        <scroll>true</scroll>
+                        <scrollsuffix> - </scrollsuffix>
+                        <scrollspeed>30</scrollspeed>
                         <label>$INFO[$PARAM[container]$PARAM[listitem].TVShowTitle]</label>
                         <font>font_title_midi_6</font>
                         <aligny>center</aligny>
@@ -534,6 +540,9 @@
                     </control>
                     <control type="label">
                         <wrapmultiline>$PARAM[wrapmultiline]</wrapmultiline>
+                        <scroll>true</scroll>
+                        <scrollsuffix> - </scrollsuffix>
+                        <scrollspeed>30</scrollspeed>
                         <label>$INFO[$PARAM[container]$PARAM[listitem].Artist]</label>
                         <font>font_title_midi_6</font>
                         <aligny>center</aligny>
@@ -543,6 +552,9 @@
                     </control>
                     <control type="label">
                         <wrapmultiline>$PARAM[wrapmultiline]</wrapmultiline>
+                        <scroll>true</scroll>
+                        <scrollsuffix> - </scrollsuffix>
+                        <scrollspeed>30</scrollspeed>
                         <label>$INFO[$PARAM[container]$PARAM[listitem].Title]</label>
                         <font>font_title_midi_6</font>
                         <aligny>center</aligny>
@@ -553,6 +565,9 @@
                     </control>
                     <control type="label">
                         <wrapmultiline>$PARAM[wrapmultiline]</wrapmultiline>
+                        <scroll>true</scroll>
+                        <scrollsuffix> - </scrollsuffix>
+                        <scrollspeed>30</scrollspeed>
                         <label>$INFO[$PARAM[container]$PARAM[listitem].Label]</label>
                         <font>font_title_midi_6</font>
                         <aligny>center</aligny>
@@ -1147,7 +1162,10 @@
     </include>
 
     <include name="Info_Panel_Dimensions">
-        <width>info_panel_w</width>
+        <!-- MISC361: START change width from info_panel_w = 1120 to 1400 (same as Info_Title) -->    
+        <!-- width>info_panel_w</width -->
+        <width>1400</width>
+        <!-- MISC361: END change width from info_panel_w = 1120 to 1400 (same as Info_Title) -->    
         <left>view_pad</left>
         <height>420</height>
         <top>view_pad</top>
