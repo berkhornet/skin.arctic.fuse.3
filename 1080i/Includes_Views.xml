@@ -33,18 +33,12 @@
 
     <include name="View_Line_Divider_left">
         <left>0</left>
-        <!-- MISC360: START change divider colour -->
-        <!-- texture colordiffuse="main_fg_12" flipx="true">common/gradient-box.png</texture -->
-        <texture colordiffuse="main_fg_50" flipx="true">common/gradient-box.png</texture>
-        <!-- MISC360: END change divider colour -->
+        <texture colordiffuse="main_fg_12" flipx="true">common/gradient-box.png</texture>
     </include>
     
     <include name="View_Line_Divider_right">
         <right>0</right>
-        <!-- MISC360: START change divider colour -->
-        <!-- texture colordiffuse="main_fg_12" flipx="false">common/gradient-box.png</texture -->
-        <texture colordiffuse="main_fg_50" flipx="false">common/gradient-box.png</texture>
-        <!-- MISC360: END change divider colour -->
+        <texture colordiffuse="main_fg_12" flipx="false">common/gradient-box.png</texture>
     </include>
 
     <include name="View_Line_Divider">
