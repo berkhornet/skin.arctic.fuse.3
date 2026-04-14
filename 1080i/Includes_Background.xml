@@ -213,7 +213,7 @@
             <!-- MISC364: START ensure consistent overlays on Home Page (copied from Home_Control) -->
             <control type="image">
                 <include>Home_Fade_Animation</include>
-                <texture colordiffuse="main_bg_70">background/combined_topmenu.png</texture>
+                <texture colordiffuse="main_bg_70">special://skin/extras/backgrounds/overlay/combined_topmenu.png</texture>
                 <bottom>0</bottom>
                 <visible>$EXP[Home_Page] + !String.IsEqual(System.CurrentControlID,300)</visible>
             </control>

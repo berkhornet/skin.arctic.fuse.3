@@ -266,7 +266,7 @@
                 <!-- MISC364: START enable overlay for side menu -->
                 <!-- visible>!Skin.HasSetting(HomeSwitcher.Vertical)</visible -->
                 <!-- MISC364: END enable overlay for side menu -->
-                <texture colordiffuse="main_bg_70">background/combined_topmenu.png</texture>
+                <texture colordiffuse="main_bg_70">special://skin/extras/backgrounds/overlay/combined_topmenu.png</texture>
                 <bottom>0</bottom>
             </control>
         </definition>
