@@ -695,16 +695,18 @@
                 <height>80</height>
                 <control type="group">
                     <visible>Window.IsVisible($PARAM[window])</visible>
-                    <!-- MISC363: disable "selected" texture -->
-                    <!-- control type="button">
-                        <font>font_main_bold</font>
+                    <control type="button">
+                        <!-- MISC363: START change font -->
+                        <!-- font>font_main_bold</font -->
+                        <font>font_midi_bold</font>
+                        <!-- MISC363: END change font -->
                         <textcolor>00ffffff</textcolor>
                         <focusedcolor>00ffffff</focusedcolor>
                         <label>$INFO[Skin.String(HomeSwitcher.$PARAM[window].Name)]</label>
                         <width>auto</width>
                         <include>Texture_Highlight_Button_FakeFocus_H</include>
-                        <visible>![$PARAM[use_icons]]</visible>
-                    </control -->
+                        <visible>String.IsEqual(System.CurrentControlID,300) + ![$PARAM[use_icons]]</visible>
+                    </control>
                     <control type="label">
                         <!-- MISC363: START Custom Home Page menu font -->
                         <!-- font>font_main_bold</font -->
