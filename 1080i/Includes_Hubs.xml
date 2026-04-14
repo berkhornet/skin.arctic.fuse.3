@@ -739,7 +739,7 @@
             <control type="group">
                 <top>20</top>
                 <include content="Furniture_Header">
-                    <param name="include_left">true</param>
+                    <param name="include_left">false</param>
                     <param name="include_left">true</param>
                 </include>
             </control>
