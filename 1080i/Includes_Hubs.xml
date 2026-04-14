@@ -735,6 +735,16 @@
                 <param name="overlay">[String.IsEqual(Skin.String(HomeSwitcher.$PARAM[window].Mode),Wall) + String.IsEmpty(Skin.String(HomeSwitcher.$PARAM[window].Spotlight.Target))]</param>
             </include>
 
+            <!-- MISC367: START include Time and Weather on Home Page -->
+            <control type="group">
+                <top>20</top>
+                <include content="Furniture_Header">
+                    <param name="include_left">true</param>
+                    <param name="include_left">true</param>
+                </include>
+            </control>
+            <!-- MISC367: END include Time and Weather on Home Page -->
+            
             <control type="group">
                 <include>Animation_Group_Bumper</include>
 
