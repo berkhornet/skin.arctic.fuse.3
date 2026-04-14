@@ -713,10 +713,7 @@
                         <textcolor>$VAR[ColorSelected]</textcolor>
                         <label>$INFO[Skin.String(HomeSwitcher.$PARAM[window].Name)]</label>
                         <left>30</left>
-                        <!-- MISC363: START do not highlight focussed item if Fake Header displayed in Info_Title -->
-                        <!-- visible>![$PARAM[use_icons]]</visible -->
-                        <visible>String.IsEqual(System.CurrentControlID,300) + ![$PARAM[use_icons]]</visible>
-                        <!-- MISC363: END do not highlight focussed item if Fake Header displayed in Info_Title -->
+                        <visible>![$PARAM[use_icons]]</visible>
                     </control>
                     <control type="group">
                         <left>10</left>
