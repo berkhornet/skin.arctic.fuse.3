@@ -740,7 +740,7 @@
                 <top>20</top>
                 <include content="Furniture_Header">
                     <param name="include_left">true</param>
-                    <param name="include_left">true</param>
+                    <param name="include_right">true</param>
                 </include>
             </control>
             <!-- MISC367: END include Time and Weather on Home Page -->
