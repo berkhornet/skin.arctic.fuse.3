@@ -695,18 +695,17 @@
                 <height>80</height>
                 <control type="group">
                     <visible>Window.IsVisible($PARAM[window])</visible>
-                    <control type="button">
-                        <!-- MISC363: START change font -->
-                        <!-- font>font_main_bold</font -->
-                        <font>font_midi_bold</font>
-                        <!-- MISC363: END change font -->
+                    <!-- MISC363: START remove highlight texture -->
+                    <!-- control type="button">
+                        <font>font_mmain_bold</font>
                         <textcolor>00ffffff</textcolor>
                         <focusedcolor>00ffffff</focusedcolor>
                         <label>$INFO[Skin.String(HomeSwitcher.$PARAM[window].Name)]</label>
                         <width>auto</width>
                         <include>Texture_Highlight_Button_FakeFocus_H</include>
                         <visible>String.IsEqual(System.CurrentControlID,300) + ![$PARAM[use_icons]]</visible>
-                    </control>
+                    </control -->
+                    <!-- MISC363: END remove highlight texture -->
                     <control type="label">
                         <!-- MISC363: START Custom Home Page menu font -->
                         <!-- font>font_main_bold</font -->
@@ -716,6 +715,15 @@
                         <label>$INFO[Skin.String(HomeSwitcher.$PARAM[window].Name)]</label>
                         <left>30</left>
                         <visible>![$PARAM[use_icons]]</visible>
+                    </control>
+                    <!-- MISC363: START if menu item is focussed, use ColorHighlight -->
+                    <control type="label">
+                        <font>font_midi_bold</font>
+                        <textcolor>$VAR[ColorHighlight]</textcolor>
+                        <label>$INFO[Skin.String(HomeSwitcher.$PARAM[window].Name)]</label>
+                        <left>30</left>
+                        <visible>String.IsEqual(System.CurrentControlID,300) + ![$PARAM[use_icons]]</visible>
+                    <!-- MISC363: END if menu item is focussed, use ColorHighlight -->                     
                     </control>
                     <control type="group">
                         <left>10</left>
