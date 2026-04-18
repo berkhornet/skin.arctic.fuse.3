@@ -2509,12 +2509,16 @@
                 <width>$PARAM[item_w]</width>
                 <height>$PARAM[item_h]</height>
 
-                <include content="Object_ItemBack">
+                <!-- MISC369: START Custom highlights for PVR - condition added -->
+                <!-- include content="Object_ItemBack" -->
+                <include content="Object_ItemBack" condition="!Window.IsVisible(10000)">                
                     <param name="selected">$PARAM[selected]</param>
                     <param name="shadow_colordiffuse">$PARAM[shadow_colordiffuse]</param>
                 </include>
-
-                <include content="Object_Control" condition="$PARAM[selected]">
+                
+                <!-- MISC369: START Custom highlights for PVR -  + !Window.IsVisible(10000) added to condition -->
+                <!-- include content="Object_Control" condition="$PARAM[selected]" -->
+                <include content="Object_Control" condition="$PARAM[selected] + !Window.IsVisible(10000)">
                     <param name="control">image</param>
                     <include>Texture_Box_Highlight_V</include>
                 </include>
