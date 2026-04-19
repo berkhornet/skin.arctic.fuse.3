@@ -15,20 +15,24 @@
 		<value condition="$EXP[UHD_Channel]">special://userdata/customisations\PVR\resolution flags\uhd.png</value>
 		<value></value>
 	</variable>
+  
+    <!-- MISC370: Custom Info_Line for PVR -->    
+	<expression name="Anova_Standard_Channel">Integer.IsLess(ListItem.ChannelNumberLabel,200)</expression>
+ 	<expression name="Anova_Football_Channel">Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,501) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,700)</expression>
+ 	<expression name="Anova_SkySportsPlus_MLS_Channel">Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,801) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,900)</expression>
+  	<expression name="Anova_247Channel">Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,901) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,1000)</expression>
+    <expression name="Anova_Channel">$EXP[Anova_Standard_Channel] | $EXP[Anova_Football_Channel] | $EXP[Anova_SkySportsPlus_MLS_Channel] | $EXP[Anova_247Channel]</expression>  
+	<expression name="FHNatho_Standard_Channel">[Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,201) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,400)]</expression>
+	<expression name="FHNatho_Football_Channel">[Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,701) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,800)]</expression>
+	<expression name="FHNatho_Channel">$EXP[FHNatho_Standard_Channel] | $EXP[FHNatho_Football_Channel]</expression>
     
-	<!-- PVR301: Expressions and variable for Channel Provider Icon (ImagePVRProviderIcon) -->
-	<expression name="Anova_Channel">[Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,201) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,400)] | [Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,501) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,700)] | Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,801) </expression>
-	<expression name="FHNatho_Channel">Integer.IsLess(ListItem.ChannelNumberLabel,200) | [Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,701) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,800)] </expression>
-	<expression name="BBC_Channel">Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,401) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,410) </expression>
-	<expression name="ITV_Channel">[Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,411) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,420)]</expression>
-	<expression name="STV_Channel">Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,421) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,430) </expression>
-	<expression name="All4_Channel">Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,431) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,440) </expression>
-	<expression name="My5_Channel">Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,441) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,450) </expression>
-	<expression name="UKTVPlay_Channel">Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,451) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,460) </expression>
-	<expression name="Discovery_Channel">Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,461) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,470) </expression>
-	<expression name="CUTV_Channel">Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,471) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,490) </expression>
-	<expression name="PlutoTV_Channel">Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,491) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,499) </expression>
-	
+    <variable name="TextPVRProviderName">
+        <value condition="$EXP[FHNatho_Channel]">FHNATHO</value>
+        <value condition="$EXP[Anova_Channel]">ANOVA</value>
+        <value>UNKNOWN</value>
+    </variable>
+
+
     <!-- New Expressions for Kodi 22 -->
     <!-- expression name="Anova_Channel">String.IsEqual(ListItem.MediaProviders,Anova)</expression>
 	<expression name="FHNatho_Channel">String.Contains(ListItem.MediaProviders,FH Natho)</expression>
@@ -41,28 +45,6 @@
 	<expression name="Discovery_Channel">String.Contains(ListItem.MediaProviders,Discovery)</expression>
 	<expression name="CUTV_Channel">String.IsEqual(ListItem.MediaProviders,CUTV)</expression>
 	<expression name="PlutoTV_Channel">String.IsEqual(ListItem.MediaProviders,PlutoTV)</expression -->
-    
-    <variable name="ImagePVRProviderIcon">
-		<value condition="$EXP[FHNatho_Channel]">special://userdata/customisations\PVR\provider icons\FHNatho.png</value>
-		<value condition="$EXP[BBC_Channel]">special://userdata/customisations\PVR\provider icons\BBC.png</value>
-		<value condition="$EXP[ITV_Channel]">special://userdata/customisations\PVR\provider icons\ITV.png</value>
-		<value condition="$EXP[STV_Channel]">special://userdata/customisations\PVR\provider icons\STV.png</value>
-		<value condition="$EXP[All4_Channel]">special://userdata/customisations\PVR\provider icons\Channel4.png</value>
-		<value condition="$EXP[My5_Channel]">special://userdata/customisations\PVR\provider icons\My5.png</value>
-		<value condition="$EXP[UKTVPlay_Channel]">special://userdata/customisations\PVR\provider icons\UKTVPlay.png</value>
-		<value condition="$EXP[Discovery_Channel]">special://userdata/customisations\PVR\provider icons\Discovery v3.png</value>
-		<value condition="$EXP[CUTV_Channel]">special://userdata/customisations\PVR\provider icons\CUTV.png</value>
-		<value condition="$EXP[PlutoTV_Channel]">special://userdata/customisations\PVR\provider icons\PlutoTV.png</value>
-		<value condition="$EXP[Anova_Channel]">special://userdata/customisations\PVR\provider icons\Anova.png</value>
-		<value>special://userdata/customisations\PVR\provider icons\NoProvider.png</value>
-	</variable>
-    
-    <!-- MISC370: Custom Info_Line for PVR -->    
-    <variable name="TextPVRProviderName">
-        <value condition="$EXP[FHNatho_Channel]">FHNATHO</value>
-        <value condition="$EXP[Anova_Channel]">ANOVA</value>
-        <value>UNKNOWN</value>
-    </variable>
     
     <!-- PVR301 and PVR302: Expressions for Custom Icon and Custom Program Information -->
 	<expression name="Standard_Channel">Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,499)</expression>
