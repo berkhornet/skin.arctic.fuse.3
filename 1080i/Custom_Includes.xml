@@ -57,6 +57,13 @@
 		<value>special://userdata/customisations\PVR\provider icons\NoProvider.png</value>
 	</variable>
     
+    <!-- MISC370: Custom Info_Line for PVR -->    
+    <variable name="TextPVRProviderName">
+        <value condition="$EXP[FHNatho_Channel]">FHNATHO</value>
+        <value condition="$EXP[Anova_Channel]">ANOVA</value>
+        <value>UNKNOWN</value>
+    </variable>
+    
     <!-- PVR301 and PVR302: Expressions for Custom Icon and Custom Program Information -->
 	<expression name="Standard_Channel">Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,499)</expression>
 	<expression name="247_Channel">Integer.IsGreater(ListItem.ChannelNumberLabel,900)</expression>
