@@ -543,7 +543,9 @@
         <param name="grouplistid">5000</param>
         <param name="widgetconstants_affix" />
         <definition>
-            <include content="_Widget_Row">
+            <!--MISC369: Custom Widgets for PVR Widgets: include condition for standard layout -->
+            <!-- include content="_Widget_Row" -->
+            <include content="_Widget_Row" condition="!Window.IsVisible(10000)">
                 <param name="id">$PARAM[id]</param>
                 <param name="groupid">$PARAM[groupid]</param>
                 <param name="label">$PARAM[label]</param>
@@ -572,6 +574,41 @@
                 <nested />
 
             </include>
+            
+            <!--MISC369: START Custom Widgets for PVR Widgets: add custom include for PVR widgets -->          
+            <include content="_Widget_Row" condition="Window.IsVisible(10000)">
+                <param name="id">$PARAM[id]</param>
+                <param name="groupid">$PARAM[groupid]</param>
+                <param name="label">$PARAM[label]</param>
+                <param name="usewidgetlabel">$PARAM[usewidgetlabel]</param>
+                <param name="include">$PARAM[include]</param>
+                <param name="visible">$PARAM[visible]</param>
+                <param name="altvisible">$PARAM[altvisible]</param>
+                <param name="detailed">$PARAM[detailed]</param>
+                <param name="busy_isupdating">$PARAM[busy_isupdating]</param>
+                <param name="busy_visible">[Integer.IsEqual(Container($PARAM[id]).NumItems,0) | [Integer.IsEqual(Container($PARAM[id]).NumItems,1) + String.IsEqual(Container($PARAM[id]).ListItemAbsolute(0).Label,$LOCALIZE[31046]) + Container($PARAM[id]).IsUpdating]]</param>
+                <param name="widgetfade_include">$PARAM[widgetfade_include]</param>
+                <param name="widgetfade_disable">$PARAM[widgetfade_disable]</param>
+                <param name="widget_hideartwork">$PARAM[widget_hideartwork]</param>
+                <param name="widget_showoverlay">$PARAM[widget_showoverlay]</param>
+
+                <param name="widgettop">widget_items_t$PARAM[widgetconstants_affix]</param>
+                <param name="labelheight">widget_label_h$PARAM[widgetconstants_affix]</param>
+                <!-- MISC369: custom widget height -->
+                <param name="widgetheight">910</param>
+
+                <include content="Action_Widget_OnBack">
+                    <param name="id">$PARAM[id]</param>
+                    <param name="grouplistid">$PARAM[grouplistid]</param>
+                    <param name="refocus">$PARAM[refocus]</param>
+                </include>
+
+                <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id])</onfocus>
+                <nested />
+
+            </include>
+            <!--MISC369: END Custom Widgets for PVR Widgets: add custom include for PVR widgets -->          
+           
         </definition>
     </include>
 
