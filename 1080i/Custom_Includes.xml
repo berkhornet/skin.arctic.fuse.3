@@ -268,5 +268,16 @@
         <value condition="Window.IsVisible(11104)">HOME: $INFO[Skin.String(HomeSwitcher.1104.Name)]</value>
         <value></value>
     </variable>
+    
+    <!-- MISC369: Custom highlights for PVR widgets -->
+    <include name="MISC369_Include_1">
+        <width>410</width>
+        <height>230.625</height> 
+    </include>
+    <include name="MISC369_Include_2">
+        <width>410</width>
+        <height>130</height> 
+    </include>
+
 
 </includes>

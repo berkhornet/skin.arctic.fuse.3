@@ -2506,17 +2506,21 @@
         <definition>
             <control type="group">
 
-                <width>$PARAM[item_w]</width>
-                <height>$PARAM[item_h]</height>
-
-                <!-- MISC369: START Custom highlights for PVR - condition added -->
+                <!-- MISC369: START Custom heights for PVR widgets -->
+                <!-- width>$PARAM[item_w]</width -->
+                <!-- height>$PARAM[item_h]</height -->
+                <include content="MISC369_Include_1" condition="!Window.IsVisible(10000)"></include>                
+                <include content="MISC369_Include_2" condition="Window.IsVisible(10000)"></include>                
+                <!-- MISC369: END Custom heights for PVR widgets -->
+               
+                <!-- MISC369: Custom highlights for PVR widgets: condition added -->
                 <!-- include content="Object_ItemBack" -->
                 <include content="Object_ItemBack" condition="!Window.IsVisible(10000)">                
                     <param name="selected">$PARAM[selected]</param>
                     <param name="shadow_colordiffuse">$PARAM[shadow_colordiffuse]</param>
                 </include>
                 
-                <!-- MISC369: START Custom highlights for PVR -  + !Window.IsVisible(10000) added to condition -->
+                <!-- MISC369: Custom highlights for PVR widgets: + !Window.IsVisible(10000) added to condition -->
                 <!-- include content="Object_Control" condition="$PARAM[selected]" -->
                 <include content="Object_Control" condition="$PARAM[selected] + !Window.IsVisible(10000)">
                     <param name="control">image</param>
