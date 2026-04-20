@@ -311,9 +311,12 @@
         <value condition="String.IsEqual(ListItem.Title,Channel Off Air)">$INFO[ListItem.Icon]</value>
         <value condition="String.IsEqual(ListItem.Title,No information available)">$INFO[ListItem.Icon]</value>
         <value condition="$EXP[247_Channel]">$INFO[ListItem.Icon]</value>
+        <!-- Hacks for TMDB Helper inadvertant matches -->
+        <!-- IPL -->
+        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Current.BlurImage.Original),2pWpKLB)">special://userdata/customisations\PVR\EPG Artwork\Cricket.jpg</value>
         <!-- Check if there is a valid fanart, if not display fallback image -->
         <value condition="String.StartsWith(Window(Home).Property(TMDbHelper.ListItem.Current.BlurImage.Original),special)">$VAR[Fallback_Image]</value>
-        <!-- Default Image_Foreground values (for "normal" TV programmes -->
+        <!-- Default Image_Foreground values (for "normal" TV programmes) -->
         <value condition="$EXP[Exp_BackgroundArtwork_IsSimple]">$INFO[Window(Home).Property(TMDbHelper.SimpleBackground.BlurImage.Original)]</value>
         <value condition="!$EXP[Exp_TMDbHelper_IsBlur]">$VAR[Image_Foreground_NoService]</value>
         <value condition="!String.IsEmpty(Window.Property(TMDbHelper.ListItem.BlurImage.Original))">$INFO[Window.Property(TMDbHelper.ListItem.BlurImage.Original)]</value>
@@ -322,7 +325,13 @@
 
     <variable name="Fallback_Image">
         <value>special://userdata\customisations\Skin Customisations\Fallback Images\96099.jpg</value>
-    </variable>    
+    </variable>
+
+    <!-- Furniture_Header_Left Debug changes -->
+    <!-- label>$INFO[Window(Home).Property(TMDbHelper.SimpleBackground.BlurImage.Original)] [CR] $VAR[Image_Foreground_NoService] [CR] $INFO[Window.Property(TMDbHelper.ListItem.BlurImage.Original)] [CR] $INFO[Window(Home).Property(TMDbHelper.ListItem.Current.BlurImage.Original)]</label -->
+    <!-- font>font_debug</font -->
+
+    
 
 
 </includes>
