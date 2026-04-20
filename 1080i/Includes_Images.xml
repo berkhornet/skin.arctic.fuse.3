@@ -317,6 +317,9 @@
     </variable>
 
     <variable name="Image_Foreground">
+        <!-- MISC353: START Custom Image_Foreground for Home Page PVR widgets  -->
+        <value condition="Window.IsVisible(10000)">$VAR[Custom_Image_Foreground]</value>
+        <!-- MISC353: END Custom Image_Foreground for Home Page PVR widgets  -->
         <value condition="$EXP[Exp_BackgroundArtwork_IsSimple]">$INFO[Window(Home).Property(TMDbHelper.SimpleBackground.BlurImage.Original)]</value>
         <value condition="!$EXP[Exp_TMDbHelper_IsBlur]">$VAR[Image_Foreground_NoService]</value>
         <value condition="!String.IsEmpty(Window.Property(TMDbHelper.ListItem.BlurImage.Original))">$INFO[Window.Property(TMDbHelper.ListItem.BlurImage.Original)]</value>

@@ -267,6 +267,62 @@
         <width>410</width>
         <height>130</height> 
     </include>
+    
+    <!-- MISC353: START Custom Image_Foreground for Home Page PVR widgets -->
+    <variable name="Custom_Image_Foreground">
+        <!-- Football: Club Streams -->
+        <value condition="$EXP[Live_Football_Club_Channel]">$INFO[ListItem.Icon]</value>
+        <!-- Football: Fixture Streams -->
+        <value condition="$EXP[Live_Football_Anova_EPL_Fixture]">special://userdata/customisations\PVR\EPG Artwork\EPL.jpg</value>
+        <value condition="$EXP[Live_EPL_FHNatho]">special://userdata/customisations\PVR\EPG Artwork\EPL.jpg</value>
+        <value condition="$EXP[Live_Football_Anova_EFL_Fixture]">special://userdata/customisations\PVR\EPG Artwork\EFL.jpg</value>
+        <value condition="$EXP[Live_EFL_FHNatho]">special://userdata/customisations\PVR\EPG Artwork\EPL.jpg</value>
+        <value condition="$EXP[Live_Football_Anova_SPL_Fixture]">special://userdata/customisations\PVR\EPG Artwork\SPFL.png</value>
+        <value condition="$EXP[Live_Football_Anova_SPFLC_Fixture]">special://userdata/customisations\PVR\EPG Artwork\SPFL.png</value>
+        <value condition="$EXP[Live_Football_Anova_ScottishCup_Fixture]">special://userdata/customisations\PVR\EPG Artwork\SPFL.png</value>
+        <value condition="$EXP[Live_Football_Anova_UEFA_Fixture]">special://userdata/customisations\PVR\EPG Artwork\UEFA Nations League.png</value>
+        <!-- Sports Channel Listings (UK Football) -->
+        <value condition="String.Contains(ListItem.Title,EPL)">special://userdata/customisations\PVR\EPG Artwork\EPL.jpg</value>
+        <value condition="String.Contains(ListItem.Title,Premier League) + !String.Contains(ListItem.Title,Darts)">special://userdata/customisations\PVR\EPG Artwork\EPL.jpg</value>
+        <value condition="String.StartsWith(ListItem.Title,PL )">special://userdata/customisations\PVR\EPG Artwork\EPL.jpg</value>
+        <value condition="String.StartsWith(ListItem.Title,Prem )">special://userdata/customisations\PVR\EPG Artwork\EPL.jpg</value>
+        <value condition="String.Contains(ListItem.Title,EFL)">special://userdata/customisations\PVR\EPG Artwork\EFL v3.jpg</value>
+        <value condition="String.Contains(ListItem.Title,Scottish Premiership)">special://userdata/customisations\PVR\EPG Artwork\SPFL.png</value>
+        <value condition="String.Contains(ListItem.Title,SPFL )">special://userdata/customisations\PVR\EPG Artwork\SPFL.png</value>
+        <!-- Sports Channel Listings (Foreign Football) -->
+        <value condition="String.Contains(ListItem.Title,LaLiga)">special://userdata/customisations\PVR\EPG Artwork\LaLiga.jpg</value>
+        <value condition="String.Contains(ListItem.Title,La Liga)">special://userdata/customisations\PVR\EPG Artwork\LaLiga.jpg</value>
+        <value condition="String.Contains(ListItem.Title,Serie A)">special://userdata/customisations\PVR\EPG Artwork\Serie A.jpg</value>
+        <value condition="String.Contains(ListItem.Title,A-League)">special://userdata/customisations\PVR\EPG Artwork\A-League.png</value>
+        <value condition="String.Contains(ListItem.Title,Ligue 1)">special://userdata/customisations\PVR\EPG Artwork\Ligue1.jpg</value>
+        <value condition="String.Contains(ListItem.Title,Bundesliga)">special://userdata/customisations\PVR\EPG Artwork\Bundesliga.jpg</value>
+        <!-- Sports Channel Listings (Cricket) -->
+        <value condition="String.Contains(ListItem.Title,Indian Premier League)">special://userdata/customisations\PVR\EPG Artwork\Cricket.jpg</value>
+        <value condition="String.Contains(ListItem.Title,IPL )">special://userdata/customisations\PVR\EPG Artwork\Cricket.jpg</value>
+        <value condition="String.Contains(ListItem.Title,The Hundred)">special://userdata/customisations\PVR\EPG Artwork\Cricket.jpg</value>
+        <value condition="String.Contains(ListItem.Title,Cricket)">special://userdata/customisations\PVR\EPG Artwork\Cricket.jpg</value>
+        <!-- Sports Channel Listings (Other Sports) -->
+        <value condition="String.Contains(ListItem.Title, NRL)">special://userdata/customisations\PVR\EPG Artwork\NRL.jpg</value>
+        <value condition="String.Contains(ListItem.Title, Baseball)">special://userdata/customisations\PVR\EPG Artwork\MLB.jpg</value>
+        <!-- Miscellaneous (Use Channel Icon) -->
+        <value condition="$EXP[Live_Football_Anova_SkySportsPlus]">$INFO[ListItem.Icon]</value>
+        <value condition="$EXP[Live_Football_Anova_MLS]">$INFO[ListItem.Icon]</value>
+        <value condition="String.IsEqual(ListItem.Title,Stay tuned for the next broadcast)">$INFO[ListItem.Icon]</value>
+        <value condition="String.IsEqual(ListItem.Title,Channel Off Air)">$INFO[ListItem.Icon]</value>
+        <value condition="String.IsEqual(ListItem.Title,No information available)">$INFO[ListItem.Icon]</value>
+        <value condition="$EXP[247_Channel]">$INFO[ListItem.Icon]</value>
+        <!-- Check if there is a valid fanart, if not display fallback image -->
+        <value condition="String.StartsWith(Window(Home).Property(TMDbHelper.ListItem.Current.BlurImage.Original),special)">$VAR[Fallback_Image]</value>
+        <!-- Default Image_Foreground values (for "normal" TV programmes -->
+        <value condition="$EXP[Exp_BackgroundArtwork_IsSimple]">$INFO[Window(Home).Property(TMDbHelper.SimpleBackground.BlurImage.Original)]</value>
+        <value condition="!$EXP[Exp_TMDbHelper_IsBlur]">$VAR[Image_Foreground_NoService]</value>
+        <value condition="!String.IsEmpty(Window.Property(TMDbHelper.ListItem.BlurImage.Original))">$INFO[Window.Property(TMDbHelper.ListItem.BlurImage.Original)]</value>
+        <value>$INFO[Window(Home).Property(TMDbHelper.ListItem.Current.BlurImage.Original)]</value>
+    </variable>
+
+    <variable name="Fallback_Image">
+        <value>special://userdata\customisations\Skin Customisations\Fallback Images\96099.jpg</value>
+    </variable>    
 
 
 </includes>
