@@ -676,7 +676,7 @@
                         <param name="colordiffuse">$PARAM[colordiffuse]</param>
                         <!-- MISC370: Custom Info_Line for PVR: include Provider Name -->
                         <!-- param name="label">$INFO[$PARAM[container]$PARAM[listitem].ChannelName]</param -->
-                        <param name="label"> $VAR[TextPVRProviderName]: $INFO[$PARAM[container]$PARAM[listitem].ChannelName]</param>                       
+                        <param name="label">$VAR[TextPVRProviderName]: $INFO[$PARAM[container]$PARAM[listitem].ChannelName]</param>                       
                         <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[listitem].ChannelName)</param>
                     </include>
 

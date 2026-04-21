@@ -317,9 +317,12 @@
     </variable>
 
     <variable name="Image_Foreground">
-        <!-- MISC353: START Custom Image_Foreground for Home Page PVR widgets  -->
+        <!-- MISC353: START Custom Image_Foreground for Home Hub PVR widgets  -->
         <value condition="Window.IsVisible(10000)">$VAR[Custom_Image_Foreground]</value>
-        <!-- MISC353: END Custom Image_Foreground for Home Page PVR widgets  -->
+        <!-- MISC353: END Custom Image_Foreground for Home Hub PVR widgets  -->
+        <!-- MISC353: START Fallback image for other Hubs (copied from Custom_Includes) -->        
+        <value condition="String.StartsWith(Window(Home).Property(TMDbHelper.ListItem.Current.BlurImage.Original),special)">$VAR[Fallback_Image]</value>
+        <!-- MISC353: END Fallback image for other Hubs -->
         <value condition="$EXP[Exp_BackgroundArtwork_IsSimple]">$INFO[Window(Home).Property(TMDbHelper.SimpleBackground.BlurImage.Original)]</value>
         <value condition="!$EXP[Exp_TMDbHelper_IsBlur]">$VAR[Image_Foreground_NoService]</value>
         <value condition="!String.IsEmpty(Window.Property(TMDbHelper.ListItem.BlurImage.Original))">$INFO[Window.Property(TMDbHelper.ListItem.BlurImage.Original)]</value>
