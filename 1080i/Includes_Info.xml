@@ -671,12 +671,18 @@
                         <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[listitem].Premiered) + [String.IsEqual($PARAM[container]$PARAM[listitem].DBType,movie) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,episode) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,season) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,video) | !String.IsEmpty($PARAM[container]$PARAM[listitem].ChannelNumberLabel) | $PARAM[override]]</param>
                     </include>
 
+                    <!-- MISC370: START add PVR Provider Name -->
+                    <include content="Info_Line_Label">
+                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                        <param name="label">$VAR[TextPVRProviderName]</param>                       
+                        <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[listitem].ChannelName)</param>
+                    </include>
+                    <!-- MISC370: END add PVR Provider Name -->
+                   
                     <!-- Channel Name -->
                     <include content="Info_Line_Label">
                         <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                        <!-- MISC370: Custom Info_Line for PVR: include Provider Name -->
-                        <!-- param name="label">$INFO[$PARAM[container]$PARAM[listitem].ChannelName]</param -->
-                        <param name="label">$VAR[TextPVRProviderName]: $INFO[$PARAM[container]$PARAM[listitem].ChannelName]</param>                       
+                        <param name="label">$INFO[$PARAM[container]$PARAM[listitem].ChannelName]</param>
                         <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[listitem].ChannelName)</param>
                     </include>
 
