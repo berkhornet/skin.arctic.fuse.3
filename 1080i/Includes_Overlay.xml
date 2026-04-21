@@ -289,6 +289,8 @@
     <include name="Overlay_DebugInfo">
         <control type="group">
             <control type="grouplist">
+                <!-- MISC371: add visible tag -->
+                <visible>!Skin.HasSetting(Custom.DebugInfo)</visible>            
                 <align>bottom</align>
                 <orientation>vertical</orientation>
                 <control type="grouplist">
@@ -320,6 +322,8 @@
                 </control>
             </control>
             <control type="grouplist">
+                <!-- MISC371: add visible tag -->
+                <visible>!Skin.HasSetting(Custom.DebugInfo)</visible>            
                 <align>top</align>
                 <orientation>vertical</orientation>
                 <include content="Overlay_InfoLabel">
@@ -335,7 +339,32 @@
                     <textcolor>yellowgreen</textcolor>
                 </include>
             </control>
+            <!-- MISC371: START Custom Debug Information display -->
             <control type="grouplist">
+                <visible>Skin.HasSetting(Custom.DebugInfo)</visible>
+                <align>bottom</align>
+                <orientation>vertical</orientation>
+                <include content="Overlay_InfoLabel">
+                    <label> -TMDbHelper.SimpleBackground.BlurImage.Original: $INFO[Window(Home).Property(TMDbHelper.SimpleBackground.BlurImage.Original)]</label>
+                    <textcolor>yellowgreen</textcolor>
+                </include>
+                <include content="Overlay_InfoLabel">
+                    <label> -Image_Foreground_NoService: $VAR[Image_Foreground_NoService]</label>
+                    <textcolor>yellowgreen</textcolor>
+                </include>
+                <include content="Overlay_InfoLabel">
+                    <label> -TMDbHelper.ListItem.BlurImage.Original: $INFO[Window.Property(TMDbHelper.ListItem.BlurImage.Original)]</label>
+                    <textcolor>yellowgreen</textcolor>
+                </include>
+                <include content="Overlay_InfoLabel">
+                    <label> -TMDbHelper.ListItem.Current.BlurImage.Original: $INFO[Window(Home).Property(TMDbHelper.ListItem.Current.BlurImage.Original)]</label>
+                    <textcolor>yellowgreen</textcolor>
+                </include>
+            </control>
+            <!-- MISC371: END Custom Debug Information display -->
+            <control type="grouplist">
+                <!-- MISC371: add visible tag -->
+                <visible>!Skin.HasSetting(Custom.DebugInfo)</visible>
                 <align>bottom</align>
                 <orientation>vertical</orientation>
                 <include content="Overlay_InfoLabel">

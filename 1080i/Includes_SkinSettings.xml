@@ -94,7 +94,6 @@
         </include>
         <!-- MISC364: END Fake Menu Setting -->
 
-
         <include content="Settings_Label" description="Layout">
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -1029,6 +1028,20 @@
             <onclick>Skin.ToggleSetting(DebugInfo)</onclick>
             <selected>Skin.HasSetting(DebugInfo)</selected>
         </include>
+        <!-- MISC371: START Custom Debug Information setting -->
+        <include content="Settings_Button" description="Custom Debug Info">
+            <param name="dialog">false</param>
+            <param name="window">skinsettings</param>
+            <param name="slevel">3</param>            
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">901</param>
+            <param name="control">radiobutton</param>
+            <label>Custom Debug Info</label>
+            <onclick>Skin.ToggleSetting(Custom.DebugInfo)</onclick>
+            <selected>Skin.HasSetting(Custom.DebugInfo)</selected>
+            <visible>Skin.HasSetting(DebugInfo)</visible>
+        </include>
+        <!-- MISC371: END Custom Debug Information setting -->
         <include content="Settings_Button" description="Debug Grid">
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
