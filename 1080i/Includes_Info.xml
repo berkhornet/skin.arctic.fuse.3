@@ -480,7 +480,7 @@
                 
                 <!-- MISC364: START Info_Title prefix on Home Pages (Vertical Home Switcher) -->
                 <control type="label">
-                    <top>-140</top>
+                    <top>-100</top>
                     <wrapmultiline>true</wrapmultiline>
                     <label>$VAR[Info_Title_Prefix]</label>
                     <font>font_homemenu</font>
