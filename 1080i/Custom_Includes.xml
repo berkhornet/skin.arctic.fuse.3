@@ -269,6 +269,8 @@
         <width>410</width>
         <height>130</height> 
     </include>
+        
+    <expression name="PVR_Hub_Visible">Window.IsVisible(10000) | Window.IsVisible(11107)</expression>
     
     <!-- MISC353: START Custom Image_Foreground for Home Page PVR widgets -->
     <variable name="Custom_Image_Foreground">

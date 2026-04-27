@@ -545,7 +545,7 @@
         <definition>
             <!--MISC369: Custom Widgets for PVR Widgets: include condition for standard layout -->
             <!-- include content="_Widget_Row" -->
-            <include content="_Widget_Row" condition="!Window.IsVisible(10000)">
+            <include content="_Widget_Row" condition="!$EXP[PVR_Hub_Visible]">
                 <param name="id">$PARAM[id]</param>
                 <param name="groupid">$PARAM[groupid]</param>
                 <param name="label">$PARAM[label]</param>
@@ -576,7 +576,7 @@
             </include>
             
             <!--MISC369: START Custom Widgets for PVR Widgets: add custom include for PVR widgets -->          
-            <include content="_Widget_Row" condition="Window.IsVisible(10000)">
+            <include content="_Widget_Row" condition="$EXP[PVR_Hub_Visible]">
                 <param name="id">$PARAM[id]</param>
                 <param name="groupid">$PARAM[groupid]</param>
                 <param name="label">$PARAM[label]</param>

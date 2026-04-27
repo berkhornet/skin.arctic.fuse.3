@@ -2538,20 +2538,20 @@
                 <!-- MISC369: START Custom heights for PVR widgets -->
                 <!-- width>$PARAM[item_w]</width -->
                 <!-- height>$PARAM[item_h]</height -->
-                <include content="MISC369_Include_1" condition="!Window.IsVisible(10000)"></include>                
-                <include content="MISC369_Include_2" condition="Window.IsVisible(10000)"></include>                
+                <include content="MISC369_Include_1" condition="!$EXP[PVR_Hub_Visible]"></include>                
+                <include content="MISC369_Include_2" condition="$EXP[PVR_Hub_Visible]"></include>                
                 <!-- MISC369: END Custom heights for PVR widgets -->
                
                 <!-- MISC369: Custom highlights for PVR widgets: condition added -->
                 <!-- include content="Object_ItemBack" -->
-                <include content="Object_ItemBack" condition="!Window.IsVisible(10000)">                
+                <include content="Object_ItemBack" condition="!$EXP[PVR_Hub_Visible]">                
                     <param name="selected">$PARAM[selected]</param>
                     <param name="shadow_colordiffuse">$PARAM[shadow_colordiffuse]</param>
                 </include>
                 
-                <!-- MISC369: Custom highlights for PVR widgets: + !Window.IsVisible(10000) added to condition -->
+                <!-- MISC369: Custom highlights for PVR widgets: + !$EXP[PVR_Hub_Visible] added to condition -->
                 <!-- include content="Object_Control" condition="$PARAM[selected]" -->
-                <include content="Object_Control" condition="$PARAM[selected] + !Window.IsVisible(10000)">
+                <include content="Object_Control" condition="$PARAM[selected] + !$EXP[PVR_Hub_Visible]">
                     <param name="control">image</param>
                     <include>Texture_Box_Highlight_V</include>
                 </include>
