@@ -216,7 +216,7 @@
     </variable>  
 
     <!-- MISC328: Expression for MISC328: Custom Layout Labels --> 
-    <expression name="Home_Page">Window.IsVisible(10000) | Window.IsVisible(11101) | Window.IsVisible(1102) | Window.IsVisible(11103) | Window.IsVisible(11104)</expression>    
+    <expression name="Home_Page">Window.IsVisible(10000) | Window.IsVisible(11101) | Window.IsVisible(1102) | Window.IsVisible(11103) | Window.IsVisible(11104) | Window.IsVisible(11107)</expression>    
 
     <!-- MISC352: Expressions and Variables for Custom Episode Type Banner-->
     <expression name="Info_Line_Episode_Banner_Exists">String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.episode_type),series_premiere) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.episode_type),season_premiere) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.episode_type),mid_season_premiere) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.episode_type),series_finale) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.episode_type),season_finale) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.episode_type),mid_season_finale)</expression>
