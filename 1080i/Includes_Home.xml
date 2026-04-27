@@ -250,10 +250,12 @@
                 <onclick condition="$PARAM[onclick_condition] + !String.IsEmpty(Skin.String(HomeSwitcher.$PARAM[window].Shortcut.Target))">ActivateWindow($INFO[Skin.String(HomeSwitcher.$PARAM[window].Shortcut.Target)],$INFO[Skin.String(HomeSwitcher.$PARAM[window].Shortcut.Path)],return)</onclick>
                 <onclick condition="$PARAM[onclick_condition] + String.IsEmpty(Skin.String(HomeSwitcher.$PARAM[window].Shortcut.Target))">$INFO[Skin.String(HomeSwitcher.$PARAM[window].Shortcut.Path)]</onclick>
                 <onclick condition="Window.IsVisible(1108)">ActivateWindow(addonbrowser)</onclick>
-                <onclick condition="Window.IsVisible(1107)">ActivateWindow(tvchannels)</onclick>
+                <!-- MISC372: START Open TV Guide instead of TV Channels -->                
+                <!-- onclick condition="Window.IsVisible(1107)">ActivateWindow(tvchannels)</onclick -->
+                <onclick condition="Window.IsVisible(1107)">ActivateWindow(TVGuide)</onclick>
+                <!-- MISC372: END Open TV Guide instead of TV Channels -->
                 <onclick condition="Window.IsVisible(1105)">SetFocus(3001)</onclick>
                 <onclick condition="Window.IsVisible(1105)">AlarmClock(reclick,Action(Select),00:00,silent)</onclick>
-
                 <include content="Home_Movement">
                     <param name="window">$PARAM[window]</param>
                 </include>
