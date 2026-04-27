@@ -873,12 +873,17 @@
                 </control>
                 <control type="group">
                     <visible>Window.IsVisible($PARAM[window]) + Integer.IsEqual(System.CurrentControlID,300)</visible>
-                    <control type="image">
+                    <!-- MISC363: START remove Highlight texture -->
+                    <!--control type="image">
                         <include>Texture_Menu_Highlight_H</include>
-                    </control>
+                    </control -->
+                    <!-- MISC363: END remove Highlight texture -->                   
                     <control type="image">
                         <include>Home_Grouplist_Icon_Definition</include>
-                        <texture background="true" colordiffuse="$VAR[ColorSelected]">$PARAM[icon]</texture>
+                        <!-- MISC363: START if menu item is focussed, use ColorHighlight -->                        
+                        <!-- texture background="true" colordiffuse="$VAR[ColorSelected]">$PARAM[icon]</texture -->
+                        <texture background="true" colordiffuse="$VAR[ColorHighlight]">$PARAM[icon]</texture>
+                        <!-- MISC363: END if menu item is focussed, use ColorHighlight -->                        
                     </control>
                 </control>
             </control>

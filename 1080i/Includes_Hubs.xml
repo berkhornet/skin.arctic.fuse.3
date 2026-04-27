@@ -736,11 +736,22 @@
             </include>
 
             <!-- MISC367: START include Time and Weather on Home Page -->
+            <!-- Include left and right furniture if no additional hubs enabled -->
             <control type="group">
+                <visible>String.IsEmpty(Skin.String(HomeSwitcher.1106.Toggle)) + String.IsEmpty(Skin.String(HomeSwitcher.1107.Toggle)) + String.IsEmpty(Skin.String(HomeSwitcher.1108.Toggle))</visible>
                 <top>20</top>
                 <include content="Furniture_Header">
                     <param name="include_left">true</param>
                     <param name="include_right">true</param>
+                </include>
+            </control>
+            <!-- Only include left furniture if any additional hubs enabled -->
+            <control type="group">
+                <visible>!String.IsEmpty(Skin.String(HomeSwitcher.1106.Toggle)) | !String.IsEmpty(Skin.String(HomeSwitcher.1107.Toggle)) | !String.IsEmpty(Skin.String(HomeSwitcher.1108.Toggle))</visible>
+                <top>20</top>
+                <include content="Furniture_Header">
+                    <param name="include_left">true</param>
+                    <param name="include_right">false</param>
                 </include>
             </control>
             <!-- MISC367: END include Time and Weather on Home Page -->
