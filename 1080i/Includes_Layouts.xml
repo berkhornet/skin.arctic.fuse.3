@@ -2535,10 +2535,10 @@
         <definition>
             <control type="group">
 
-                <!-- MISC369: START Custom heights for PVR widgets -->
-                <!-- width>$PARAM[item_w]</width -->
-                <!-- height>$PARAM[item_h]</height -->
-                <include content="MISC369_Include_1" condition="!$EXP[PVR_Hub_Visible]"></include>                
+                <!-- MISC369: START Custom heights for PVR widgets (DISABLED) -->
+                <width>$PARAM[item_w]</width>
+                <height>$PARAM[item_h]</height>
+                <!--include content="MISC369_Include_1" condition="!$EXP[PVR_Hub_Visible]"></include>                
                 <include content="MISC369_Include_2" condition="$EXP[PVR_Hub_Visible]"></include>                
                 <!-- MISC369: END Custom heights for PVR widgets -->
                
