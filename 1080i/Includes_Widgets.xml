@@ -543,9 +543,9 @@
         <param name="grouplistid">5000</param>
         <param name="widgetconstants_affix" />
         <definition>
-            <!--MISC369: Custom Widgets for PVR Widgets: include condition for standard layout -->
-            <!-- include content="_Widget_Row" -->
-            <include content="_Widget_Row" condition="!$EXP[PVR_Hub_Visible]">
+            <!--MISC369: Custom Widgets for PVR Widgets: include condition for standard layout (DISABLED) -->
+            <include content="_Widget_Row">
+            <!-- include content="_Widget_Row" condition="!$EXP[PVR_Hub_Visible]" -->
                 <param name="id">$PARAM[id]</param>
                 <param name="groupid">$PARAM[groupid]</param>
                 <param name="label">$PARAM[label]</param>
@@ -575,8 +575,8 @@
 
             </include>
             
-            <!--MISC369: START Custom Widgets for PVR Widgets: add custom include for PVR widgets -->          
-            <include content="_Widget_Row" condition="$EXP[PVR_Hub_Visible]">
+            <!-- MISC369: START Custom Widgets for PVR Widgets: add custom include for PVR widgets (DISABLED) -->          
+            <!-- include content="_Widget_Row" condition="$EXP[PVR_Hub_Visible]">
                 <param name="id">$PARAM[id]</param>
                 <param name="groupid">$PARAM[groupid]</param>
                 <param name="label">$PARAM[label]</param>
@@ -594,7 +594,7 @@
 
                 <param name="widgettop">widget_items_t$PARAM[widgetconstants_affix]</param>
                 <param name="labelheight">widget_label_h$PARAM[widgetconstants_affix]</param>
-                <!-- MISC369: custom widget height -->
+                <!-- MISC369: custom widget height>
                 <param name="widgetheight">910</param>
 
                 <include content="Action_Widget_OnBack">
@@ -607,7 +607,7 @@
                 <nested />
 
             </include>
-            <!--MISC369: END Custom Widgets for PVR Widgets: add custom include for PVR widgets -->          
+            <!-- MISC369: END Custom Widgets for PVR Widgets: add custom include for PVR widgets -->          
            
         </definition>
     </include>

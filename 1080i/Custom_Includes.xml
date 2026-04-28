@@ -260,15 +260,15 @@
         <value></value>
     </variable>
     
-    <!-- MISC369: Custom highlights for PVR widgets -->
-    <include name="MISC369_Include_1">
+    <!-- MISC369: Custom highlights for PVR widgets (DISABLED) -->
+    <!-- include name="MISC369_Include_1">
         <width>410</width>
         <height>230.625</height> 
     </include>
     <include name="MISC369_Include_2">
         <width>410</width>
         <height>130</height> 
-    </include>
+    </include -->
         
     <expression name="PVR_Hub_Visible">Window.IsVisible(10000) | Window.IsVisible(11107)</expression>
     
