@@ -590,9 +590,9 @@
         <param name="override">false</param>
         <definition>
             <control type="group">
-                <!-- MISC373: Disable Info_Line for "Continue Watching" widget -->
-                <!-- visible>$PARAM[visible]</visible -->
-                <visible>$PARAM[visible] + ![Window.IsVisible(11102) + [String.IsEqual(System.CurrentControlID,300) | String.IsEqual(System.CurrentControlID,501)]]</visible>
+                <!-- MISC373: Disable Info_Line for "Continue Watching" widget (DISABLED) -->
+                <visible>$PARAM[visible]</visible>
+                <!-- visible>$PARAM[visible] + ![Window.IsVisible(11102) + [String.IsEqual(System.CurrentControlID,300) | String.IsEqual(System.CurrentControlID,501)]]</visible -->
                 <left>$PARAM[left]</left>
                 <height>80</height>
 
