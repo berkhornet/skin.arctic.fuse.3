@@ -1103,14 +1103,14 @@
         <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,tvshows) + String.Contains(Container.FolderPath,userdata)">Videos: Sources</value>       
         <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,movies) + String.Contains(Container.FolderPath,Kodi Libraries)">Videos: Sources</value>       
         <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,movies) + String.Contains(Container.FolderPath,userdata)">Videos: Sources</value>       
-        <!-- MISC308: Video Library Addons -->
-        <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,addons)">Videos: Addons</value> 
+        <!-- MISC308: Video Library Addons (DISABLED) -->
+        <!--value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,addons)">Videos: Addons</value> 
         <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,plugin) + String.Contains(Container.FolderPath,iPlayer)">On Demand: BBC iPlayer</value>
         <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,plugin) + String.Contains(Container.FolderPath,viwX)">On Demand: ITVX</value>
         <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,plugin) + String.Contains(Container.FolderPath,My5)">On Demand: Channel 5</value>
         <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,plugin) + String.Contains(Container.FolderPath,channel4)">On Demand: Channel 4</value>    
         <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,plugin) + String.Contains(Container.FolderPath,uktvplay)">On Demand: U</value>
-        <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,plugin)">On Demand: $INFO[Container.FolderName]</value>
+        <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,plugin)">On Demand: $INFO[Container.FolderName]</value -->
         <!-- MISC308: Video Library TV Shows -->
         <!-- value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,tvshows) + $EXP[Exp_View_512] + String.IsEqual(System.CurrentControlID,512)">TV Shows: [COLOR=main_fg_70]$INFO[ListItem.Title][/COLOR]</value -->
         <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,tvshows) + $EXP[Exp_View_512] + String.IsEqual(System.CurrentControlID,512)">TV Shows</value>

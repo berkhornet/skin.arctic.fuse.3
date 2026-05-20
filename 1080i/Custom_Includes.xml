@@ -334,8 +334,16 @@
     <!-- Furniture_Header_Left Debug changes -->
     <!-- label>$INFO[Window(Home).Property(TMDbHelper.SimpleBackground.BlurImage.Original)] [CR] $VAR[Image_Foreground_NoService] [CR] $INFO[Window.Property(TMDbHelper.ListItem.BlurImage.Original)] [CR] $INFO[Window(Home).Property(TMDbHelper.ListItem.Current.BlurImage.Original)]</label -->
     <!-- font>font_debug</font -->
-
     
+    <!-- MISC374: Info_Title prefix for Video Addons -->
+    <variable name="Info_Title_AddonName">
+        <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,plugin) + String.Contains(Container.FolderPath,iPlayer)">BBC iPlayer: </value>
+        <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,plugin) + String.Contains(Container.FolderPath,viwX)">ITVX: </value>
+        <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,plugin) + String.Contains(Container.FolderPath,My5)">Channel 5: </value>
+        <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,plugin) + String.Contains(Container.FolderPath,channel4)">Channel 4: </value>    
+        <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,plugin) + String.Contains(Container.FolderPath,uktvplay)">U: </value>
+        <value></value>
+    </variable>    
 
 
 </includes>

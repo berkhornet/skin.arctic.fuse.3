@@ -555,7 +555,9 @@
                         <scroll>true</scroll>
                         <scrollsuffix> | </scrollsuffix>
                         <scrollspeed>30</scrollspeed>
-                        <label>$INFO[$PARAM[container]$PARAM[listitem].Title]</label>
+                        <!-- MISC374: Info_Title prefix for Video Addons -->
+                        <!-- label>$VAR[Info_Title_AddonName]$INFO[$PARAM[container]$PARAM[listitem].Title]</label -->                        
+                        <label>$VAR[Info_Title_AddonName]$INFO[$PARAM[container]$PARAM[listitem].Title]</label>
                         <font>font_title_midi_6</font>
                         <aligny>center</aligny>
                         <visible>!String.IsEmpty($PARAM[container]$PARAM[listitem].Title)</visible>
