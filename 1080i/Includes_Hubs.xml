@@ -740,7 +740,7 @@
             <control type="group">
                 <visible>String.IsEmpty(Skin.String(HomeSwitcher.1106.Toggle)) + String.IsEmpty(Skin.String(HomeSwitcher.1107.Toggle)) + String.IsEmpty(Skin.String(HomeSwitcher.1108.Toggle))</visible>
                 <top>20</top>
-                <include content="Furniture_Header">
+                <include content="Custom_Furniture_Header">
                     <param name="include_left">true</param>
                     <param name="include_right">true</param>
                 </include>

@@ -8,7 +8,7 @@
     <controls>
         <!-- MISC367: START include Time and Weather on Music Info Overlay -->
         <control type="group">
-            <include content="Furniture_Header">
+            <include content="Custom_Furniture_Header">
                 <param name="include_left">false</param>
                 <param name="include_right">true</param>
             </include>

@@ -345,5 +345,45 @@
         <value></value>
     </variable>    
 
+    <!-- MISC367: START Custom Furniture Header -->
+    <include name="Custom_Furniture_Header">
+        <param name="label">$VAR[Label_Header_Main]</param>
+        <param name="include_left">true</param>
+        <param name="include_right">true</param>
+        <param name="textcolor">main_fg_90</param>
+        <param name="top">40</param>
+        <definition>
+            <control type="group">
+                <top>$PARAM[top]</top>
+                <height>80</height>
+                <left>view_pad</left>
+                <right>view_pad</right>
+                <include content="Furniture_Header_Left" condition="$PARAM[include_left]">
+                    <param name="label">$PARAM[label]</param>
+                    <param name="textcolor">$PARAM[textcolor]</param>
+                </include>
+                <include content="Custom_Furniture_Header_Right" condition="$PARAM[include_right]">
+                    <param name="textcolor">$PARAM[textcolor]</param>
+                </include>
+            </control>
+        </definition>
+    </include>
+    
+    <include name="Custom_Furniture_Header_Right">
+        <control type="group">
+            <right>0</right>
+            <width>720</width>
+            <visible>$PARAM[visible_right]</visible>
+            <control type="label">
+                <label>$INFO[System.Time]$VAR[Furniture_Header_Right_Temperature, • ,]</label>
+                <align>right</align>
+                <aligny>center</aligny>
+                <textcolor>$PARAM[textcolor]</textcolor>
+                <font>font_midi_bold</font>
+                <height>80</height>
+            </control>
+        </control>
+    </include>
+    <!-- MISC367: END Custom Furniture Header -->
 
 </includes>
