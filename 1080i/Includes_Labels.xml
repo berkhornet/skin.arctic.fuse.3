@@ -1120,6 +1120,7 @@
         <!-- MISC308: Video Library Addons -->
         <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,addons)">Videos: Addons</value> 
         <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,plugin) + String.Contains(Container.FolderPath,iPlayer)">On Demand: BBC iPlayer</value>
+        <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,plugin) + String.Contains(Container.FolderPath,bbcsport)">On Demand: BBC Sport</value>
         <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,plugin) + String.Contains(Container.FolderPath,viwX)">On Demand: ITVX</value>
         <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,plugin) + String.Contains(Container.FolderPath,My5)">On Demand: Channel 5</value>
         <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,plugin) + String.Contains(Container.FolderPath,channel4)">On Demand: Channel 4</value>    
