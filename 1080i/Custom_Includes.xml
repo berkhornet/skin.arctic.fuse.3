@@ -328,7 +328,8 @@
     </variable>
 
     <variable name="Fallback_Image">
-        <value>special://userdata\customisations\Skin Customisations\Fallback Images\96099.jpg</value>
+        <!-- value>special://userdata\customisations\Skin Customisations\Fallback Images\96099.jpg</value -->
+        <value>special://xbmc/media/splash.jpg</value>
     </variable>
 
     <!-- Furniture_Header_Left Debug changes -->
