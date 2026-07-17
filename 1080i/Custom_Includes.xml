@@ -17,34 +17,47 @@
 	</variable>
   
     <!-- MISC370: Custom Info_Line for PVR -->    
-	<expression name="Anova_Standard_Channel">Integer.IsLess(ListItem.ChannelNumberLabel,200)</expression>
- 	<expression name="Anova_Football_Channel">Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,501) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,700)</expression>
- 	<expression name="Anova_SkySportsPlus_MLS_Channel">Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,801) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,900)</expression>
-  	<expression name="Anova_247Channel">Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,901) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,1000)</expression>
-    <expression name="Anova_Channel">$EXP[Anova_Standard_Channel] | $EXP[Anova_Football_Channel] | $EXP[Anova_SkySportsPlus_MLS_Channel] | $EXP[Anova_247Channel]</expression>  
-	<expression name="FHNatho_Standard_Channel">[Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,201) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,400)]</expression>
-	<expression name="FHNatho_Football_Channel">[Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,701) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,800)]</expression>
-	<expression name="FHNatho_Channel">$EXP[FHNatho_Standard_Channel] | $EXP[FHNatho_Football_Channel]</expression>
+	<expression name="Anova_Standard_Channel21">Integer.IsLess(ListItem.ChannelNumberLabel,200)</expression>
+ 	<expression name="Anova_Football_Channel21">Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,501) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,700)</expression>
+ 	<expression name="Anova_SkySportsPlus_MLS_Channel21">Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,801) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,900)</expression>
+  	<expression name="Anova_247Channel21">Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,901) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,1000)</expression>
+    <expression name="Anova_Channel21">$EXP[Anova_Standard_Channel21] | $EXP[Anova_Football_Channel21] | $EXP[Anova_SkySportsPlus_MLS_Channel21] | $EXP[Anova_247Channel21]</expression>  
+	<expression name="FHNatho_Standard_Channel21">[Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,201) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,400)]</expression>
+	<expression name="FHNatho_Football_Channel21">[Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,701) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,800)]</expression>
+	<expression name="FHNatho_Channel21">$EXP[FHNatho_Standard_Channel] | $EXP[FHNatho_Football_Channel]</expression>
     
-    <variable name="TextPVRProviderName">
-        <value condition="$EXP[FHNatho_Channel]">FHNATHO</value>
-        <value condition="$EXP[Anova_Channel]">ANOVA</value>
+    <variable name="TextPVRProviderNamev21">
+        <value condition="$EXP[FHNatho_Channel21]">FHNATHO</value>
+        <value condition="$EXP[Anova_Channel21]">ANOVA</value>
         <value>UNKNOWN</value>
     </variable>
 
-
     <!-- New Expressions for Kodi 22 -->
-    <!-- expression name="Anova_Channel">String.IsEqual(ListItem.MediaProviders,Anova)</expression>
-	<expression name="FHNatho_Channel">String.Contains(ListItem.MediaProviders,FH Natho)</expression>
-	<expression name="BBC_Channel">String.IsEqual(ListItem.MediaProviders,BBC iPlayer)</expression>
-	<expression name="ITV_Channel">String.IsEqual(ListItem.MediaProviders,ITVX)</expression>
-	<expression name="STV_Channel">String.IsEqual(ListItem.MediaProviders,STV Player)</expression>
-	<expression name="All4_Channel">String.IsEqual(ListItem.MediaProviders,Channel4)</expression>
-	<expression name="My5_Channel">String.IsEqual(ListItem.MediaProviders,My5)</expression>
-	<expression name="UKTVPlay_Channel">String.IsEqual(ListItem.MediaProviders,UKTV Play)</expression>
-	<expression name="Discovery_Channel">String.Contains(ListItem.MediaProviders,Discovery)</expression>
-	<expression name="CUTV_Channel">String.IsEqual(ListItem.MediaProviders,CUTV)</expression>
-	<expression name="PlutoTV_Channel">String.IsEqual(ListItem.MediaProviders,PlutoTV)</expression -->    
+    <expression name="Anova_Channel22">String.IsEqual(ListItem.MediaProviders,Anova)</expression>
+	<expression name="FHNatho_Channel22">String.Contains(ListItem.MediaProviders,FH Natho)</expression>
+	<expression name="BBC_Channel22">String.IsEqual(ListItem.MediaProviders,BBC iPlayer)</expression>
+	<expression name="ITV_Channel22">String.IsEqual(ListItem.MediaProviders,ITVX)</expression>
+	<expression name="C4_Channel22">String.IsEqual(ListItem.MediaProviders,Channel4)</expression>
+	<expression name="C5_Channel22">String.IsEqual(ListItem.MediaProviders,My5)</expression>
+	<expression name="U_Channel22">String.IsEqual(ListItem.MediaProviders,UKTV Play)</expression>
+	<expression name="PlutoTV_Channel22">String.IsEqual(ListItem.MediaProviders,PlutoTV)</expression>
+    
+    <variable name="TextPVRProviderNamev22">
+        <value condition="$EXP[Anova_Channel22]">ANOVA</value>
+        <value condition="$EXP[FHNatho_Channel22]">FHNATHO</value>
+        <value condition="$EXP[BBC_Channel22]">BBC iPLAYER</value>
+        <value condition="$EXP[ITV_Channel22]">ITVX</value>
+        <value condition="$EXP[C4_Channel22]">CHANNEL 4</value>
+        <value condition="$EXP[C5_Channel22]">CHANNEL 5</value>
+        <value condition="$EXP[U_Channel22]">U</value>
+        <value condition="$EXP[PlutoTV_Channel22]">PLUTO TV</value>         
+        <value>UNKNOWN</value>
+    </variable>
+    
+    <variable name="TextPVRProviderName">
+        <value condition="String.StartsWith(System.BuildVersionShort,22)">$VAR[TextPVRProviderNamev22]</value>
+        <value>$VAR[TextPVRProviderNamev21]</value>
+    </variable>    
     
     <!-- PVR301 and PVR302: Expressions for Custom Icon and Custom Program Information -->
 	<expression name="Standard_Channel">Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,499)</expression>
@@ -328,7 +341,6 @@
     </variable>
 
     <variable name="Fallback_Image">
-        <!-- value>special://userdata\customisations\Skin Customisations\Fallback Images\96099.jpg</value -->
         <value>special://xbmc/media/splash.jpg</value>
     </variable>
 
@@ -370,7 +382,12 @@
         </definition>
     </include>
     
-    <include name="Custom_Furniture_Header_Right">
+    <variable name="Custom_Kodi_Version">
+        <value condition="String.StartsWith(System.BuildVersionShort,22)">KODI 22</value>
+        <value>KODI 21</value>
+    </variable>
+    
+    <!-- include name="Custom_Furniture_Header_Right">
         <control type="group">
             <right>0</right>
             <width>720</width>
@@ -384,7 +401,33 @@
                 <height>80</height>
             </control>
         </control>
-    </include>
+    </include -->
+ 
+    <include name="Custom_Furniture_Header_Right">
+        <control type="group">
+            <right>0</right>
+            <width>720</width>
+            <visible>$PARAM[visible_right]</visible>
+            <control type="label">
+                <label>$INFO[System.Time]$VAR[Furniture_Header_Right_Temperature, • ,] • $VAR[Custom_Kodi_Version]</label>
+                <align>right</align>
+                <aligny>center</aligny>
+                <textcolor>$PARAM[textcolor]</textcolor>
+                <font>font_midi_bold</font>
+                <height>80</height>
+                <visible>!Window.IsVisible(11151)</visible>             
+            </control>
+            <control type="label">
+                <label>$INFO[System.Time]$VAR[Furniture_Header_Right_Temperature, • ,]</label>
+                <align>right</align>
+                <aligny>center</aligny>
+                <textcolor>$PARAM[textcolor]</textcolor>
+                <font>font_midi_bold</font>
+                <height>80</height>
+                <visible>Window.IsVisible(11151)</visible>
+            </control>            
+        </control>
+    </include> 
     <!-- MISC367: END Custom Furniture Header -->
 
 </includes>
