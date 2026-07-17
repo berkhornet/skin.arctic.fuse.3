@@ -356,8 +356,8 @@
     </include>
     
     <variable name="Custom_Kodi_Version">
-        <value condition="String.StartsWith(System.BuildVersionShort,22)">KODI 22</value>
-        <value>KODI 21</value>
+        <value condition="String.StartsWith(System.BuildVersionShort,22)">Kodi v22</value>
+        <value>Kodi v21</value>
     </variable>
     
     <!-- include name="Custom_Furniture_Header_Right">
@@ -382,7 +382,7 @@
             <width>720</width>
             <visible>$PARAM[visible_right]</visible>
             <control type="label">
-                <label>$INFO[System.Time]$VAR[Furniture_Header_Right_Temperature, • ,] • $VAR[Custom_Kodi_Version]</label>
+                <label>$INFO[System.Time]$VAR[Furniture_Header_Right_Temperature, • ,][COLOR grey][CR]$VAR[Custom_Kodi_Version][/COLOR]</label>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>$PARAM[textcolor]</textcolor>
