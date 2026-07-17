@@ -26,39 +26,12 @@
 	<expression name="FHNatho_Football_Channel21">[Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,701) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,800)]</expression>
 	<expression name="FHNatho_Channel21">$EXP[FHNatho_Standard_Channel] | $EXP[FHNatho_Football_Channel]</expression>
     
-    <variable name="TextPVRProviderNamev21">
+    <variable name="TextPVRProviderName">
         <value condition="$EXP[FHNatho_Channel21]">FHNATHO</value>
         <value condition="$EXP[Anova_Channel21]">ANOVA</value>
         <value>UNKNOWN</value>
     </variable>
-
-    <!-- New Expressions for Kodi 22 -->
-    <expression name="Anova_Channel22">String.IsEqual(ListItem.MediaProviders,Anova)</expression>
-	<expression name="FHNatho_Channel22">String.Contains(ListItem.MediaProviders,FH Natho)</expression>
-	<expression name="BBC_Channel22">String.IsEqual(ListItem.MediaProviders,BBC iPlayer)</expression>
-	<expression name="ITV_Channel22">String.IsEqual(ListItem.MediaProviders,ITVX)</expression>
-	<expression name="C4_Channel22">String.IsEqual(ListItem.MediaProviders,Channel4)</expression>
-	<expression name="C5_Channel22">String.IsEqual(ListItem.MediaProviders,My5)</expression>
-	<expression name="U_Channel22">String.IsEqual(ListItem.MediaProviders,UKTV Play)</expression>
-	<expression name="PlutoTV_Channel22">String.IsEqual(ListItem.MediaProviders,PlutoTV)</expression>
-    
-    <variable name="TextPVRProviderNamev22">
-        <value condition="$EXP[Anova_Channel22]">ANOVA</value>
-        <value condition="$EXP[FHNatho_Channel22]">FHNATHO</value>
-        <value condition="$EXP[BBC_Channel22]">BBC iPLAYER</value>
-        <value condition="$EXP[ITV_Channel22]">ITVX</value>
-        <value condition="$EXP[C4_Channel22]">CHANNEL 4</value>
-        <value condition="$EXP[C5_Channel22]">CHANNEL 5</value>
-        <value condition="$EXP[U_Channel22]">U</value>
-        <value condition="$EXP[PlutoTV_Channel22]">PLUTO TV</value>         
-        <value>UNKNOWN</value>
-    </variable>
-    
-    <variable name="TextPVRProviderName">
-        <value condition="String.StartsWith(System.BuildVersionShort,22)">$VAR[TextPVRProviderNamev22]</value>
-        <value>$VAR[TextPVRProviderNamev21]</value>
-    </variable>    
-    
+   
     <!-- PVR301 and PVR302: Expressions for Custom Icon and Custom Program Information -->
 	<expression name="Standard_Channel">Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,499)</expression>
 	<expression name="247_Channel">Integer.IsGreater(ListItem.ChannelNumberLabel,900)</expression>
