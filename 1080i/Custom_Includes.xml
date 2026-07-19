@@ -305,7 +305,7 @@
         <!-- IPL -->
         <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Current.BlurImage.Original),2pWpKLB)">special://userdata/customisations\PVR\EPG Artwork\Cricket.jpg</value>
         <!-- Check if there is a valid fanart, if not display fallback image -->
-        <value condition="String.StartsWith(Window(Home).Property(TMDbHelper.ListItem.Current.BlurImage.Original),special)">$VAR[Fallback_Image]</value>
+        <value condition="String.StartsWith(Window(Home).Property(TMDbHelper.ListItem.Current.BlurImage.Original),special)">$VAR[Custom_Fallback_Image]</value>
         <!-- Default Image_Foreground values (for "normal" TV programmes) -->
         <value condition="$EXP[Exp_BackgroundArtwork_IsSimple]">$INFO[Window(Home).Property(TMDbHelper.SimpleBackground.BlurImage.Original)]</value>
         <value condition="!$EXP[Exp_TMDbHelper_IsBlur]">$VAR[Image_Foreground_NoService]</value>
@@ -313,8 +313,8 @@
         <value>$INFO[Window(Home).Property(TMDbHelper.ListItem.Current.BlurImage.Original)]</value>
     </variable>
 
-    <variable name="Fallback_Image">
-        <value>special://xbmc/media/splash.jpg</value>
+    <variable name="Custom_Fallback_Image">
+        <value>special://userdata/customisations/Skin Customisations/Fallback Images - Other/96099.jpg</value>
     </variable>
 
     <!-- Furniture_Header_Left Debug changes -->
