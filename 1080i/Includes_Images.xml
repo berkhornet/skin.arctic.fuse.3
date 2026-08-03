@@ -191,7 +191,7 @@
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Returning Series)">flags/$VAR[Color_Directory]/status/calendar-day.png</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Post Production)">flags/$VAR[Color_Directory]/status/calendar-day.png</value>
         <!-- MISC341: value changed from $VAR[Info_RatingsLine_Object_Style]/status/calendar-xmark.png -->
-        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Canceled)">flags/$VAR[Info_RatingsLine_Object_Style]/status/calendar-check.png</value>
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Canceled)">flags/$VAR[Color_Directory]/status/calendar-check.png</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Ended)">flags/$VAR[Color_Directory]/status/calendar-check.png</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Released)">flags/$VAR[Color_Directory]/status/calendar-check.png</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),In Production)">flags/$VAR[Color_Directory]/status/calendar-day.png</value>
@@ -203,7 +203,7 @@
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Returning Series) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Returning Series)">flags/$VAR[Color_Directory]/status/calendar-day.png</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Post Production) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Post Production)">flags/$VAR[Color_Directory]/status/calendar-day.png</value>
         <!-- MISC341: value changed from $VAR[Info_RatingsLine_Object_Style]/status/calendar-xmark.png -->
-        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Canceled) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Canceled)">flags/$VAR[Info_RatingsLine_Object_Style]/status/calendar-check.png</value>
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Canceled) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Canceled)">flags/$VAR[Color_Directory]/status/calendar-check.png</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Ended) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Ended)">flags/$VAR[Color_Directory]/status/calendar-check.png</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Released) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Released)">flags/$VAR[Color_Directory]/status/calendar-check.png</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),In Production) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),In Production)">flags/$VAR[Color_Directory]/status/calendar-day.png</value>
