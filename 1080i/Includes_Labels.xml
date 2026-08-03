@@ -1005,8 +1005,8 @@
     </variable>
 
     <variable name="Label_Player_Status">
-        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Canceled)">$LOCALIZE[31490]</value>
-        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Ended)">$LOCALIZE[31493]</value>
+        <!-- MISC341: value changed from $LOCALIZE[31490] -->
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Canceled)">$LOCALIZE[31493]</value>        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Ended)">$LOCALIZE[31493]</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Released)">$LOCALIZE[31498]</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),In Production) | String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Post Production)">$LOCALIZE[31499]</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Planned)">$LOCALIZE[31504]</value>
@@ -1015,7 +1015,8 @@
     </variable>
 
     <variable name="Label_ListItem_Status">
-        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Canceled) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Canceled)">$LOCALIZE[31490]</value>
+        <!-- MISC341: value changed from $LOCALIZE[31490] -->
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Canceled) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Canceled)">$LOCALIZE[31493]</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Ended) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Ended)">$LOCALIZE[31493]</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Released) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Released)">$LOCALIZE[31498]</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),In Production) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),In Production) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Post Production) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Post Production)">$LOCALIZE[31499]</value>
