@@ -24,7 +24,7 @@
     <expression name="Anova_Channel21">$EXP[Anova_Standard_Channel21] | $EXP[Anova_Football_Channel21] | $EXP[Anova_SkySportsPlus_MLS_Channel21] | $EXP[Anova_247Channel21]</expression>  
 	<expression name="FHNatho_Standard_Channel21">[Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,201) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,400)]</expression>
 	<expression name="FHNatho_Football_Channel21">[Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,701) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,800)]</expression>
-	<expression name="FHNatho_Channel21">$EXP[FHNatho_Standard_Channel] | $EXP[FHNatho_Football_Channel]</expression>
+	<expression name="FHNatho_Channel21">$EXP[FHNatho_Standard_Channel21] | $EXP[FHNatho_Football_Channel21]</expression>
     
     <variable name="TextPVRProviderName">
         <value condition="$EXP[FHNatho_Channel21]">FHNATHO</value>
