@@ -1045,7 +1045,8 @@
                 <param name="service">Player</param>
                 <param name="listitem">$PARAM[listitem]</param>
                 <param name="left">0</param>
-                <param name="width">$PARAM[top_logo_width]</param>
+                <!-- MISC368: width changed from $PARAM[top_logo_width] (consistent with MISC364) -->
+                <param name="width">1400</param>
                 <param name="croplogo">Window.Property(TMDbHelper.Player.CropImage)</param>
             </include>
             <control type="group">

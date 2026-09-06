@@ -615,6 +615,12 @@
     </variable>
 
     <variable name="Label_PVRPrograms">
+        <!-- PVR302: START Custom PVR Program Information -->
+        <value condition="$EXP[247_Channel]">$INFO[ListItem.ChannelName] ... All Day, Every Day</value>        
+        <value condition="$EXP[Live_Football_Anova]">$INFO[ListItem.ChannelName]</value>
+        <value condition="$EXP[Live_Football_FHNatho]">$INFO[ListItem.ChannelName]</value>
+        <!-- value condition="$EXP[Live_Football_Anova_SkySportsPlus]">$INFO[ListItem.Label]</value -->
+        <!-- PVR302: END Custom PVR Program Information -->
         <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
         <value condition="!String.IsEmpty(ListItem.Label)">$INFO[ListItem.Label]</value>
         <value condition="!String.IsEmpty(ListItem.ChannelName)">$INFO[ListItem.ChannelName]</value>
@@ -1000,8 +1006,8 @@
     </variable>
 
     <variable name="Label_Player_Status">
-        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Canceled)">$LOCALIZE[31490]</value>
-        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Ended)">$LOCALIZE[31493]</value>
+        <!-- MISC341: value changed from $LOCALIZE[31490] -->
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Canceled)">$LOCALIZE[31493]</value>        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Ended)">$LOCALIZE[31493]</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Released)">$LOCALIZE[31498]</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),In Production) | String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Post Production)">$LOCALIZE[31499]</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Planned)">$LOCALIZE[31504]</value>
@@ -1010,7 +1016,8 @@
     </variable>
 
     <variable name="Label_ListItem_Status">
-        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Canceled) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Canceled)">$LOCALIZE[31490]</value>
+        <!-- MISC341: value changed from $LOCALIZE[31490] -->
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Canceled) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Canceled)">$LOCALIZE[31493]</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Ended) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Ended)">$LOCALIZE[31493]</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Released) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Released)">$LOCALIZE[31498]</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),In Production) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),In Production) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Post Production) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Post Production)">$LOCALIZE[31499]</value>
@@ -1075,7 +1082,8 @@
         <value condition="Window.IsVisible(filemanager)">$LOCALIZE[7]</value>
         <value condition="Window.IsVisible(MyMusicPlaylistEditor.xml)">$LOCALIZE[10503]</value>
         <value condition="Window.IsVisible(tvchannels)">$LOCALIZE[10700]</value>
-        <value condition="Window.IsVisible(tvguide)">$LOCALIZE[10702]</value>
+        <!-- PVR300: Replace $LOCALIZE[10702] to capitalise "guide" -->
+        <value condition="Window.IsVisible(tvguide)">TV Guide</value>
         <value condition="Window.IsVisible(tvrecordings)">$LOCALIZE[10701]</value>
         <value condition="Window.IsVisible(tvsearch)">$LOCALIZE[10704]</value>
         <value condition="Window.IsVisible(tvtimers)">$LOCALIZE[10703]</value>
@@ -1095,6 +1103,61 @@
     </variable>
 
     <variable name="Label_Section_Main">
+    
+        <!-- MISC308: START Custom Section Headers -->
+        <!-- MISC308: Music Headers -->
+        <value condition="Window.IsVisible(10502) + String.IsEqual(Container.Content,artists)">Music: Artists</value>
+        <value condition="Window.IsVisible(10502) + String.IsEqual(Container.Content,albums)">Music: Albums</value>
+        <value condition="Window.IsVisible(10502) + String.IsEqual(Container.Content,songs)">Music: Albums: $INFO[ListItem.Album]</value>
+        <value condition="Window.IsVisible(10502) + String.IsEqual(Container.Content,musicvideos)">Music: Videos</value>
+        <value condition="Window.IsVisible(10502) + String.IsEqual(Container.Content,playlists)">Music: Playlists</value>
+        <value condition="Window.IsVisible(10502) + [String.IsEqual(Container.Content,addons) | !String.IsEmpty(Container.PluginName)]">Music: Addons</value>
+        <value condition="Window.IsVisible(10502) + String.IsEqual(Container.Content,files)">Music: Files</value>
+        <value condition="Window.IsVisible(10502) + String.StartsWith(Container.FolderPath,sources)">Music: Sources</value>
+        <!-- MISC308: Video Library Sources -->
+        <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,sources)">Videos: Sources</value>
+        <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,tvshows) + String.Contains(Container.FolderPath,Kodi Libraries)">Videos: Sources</value>       
+        <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,tvshows) + String.Contains(Container.FolderPath,userdata)">Videos: Sources</value>       
+        <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,movies) + String.Contains(Container.FolderPath,Kodi Libraries)">Videos: Sources</value>       
+        <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,movies) + String.Contains(Container.FolderPath,userdata)">Videos: Sources</value>       
+        <!-- MISC308: Video Library Addons -->
+        <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,addons)">Videos: Addons</value> 
+        <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,plugin) + String.Contains(Container.FolderPath,iPlayer)">On Demand: BBC iPlayer: $INFO[Window(10000).Property(CustomAddonSection)]</value>
+        <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,plugin) + String.Contains(Container.FolderPath,bbcsport)">On Demand: BBC Sport</value>
+        <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,plugin) + String.Contains(Container.FolderPath,viwX)">On Demand: ITVX</value>
+        <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,plugin) + String.Contains(Container.FolderPath,My5)">On Demand: Channel 5</value>
+        <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,plugin) + String.Contains(Container.FolderPath,channel4)">On Demand: Channel 4</value>    
+        <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,plugin) + String.Contains(Container.FolderPath,uktvplay)">On Demand: U</value>
+        <value condition="Window.IsVisible(10025) + String.StartsWith(Container.FolderPath,plugin)">On Demand: $INFO[Container.FolderName]</value>
+        <!-- MISC308: Video Library TV Shows -->
+        <!-- value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,tvshows) + $EXP[Exp_View_512] + String.IsEqual(System.CurrentControlID,512)">TV Shows: [COLOR=main_fg_70]$INFO[ListItem.Title][/COLOR]</value -->
+        <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,tvshows) + $EXP[Exp_View_512] + String.IsEqual(System.CurrentControlID,512)">TV Shows</value>
+        <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,tvshows)">TV Shows</value>
+        <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,seasons)">TV Shows</value>
+        <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,episodes)">TV Shows</value>
+        <value condition="Window.IsVisible(10025) + String.Contains(Container.FolderPath,tv_show_collections)">TV Shows: Collections</value>
+        <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,genres) + String.Contains(Container.FolderPath,tvshows)">TV Shows: Genres</value>
+        <!-- MISC308: Video Library Movies -->
+        <!-- value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,movies) + $EXP[Exp_View_512] + String.IsEqual(System.CurrentControlID,512)">Movies: [COLOR=main_fg_70]$INFO[ListItem.Title][/COLOR]</value -->
+        <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,movies) + $EXP[Exp_View_512] + String.IsEqual(System.CurrentControlID,512)">Movies</value>
+        <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,movies)">Movies</value>
+        <!-- value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,sets) + $EXP[Exp_View_512] + String.IsEqual(System.CurrentControlID,512)">Movies: Collections: [COLOR=main_fg_70]$INFO[ListItem.Title][/COLOR]</value -->
+        <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,sets) + $EXP[Exp_View_512] + String.IsEqual(System.CurrentControlID,512)">Movies: Collections</value>        
+        <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,sets)">Movies: Collections</value>
+        <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,genres) + String.Contains(Container.FolderPath,movies)">Movies: Genres</value>
+        <!-- MISC308: Video Library Playlists -->
+        <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,playlists)">Videos: Playlists</value>       
+        <!-- value condition="Window.IsVisible(10025)">Video Library: $INFO[Container.Content] / $INFO[Container.FolderName]</value -->        
+        <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,files)">Videos: Files</value>
+        <!-- MISC308: PVR Recordings -->
+        <value condition="Window.IsVisible(10025) + String.IsEqual(Container.Content,recordings)">Videos: PVR Movies</value>
+        <value condition="Window.IsVisible(10025)">Videos</value>
+        <value condition="Window.IsVisible(10502)">Music</value>
+        <value condition="Window.IsVisible(10001)">Addons: $INFO[Container.FolderName]</value>
+        <!-- MISC308: PVR Recordings -->
+        <value condition="Window.IsVisible(10701)">Videos: PVR On Demand</value>             
+        <!-- MISC308: END Custom Section Headers -->
+        
         <!-- Filtered Dir -->
         <value condition="Window.IsMedia + String.IsEqual(Container.FolderName,Skin Variables) + !String.IsEmpty(Window.Property(MediaFilter.BaseDir.Name))">$INFO[Window.Property(MediaFilter.BaseDir.Name)]</value>
 
