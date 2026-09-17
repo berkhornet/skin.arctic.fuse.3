@@ -20,7 +20,15 @@
             <param name="switcher_content">LiveTV_Switcher_Items</param>
         </include>
 
-
+         <!-- MISC372: START include Furnitutre_Header_Left on PVR Hub -->
+         <control type="group">
+                <top>20</top>
+                <include content="Furniture_Header">
+                    <param name="include_left">true</param>
+                    <param name="include_right">false</param>
+                </include>
+         </control>
+         <!-- MISC372: END include Furnitutre_Header_Left on PVR Hub -->
 
     </controls>
 </window>

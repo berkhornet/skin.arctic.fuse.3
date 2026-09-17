@@ -27,14 +27,22 @@
                 <texturenofocus />
                 <font />
             </control>
-            <control type="group">
+            <!-- PVR305: remove original group name -->
+            <!-- control type="group">
                 <animation effect="fade" start="100" end="30" condition="true">Conditional</animation>
                 <include content="View_Line">
                     <param name="label">$INFO[Control.GetLabel(28)]$INFO[Container.NumItems, (,)]</param>
                     <param name="top">20</param>
                     <param name="left">0</param>
                 </include>
+            </control -->            
+            <!-- PVR305: START alternative group name control -->
+            <control type="label">
+                <label fallback="19055">$INFO[Control.GetLabel(28)]</label>
+                <font>font_infotag_bold</font>
+                <textcolor>$VAR[ColorHighlight]</textcolor>
             </control>
+            <!-- PVR305: END alternative group name control -->
         </control>
     </include>
 
@@ -324,6 +332,37 @@
                 <visible>!Control.IsVisible(502)</visible>
                 <visible>!Control.IsVisible(503)</visible>
                 <include>Furniture_Header</include>
+                <!-- PVR310: START custom header for EPG plotbox -->                    
+                <control type="label">
+                    <height>15</height>                         
+                    <left>463</left>
+                    <bottom>120</bottom>
+                    <width>auto</width>
+                    <aligny>center</aligny>
+                    <align>left</align>                         
+                    <font>font_tiny_bold</font>                         
+                    <textcolor>main_fg_90</textcolor>
+                    <shadowcolor>main_bg_12</shadowcolor>
+                    <label>$VAR[TextPVRPlotboxHeader]</label>
+                    <visible>!String.IsEqual(ListItem.Title,ListItem.ChannelName)</visible>
+                    <visible>!Skin.HasSetting(Views.UseHalfPVRGuide)</visible>
+                </control>
+                <!-- PVR310: END custom header for EPG plotbox -->                    
+                <!-- PVR310: START custom textbox for EPG plotbox -->                      
+                <control type="textbox">
+                    <left>463</left>
+                    <bottom>25</bottom>
+                    <width>900</width>
+                    <height>80</height>
+                    <textcolor>main_fg_70</textcolor>
+                    <align>left</align>
+                    <font>font_tiny</font>
+                    <aligny>top</aligny>
+                    <label>$VAR[TextPVREPGProgramPlot]</label>
+                    <visible>!Skin.HasSetting(Views.UseHalfPVRGuide)</visible>
+                    <autoscroll delay="3500" time="3500" repeat="3500">Window.IsVisible(10702)</autoscroll>
+                </control>
+                <!-- PVR310: END custom plotbox for EPG -->
             </control>
             <control type="group">
                 <visible>Control.IsVisible(502) | Control.IsVisible(503)</visible>

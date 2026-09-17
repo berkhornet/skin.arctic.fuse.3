@@ -96,7 +96,13 @@
     <include name="LiveTV_Widgets">
         <include content="Hub_Standard_Widget" condition="!Skin.HasSetting(Hub.1107.DisableSearch)">
             <param name="id">01</param>
-            <param name="label">$LOCALIZE[568]</param>
+            <!-- START MISC372: Customise PVR Hub -->
+            <!-- param name="label">$LOCALIZE[568]</param -->
+            <param name="label">Recent Channels</param>
+            <param name="sortby">lastplayed</param>
+            <param name="sortorder">True</param>
+            <param name="dynamic">true</param>
+            <!-- END MISC372: Customise PVR Hub -->            
             <param name="visible">true</param>
             <content target="tvchannels">pvr://channels/tv/*?view=lastplayed</content>
         </include>

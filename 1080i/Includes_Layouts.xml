@@ -467,9 +467,11 @@
                 <left>10</left>
                 <align>left</align>
                 <aligny>center</aligny>
-                <font>font_tiny</font>
+                <!-- PVR313: font changed from font_tiny -->
+                <font>font_tiny_bold</font>
                 <label>$INFO[ListItem.Label]</label>
-                <textcolor>main_fg_70</textcolor>
+                <!-- PVR313: textcolor changed from main_fg_70 -->
+                <textcolor>main_fg_90</textcolor>
                 <shadowcolor>main_bg_12</shadowcolor>
             </control>
         </control>
@@ -486,9 +488,11 @@
             <control type="label">
                 <top>15</top>
                 <aligny>top</aligny>
-                <font>font_tiny</font>
+                <!-- PVR313: font changed from font_tiny -->
+                <font>font_tiny_bold</font>
                 <label>$INFO[ListItem.Label]</label>
-                <textcolor>main_fg_70</textcolor>
+                <!-- PVR313: textcolor changed from main_fg_70 -->
+                <textcolor>main_fg_90</textcolor>
                 <shadowcolor>main_bg_12</shadowcolor>
             </control>
         </control>
@@ -505,17 +509,20 @@
                 <right>$PARAM[right]</right>
                 <left>20</left>
                 <bottom>$PARAM[bottom]</bottom>
-                <include content="Object_Control" condition="$PARAM[selected]">
+                <!-- PVR301: Remove "Selected Highlight" from Channel -->
+                <!-- include content="Object_Control" condition="$PARAM[selected]">
                     <param name="control">image</param>
                     <include>Texture_Menu_Highlight_H</include>
-                </include>
+                </include -->
                 <control type="group">
                     <height>80</height>
-                    <centertop>50%</centertop>
+                    <!-- PVR301: centertop was 50% (correct alignement with listings -->
+                    <centertop>70%</centertop>
                     <left>-20</left>
                     <right>40</right>
                     <control type="group">
-                        <include content="Object_InfoCircle" condition="!$PARAM[selected]">
+                        <!-- PVR301: Remove original "Unselected" Channel Details -->
+                        <!-- include content="Object_InfoCircle" condition="!$PARAM[selected]">
                             <param name="name">$INFO[ListItem.ChannelNumberLabel,$LOCALIZE[19029] ,]</param>
                             <param name="role">$INFO[ListItem.ChannelName]</param>
                             <param name="include_labels">$PARAM[include_detailed_labels]</param>
@@ -562,7 +569,73 @@
                                 <param name="aspectratio">keep</param>
                                 <param name="bordersize">5</param>
                             </include>
-                        </include>
+                        </include -->
+                        <!-- PVR301: Channel Number -->
+                        <control type="label">                          
+                            <left>45</left>
+                            <top>-2</top>
+                            <width>60</width>
+                            <height>53</height>                                 
+                            <align>left</align>
+                            <label>$INFO[ListItem.ChannelNumberLabel]</label>
+                        </control>
+                        <!-- PVR301: Channel Icon -->
+                        <control type="image">                          
+                            <left>107</left>
+                            <top>-7</top>
+                            <width>203</width>
+                            <height>64</height>                                 
+                            <texture>$VAR[ImagePVREPGIcon]</texture>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <aspectratio>keep</aspectratio>
+                        </control>
+                        <!-- PVR301: For Club Specific Channels, display Icon (Club Badge) -->
+                        <control type="image">  
+                            <left>327</left>
+                            <top>-4</top>
+                            <width>60</width>
+                            <height>60</height>                                 
+                            <texture>$INFO[ListItem.Icon]</texture>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <aspectratio>keep</aspectratio>
+                            <visible>$EXP[Live_Football_Club_Channel]</visible>
+                        </control>
+                        <!-- PVR301: For Sky Sports+ Channels, display Event No. over Channel Icon (DISABLED) -->                       
+                        <!-- control type="label">                          
+                            <left>170</left>
+                            <top>16</top>
+                            <width>150</width>
+                            <height>53</height>                                 
+                            <align>center</align>
+                            <!--textcolor>FF940102</textcolor >
+                            <textcolor>FF1E1E7F</textcolor>
+                            <font>font_tiny</font>
+                            <label>$VAR[TextPVREPGSkySportsPlusEventNo]</label>
+                            <visible>$EXP[Live_Football_Anova_SkySportsPlus]</visible>
+                        </control -->
+                        <!-- PVR301: Channel Resolution Icon -->
+                        <control type="image">                      
+                            <left>322</left>
+                            <top>16</top>
+                            <width>70</width>
+                            <height>38</height>                                 
+                            <texture>$VAR[ImagePVRChannelResolutionIcon]</texture>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <aspectratio>keep</aspectratio>
+                            <visible>!$EXP[Live_Football_Anova_SkySportsPlus]</visible>
+                        </control>
+                        <!-- PVR301: Provider Icon (temporarily disabled) -->
+                        <!-- control type="image">
+                            <aspectratio align="right">keep</aspectratio>
+                            <left>385</left>
+                            <top>16</top>
+                            <width>90</width>
+                            <height>38</height>
+                            <texture>$VAR[ImagePVRProviderIcon]</texture>
+                        </control -->
                     </control>
                 </control>
             </control>
@@ -723,7 +796,8 @@
             </include>
 
             <!-- No Indicator Text -->
-            <include content="Object_InfoCircle_Text_Top" condition="$PARAM[include_detailed_labels]">
+            <!-- PVR302: Object removed - Label control below used instead -->
+            <!-- include content="Object_InfoCircle_Text_Top" condition="$PARAM[include_detailed_labels]">
                 <param name="id">1</param>
                 <include condition="$PARAM[selected] + false">Color_SelectedText</include>
                 <label>$VAR[Label_PVRPrograms]</label>
@@ -732,8 +806,9 @@
                 <left>$PARAM[left_text]</left>
                 <right>40</right>
                 <visible>![ListItem.IsRecording | ListItem.HasTimer | [ListItem.IsPlayable + !Skin.HasSetting(Indicator.DisablePVRGuideCatchUp)]]</visible>
-            </include>
-            <include content="Object_InfoCircle_Text_Sub" condition="$PARAM[include_detailed_labels]">
+            </include -->
+            <!-- PVR302: Remove Genre -->
+            <!-- include content="Object_InfoCircle_Text_Sub" condition="$PARAM[include_detailed_labels]">
                 <param name="id">1</param>
                 <include condition="$PARAM[selected] + false">Color_SelectedText</include>
                 <label>$INFO[ListItem.Genre]</label>
@@ -742,21 +817,26 @@
                 <left>$PARAM[left_text]</left>
                 <right>40</right>
                 <visible>![ListItem.IsRecording | ListItem.HasTimer | [ListItem.IsPlayable + !Skin.HasSetting(Indicator.DisablePVRGuideCatchUp)]]</visible>
-            </include>
+            </include -->
             <control type="label" id="1">
-                <font>font_mini</font>
-                <label>$INFO[ListItem.Label]</label>
+                <!-- PVR302: font changed from font_mini -->
+                <font>font_mini_bold</font>
+                <!-- PVR302: label changed from $INFO[ListItem.Label] -->
+                <label>$VAR[Label_PVRPrograms]</label>
                 <align>left</align>
                 <left>$PARAM[left_text]</left>
                 <right>40</right>
                 <include condition="$PARAM[selected] + false">Color_SelectedText</include>
-                <textcolor>main_fg_70</textcolor>
-                <visible>![$PARAM[include_detailed_labels]]</visible>
+                <!-- PVR302: textcolor changed from main_fg_70 -->
+                <textcolor>main_fg_90</textcolor>
+                <!-- PVR302: visibility removed -->
+                <!-- visible>![$PARAM[include_detailed_labels]]</visible -->
                 <visible>![ListItem.IsRecording | ListItem.HasTimer | [ListItem.IsPlayable + !Skin.HasSetting(Indicator.DisablePVRGuideCatchUp)]]</visible>
             </control>
 
             <!-- Indicator Text -->
-            <include content="Object_InfoCircle_Text_Top" condition="$PARAM[include_detailed_labels]">
+            <!-- PVR302: Object removed - Label control below used instead -->
+            <!-- include content="Object_InfoCircle_Text_Top" condition="$PARAM[include_detailed_labels]">
                 <param name="id">1</param>
                 <include condition="$PARAM[selected] + false">Color_SelectedText</include>
                 <label>$VAR[Label_PVRPrograms]</label>
@@ -765,8 +845,9 @@
                 <left>$PARAM[left_text_slide]</left>
                 <right>40</right>
                 <visible>[ListItem.IsRecording | ListItem.HasTimer | [ListItem.IsPlayable + !Skin.HasSetting(Indicator.DisablePVRGuideCatchUp)]]</visible>
-            </include>
-            <include content="Object_InfoCircle_Text_Sub" condition="$PARAM[include_detailed_labels]">
+            </include -->
+            <!-- PVR302: Remove Genre -->
+            <!-- include content="Object_InfoCircle_Text_Sub" condition="$PARAM[include_detailed_labels]">
                 <param name="id">1</param>
                 <include condition="$PARAM[selected] + false">Color_SelectedText</include>
                 <label>$INFO[ListItem.Genre]</label>
@@ -775,16 +856,20 @@
                 <left>$PARAM[left_text_slide]</left>
                 <right>40</right>
                 <visible>[ListItem.IsRecording | ListItem.HasTimer | [ListItem.IsPlayable + !Skin.HasSetting(Indicator.DisablePVRGuideCatchUp)]]</visible>
-            </include>
+            </include -->
             <control type="label" id="1">
-                <font>font_mini</font>
-                <label>$INFO[ListItem.Label]</label>
+                <!-- PVR302: font changed from font_mini -->
+                <font>font_mini_bold</font>
+                <!-- PVR302: label changed from $INFO[ListItem.Label] -->
+                <label>$VAR[Label_PVRPrograms]</label>
                 <align>left</align>
                 <left>$PARAM[left_text_slide]</left>
                 <right>40</right>
                 <include condition="$PARAM[selected] + false">Color_SelectedText</include>
-                <textcolor>main_fg_70</textcolor>
-                <visible>![$PARAM[include_detailed_labels]]</visible>
+                <!-- PVR302: textcolor changed from main_fg_70 -->
+                <textcolor>main_fg_90</textcolor>
+                <!-- PVR302: visibility removed -->
+                <!-- visible>![$PARAM[include_detailed_labels]]</visible -->
                 <visible>[ListItem.IsRecording | ListItem.HasTimer | [ListItem.IsPlayable + !Skin.HasSetting(Indicator.DisablePVRGuideCatchUp)]]</visible>
             </control>
 
@@ -799,7 +884,8 @@
                     <include content="Object_ColorDiffuse" condition="$PARAM[selected] + false">
                         <param name="colordiffuse">$VAR[ColorSelected]</param>
                     </include>
-                    <colordiffuse>main_fg_70</colordiffuse>
+                    <!-- PVR302: colordiffuse changed from main_fg_70 -->
+                    <colordiffuse>main_fg_100</colordiffuse>
                     <texture>$VAR[Image_PVRGuide_Indicator]</texture>
                 </control>
             </control>
@@ -1271,6 +1357,8 @@
                         </include>
                         <include content="Object_ContentBanner" condition="$PARAM[indicator]">
                             <param name="listitem">$PARAM[listitem]</param>
+                            <!-- MISC352: "selected" parameter added so banner only displays on focussed item for Kodi Library items -->
+                            <param name="selected">$PARAM[selected]</param>
                         </include>
 
                         <include content="Object_TraktOverlays" condition="$PARAM[indicator] + [Skin.HasSetting(Indicator.TraktWatchlist) | Skin.HasSetting(Indicator.TraktFavourites)]">
@@ -2253,7 +2341,8 @@
                         <param name="icon_diffuse">$PARAM[diffuse]</param>
                     </include>
 
-                    <include content="Object_ProgressLine">
+                    <!-- MISC328: No progress line on Home Page widgets - "  + condition !$EXP[Home_Page]" added --> 
+                    <include content="Object_ProgressLine" condition="!$EXP[Home_Page]">
                         <param name="progress">$PARAM[listitem].$PARAM[progress]</param>
                     </include>
                     <include content="Object_Indicator" condition="!$PARAM[selected] + ![$PARAM[detailed]]">
@@ -2267,7 +2356,8 @@
                         <param name="listitem">$PARAM[listitem]</param>
                     </include>
                 </control>
-                <include content="Layout_Labels" condition="![$PARAM[variation]]">
+                <!-- MISC328: No labels on Icon/Square Home Page widgets - "  + condition !$EXP[Home_Page]" added --> 
+                <include content="Layout_Labels" condition="![$PARAM[variation]] + !$EXP[Home_Page]">
                     <param name="top">10</param>
                     <param name="item_h">$PARAM[item_h]</param>
                     <param name="affix">$PARAM[affix]</param>
@@ -2445,15 +2535,23 @@
         <definition>
             <control type="group">
 
+                <!-- MISC369: START Custom heights for PVR widgets (DISABLED) -->
                 <width>$PARAM[item_w]</width>
                 <height>$PARAM[item_h]</height>
-
-                <include content="Object_ItemBack">
+                <!--include content="MISC369_Include_1" condition="!$EXP[PVR_Hub_Visible]"></include>                
+                <include content="MISC369_Include_2" condition="$EXP[PVR_Hub_Visible]"></include>                
+                <!-- MISC369: END Custom heights for PVR widgets -->
+               
+                <!-- MISC369: Custom highlights for PVR widgets: condition added -->
+                <!-- include content="Object_ItemBack" -->
+                <include content="Object_ItemBack" condition="!$EXP[PVR_Hub_Visible]">                
                     <param name="selected">$PARAM[selected]</param>
                     <param name="shadow_colordiffuse">$PARAM[shadow_colordiffuse]</param>
                 </include>
-
-                <include content="Object_Control" condition="$PARAM[selected]">
+                
+                <!-- MISC369: Custom highlights for PVR widgets: + !$EXP[PVR_Hub_Visible] added to condition -->
+                <!-- include content="Object_Control" condition="$PARAM[selected]" -->
+                <include content="Object_Control" condition="$PARAM[selected] + !$EXP[PVR_Hub_Visible]">
                     <param name="control">image</param>
                     <include>Texture_Box_Highlight_V</include>
                 </include>
@@ -2480,7 +2578,8 @@
                     <visible>[String.IsEqual($PARAM[listitem].DBType,movie) | String.IsEqual($PARAM[listitem].DBType,tvshow)] + String.IsEmpty($PARAM[listitem].Art(landscape)) + String.IsEmpty($PARAM[listitem].Art(tvshow.landscape))</visible>
                 </include>
 
-                <include content="Object_ProgressLine">
+                <!-- MISC328: No progress line on Home Page widgets - "  + condition !$EXP[Home_Page]" added --> 
+                <include content="Object_ProgressLine" condition="!$EXP[Home_Page]">
                     <param name="progress">$PARAM[listitem].$PARAM[progress]</param>
                 </include>
 
@@ -2491,13 +2590,18 @@
 
                 <include content="Object_ContentBanner" condition="$PARAM[indicator]">
                     <param name="listitem">$PARAM[listitem]</param>
+                    <!-- MISC352: "selected" parameter added so banner only displays on focussed item for Kodi Library items -->
+                    <param name="selected">$PARAM[selected]</param>
                 </include>
 
                 <include content="Object_TraktOverlays" condition="$PARAM[indicator] + [Skin.HasSetting(Indicator.TraktWatchlist) | Skin.HasSetting(Indicator.TraktFavourites)]">
                     <param name="listitem">$PARAM[listitem]</param>
                 </include>
 
-                <include content="Layout_Labels" condition="![$PARAM[detailed]]">
+                <!-- MISC328: No labels on Landscape Home Page widgets -->
+                <!-- MISC328: " + !$EXP[Home_Page]] | [Window.IsVisible(1102)]"  added to condition -->
+                <!-- include content="Layout_Labels" condition="[![$PARAM[detailed]] + !$EXP[Home_Page]] | [Window.IsVisible(1102)]" -->
+                <include content="Layout_Labels" condition="[![$PARAM[detailed]] + !$EXP[Home_Page]]">
                     <param name="top">10</param>
                     <param name="item_h">$PARAM[item_h]</param>
                     <param name="affix">$PARAM[affix]</param>

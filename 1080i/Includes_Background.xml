@@ -50,6 +50,8 @@
                 <param name="fadetime">$PARAM[fadetime]</param>
                 <param name="diffuse">diffuse/flixart/flixart_new.png</param>
             </include>
+            <!-- PVR306: No artwork on EPG -->
+            <visible>!Window.IsVisible(10702)</visible>
         </definition>
     </include>
 
@@ -208,6 +210,14 @@
             <animation effect="fade" start="100" end="0" time="background_fadetime">Hidden</animation>
             <include>Background_Blur</include>
             <include>Background_Artwork</include>
+            <!-- MISC364: START ensure consistent overlays on Home Page (copied from Home_Control) -->
+            <control type="image">
+                <include>Home_Fade_Animation</include>
+                <texture colordiffuse="main_bg_70">special://skin/extras/backgrounds/overlay/combined_topmenu.png</texture>
+                <bottom>0</bottom>
+                <visible>$EXP[Home_Page] + !String.IsEqual(System.CurrentControlID,300)</visible>
+            </control>
+            <!-- MISC364: END ensure consistent overlays on Home Page (copied from Home_Control) -->
         </control>
     </include>
 
