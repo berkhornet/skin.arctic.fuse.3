@@ -316,13 +316,6 @@
                 <onfocus condition="![$PARAM[overlay]]">ClearProperty(InfoPanel.FullSwitch,Home)</onfocus>
                 <onfocus condition="$PARAM[overlay]">SetProperty(Background.ShowOverlay,True,Home)</onfocus>
                 <onfocus condition="![$PARAM[overlay]]">ClearProperty(Background.ShowOverlay,Home)</onfocus>
-                <onclick condition="$PARAM[onclick_condition] + !String.IsEmpty(Skin.String(HomeSwitcher.$PARAM[window].Shortcut.Target))">ActivateWindow($INFO[Skin.String(HomeSwitcher.$PARAM[window].Shortcut.Target)],$INFO[Skin.String(HomeSwitcher.$PARAM[window].Shortcut.Path)],return)</onclick>
-                <onclick condition="$PARAM[onclick_condition] + String.IsEmpty(Skin.String(HomeSwitcher.$PARAM[window].Shortcut.Target))">$INFO[Skin.String(HomeSwitcher.$PARAM[window].Shortcut.Path)]</onclick>
-                <onclick condition="Window.IsVisible(1108)">ActivateWindow(addonbrowser)</onclick>
-                <!-- MISC372: START Open TV Guide instead of TV Channels -->                
-                <!-- onclick condition="Window.IsVisible(1107)">ActivateWindow(tvchannels)</onclick -->
-                <onclick condition="Window.IsVisible(1107)">ActivateWindow(TVGuide)</onclick>
-                <!-- MISC372: END Open TV Guide instead of TV Channels -->
                 <include content="Hub_ClickActions" condition="!Window.IsVisible(1105)">
                     <param name="window">$PARAM[window]</param>
                     <param name="condition">$PARAM[onclick_condition]</param>
