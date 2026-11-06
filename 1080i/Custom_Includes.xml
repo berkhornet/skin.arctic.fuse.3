@@ -368,7 +368,8 @@
             <width>720</width>
             <visible>$PARAM[visible_right]</visible>
             <control type="label">
-                <label>$INFO[System.Time]$VAR[Furniture_Header_Right_Temperature, • ,][COLOR grey][CR]$VAR[Custom_Kodi_Version][/COLOR]</label>
+                <!--label>$INFO[System.Time]$VAR[Furniture_Header_Right_Temperature, • ,][COLOR grey][CR]$VAR[Custom_Kodi_Version][/COLOR]</label-->
+                <label>$INFO[System.Time]$VAR[Furniture_Header_Right_Temperature, • ,]</label>                
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>$PARAM[textcolor]</textcolor>
