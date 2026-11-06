@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<!-- PVR301: Expressions and variable for Channel Resolution Icon variable (ImageChannelResolutionIcon) -->
-    <!-- expression name="FHD50FPS_Channel">String.Contains(ListItem.ChannelName," FHD 50FPS")</expression -->
+    <expression name="FHD50FPS_Channel">String.Contains(ListItem.ChannelName," FHD 50FPS")</expression>
     <!-- Anova Sky Sports and TNT Sports FHD channels -->
-    <expression name="FHD50FPS_Channel">String.Contains(ListItem.ChannelName," FHD") + Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,45) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,75)</expression>
+    <!-- expression name="FHD50FPS_Channel">String.Contains(ListItem.ChannelName," FHD") + Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,45) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,75)</expression -->
 	<expression name="FHD_Channel">String.Contains(ListItem.ChannelName," FHD")</expression>
 	<expression name="HD_Channel">String.Contains(ListItem.ChannelName," HD")</expression>
 	<expression name="SD_Channel">String.Contains(ListItem.ChannelName," SD")</expression>
