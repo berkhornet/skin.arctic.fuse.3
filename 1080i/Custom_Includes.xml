@@ -15,22 +15,6 @@
 		<value condition="$EXP[UHD_Channel]">special://userdata/customisations\PVR\resolution flags\uhd.png</value>
 		<value></value>
 	</variable>
-  
-    <!-- MISC370: Custom Info_Line for PVR -->    
-	<expression name="Anova_Standard_Channel21">Integer.IsLess(ListItem.ChannelNumberLabel,200)</expression>
- 	<expression name="Anova_Football_Channel21">Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,501) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,700)</expression>
- 	<expression name="Anova_SkySportsPlus_MLS_Channel21">Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,801) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,900)</expression>
-  	<expression name="Anova_247Channel21">Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,901) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,1000)</expression>
-    <expression name="Anova_Channel21">$EXP[Anova_Standard_Channel21] | $EXP[Anova_Football_Channel21] | $EXP[Anova_SkySportsPlus_MLS_Channel21] | $EXP[Anova_247Channel21]</expression>  
-	<expression name="FHNatho_Standard_Channel21">[Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,201) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,400)]</expression>
-	<expression name="FHNatho_Football_Channel21">[Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,701) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,800)]</expression>
-	<expression name="FHNatho_Channel21">$EXP[FHNatho_Standard_Channel21] | $EXP[FHNatho_Football_Channel21]</expression>
-    
-    <variable name="TextPVRProviderName">
-        <value condition="$EXP[FHNatho_Channel21]">FHNATHO</value>
-        <value condition="$EXP[Anova_Channel21]">ANOVA</value>
-        <value>UNKNOWN</value>
-    </variable>
    
     <!-- PVR301 and PVR302: Expressions for Custom Icon and Custom Program Information -->
 	<expression name="Standard_Channel">Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,499)</expression>
