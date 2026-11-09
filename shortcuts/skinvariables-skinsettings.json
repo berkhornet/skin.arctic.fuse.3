@@ -239,6 +239,21 @@
                 }
             ]
         },
+        "home_custom_full_fake_header": {
+            "label": "Custom Full Fake Header",
+            "control": "radiobutton",
+            "group": "home_menu",
+            "description": "",
+            "selected": "Skin.HasSetting(Custom.FullFakeHeader)",
+            "visible": "!Skin.HasSetting(HomeSwitcher.Vertical)",          
+            "onclick": [
+                {
+                    "action": "Skin.ToggleSetting(Custom.FullFakeHeader)"
+                }
+            ]
+        },        
+        
+        
         "home_up_action": {
             "label": "$LOCALIZE[31349]",
             "control": "button",
@@ -1462,6 +1477,18 @@
                 }
             ]
         },
+        "tools_debug_custom_information": {
+            "label": "Custom Debug Info",
+            "control": "radiobutton",
+            "group": "tools_debug",
+            "selected": "Skin.HasSetting(Custom.DebugInfo)",
+            "visible": "Skin.HasSetting(DebugInfo)",                    
+            "onclick": [
+                {
+                    "action": "Skin.ToggleSetting(Custom.DebugInfo)"
+                }
+            ]
+        },        
         "tools_debug_gridlines": {
             "label": "$LOCALIZE[31223]",
             "control": "radiobutton",
