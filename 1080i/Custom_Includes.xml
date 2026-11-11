@@ -245,7 +245,7 @@
     <expression name="PVR_Hub_Visible">Window.IsVisible(10000) | Window.IsVisible(11107)</expression>
     
     <!-- MISC353: START Custom Image_Foreground for Home Page PVR widgets (UNUSED) -->
-    <variable name="Custom_Image_Foreground">
+    <variable name="Custom_Image_Fallback">
         <!-- Football: Club Streams -->
         <value condition="$EXP[Live_Football_Club_Channel]">$INFO[ListItem.Icon]</value>
         <!-- Football: Fixture Streams -->
@@ -291,16 +291,9 @@
         <!-- IPL -->
         <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Current.BlurImage.Original),2pWpKLB)">special://userdata/customisations\PVR\EPG Artwork\Cricket.jpg</value>
         <!-- Check if there is a valid fanart, if not display fallback image -->
-        <value condition="String.StartsWith(Window(Home).Property(TMDbHelper.ListItem.Current.BlurImage.Original),special)">$VAR[Custom_Fallback_Image]</value>
+        <value condition="String.StartsWith(Window(Home).Property(TMDbHelper.ListItem.Current.BlurImage.Original),special)">special://skin/extras/backgrounds/content/fanart-watercolour-composite-livetv.jpg</value>
         <!-- Default Image_Foreground values (for "normal" TV programmes) -->
-        <value condition="$EXP[Exp_BackgroundArtwork_IsSimple]">$INFO[Window(Home).Property(TMDbHelper.SimpleBackground.BlurImage.Original)]</value>
-        <value condition="!$EXP[Exp_TMDbHelper_IsBlur]">$VAR[Image_Foreground_NoService]</value>
-        <value condition="!String.IsEmpty(Window.Property(TMDbHelper.ListItem.BlurImage.Original))">$INFO[Window.Property(TMDbHelper.ListItem.BlurImage.Original)]</value>
-        <value>$INFO[Window(Home).Property(TMDbHelper.ListItem.Current.BlurImage.Original)]</value>
-    </variable>
-
-    <variable name="Custom_Fallback_Image">
-        <value>special://userdata/customisations/Skin Customisations/Fallback Images - Other/96099.jpg</value>
+        <value>special://skin/extras/backgrounds/content/fanart-watercolour-composite-livetv.jpg</value>
     </variable>
 
     <!-- Furniture_Header_Left Debug changes -->
