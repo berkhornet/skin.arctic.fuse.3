@@ -548,7 +548,7 @@
     </variable>
 
     <variable name="Image_GenreIcon">
-        <value condition="System.HasAddon(resource.images.moviegenreicons.transparent)">$INFO[ListItem.Label,genres/,.png]</value>
+        <value>$INFO[ListItem.Label,genres/,.png]</value>
     </variable>
 
     <variable name="Image_DiscArt">
