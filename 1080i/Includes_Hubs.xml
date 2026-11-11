@@ -359,9 +359,9 @@
             <include>Info_Panel_Dimensions</include>
             <include content="Info_Panel">
                 <param name="container">Container(301).</param>
-                <param name="visible_line">String.IsEmpty(Window(Home).Property(Background.ShowOverlay))</param>
-                <param name="visible_plot">String.IsEmpty(Window(Home).Property(Background.ShowOverlay))</param>
-                <param name="visible_meta">String.IsEmpty(Window(Home).Property(Background.ShowOverlay))</param>
+                <param name="visible_line">!$EXP[Exp_BackgroundArtwork_ShowOverlay]</param>
+                <param name="visible_plot">!$EXP[Exp_BackgroundArtwork_ShowOverlay]</param>
+                <param name="visible_meta">!$EXP[Exp_BackgroundArtwork_ShowOverlay]</param>
             </include>
         </control>
     </include>
