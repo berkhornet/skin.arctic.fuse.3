@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+    <!-- SkinVariables viewtype selector dialog (script-skinvariables-viewtypes.xml) -->
+
+    <!-- Screenshot of the focused viewtype, or the icon of the focused group -->
+    <include name="DialogViewTypes_Preview">
+        <control type="group">
+            <top>40</top>
+            <left>40</left>
+            <right>40</right>
+            <control type="image">
+                <visible>$EXP[Exp_ViewTypes_IsViewFocused]</visible>
+                <aspectratio>scale</aspectratio>
+                <texture background="true" diffuse="diffuse/landscape_w1040_h585.png">$INFO[Window.Property(SkinVariables.ViewTypes.Screenshot)]</texture>
+            </control>
+            <control type="group">
+                <visible>!$EXP[Exp_ViewTypes_IsViewFocused]</visible>
+                <control type="image">
+                    <texture border="20" colordiffuse="dialog_fg_06">common/dialog.png</texture>
+                </control>
+                <control type="image">
+                    <centerleft>50%</centerleft>
+                    <centertop>50%</centertop>
+                    <width>160</width>
+                    <height>160</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture colordiffuse="dialog_fg_70">$INFO[Window.Property(SkinVariables.ViewTypes.Screenshot)]</texture>
+                </control>
+            </control>
+        </control>
+    </include>
+
+    <!-- Selector button. The script adds the label, selected and visible tags. -->
+    <include name="DialogViewTypes_Button">
+        <include content="Settings_Button">
+            <param name="id">$PARAM[id]</param>
+            <param name="control">radiobutton</param>
+            <param name="dialog">true</param>
+            <nested />
+        </include>
+    </include>
+
+    <!-- Viewtype button: the radio sits on the left of the label, like a selection list -->
+    <include name="DialogViewTypes_Button_View">
+        <include content="DialogViewTypes_Button">
+            <param name="id">$PARAM[id]</param>
+            <nested />
+            <radioposx>-2</radioposx>
+            <textoffsetx>80</textoffsetx>
+        </include>
+    </include>
+
+    <!-- Group button: the radio on the right shows a triangle pointing right while collapsed and down while expanded -->
+    <include name="DialogViewTypes_Button_Group">
+        <include content="DialogViewTypes_Button">
+            <param name="id">$PARAM[id]</param>
+            <nested />
+            <textureradioonfocus colordiffuse="$VAR[ColorSelected]">buttons/triangle-down.png</textureradioonfocus>
+            <textureradioonnofocus colordiffuse="dialog_fg_70">buttons/triangle-down.png</textureradioonnofocus>
+            <textureradioondisabled colordiffuse="dialog_fg_06">buttons/triangle-down.png</textureradioondisabled>
+            <textureradioofffocus colordiffuse="$VAR[ColorSelected]">buttons/triangle-right.png</textureradioofffocus>
+            <textureradiooffnofocus colordiffuse="dialog_fg_70">buttons/triangle-right.png</textureradiooffnofocus>
+            <textureradiooffdisabled colordiffuse="dialog_fg_06">buttons/triangle-right.png</textureradiooffdisabled>
+        </include>
+    </include>
+
+</includes>

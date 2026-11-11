@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Template for the SkinVariables viewtype selector dialog (buildviews with selector=window). The script fills grouplist 3 with clones
+     of the group button 10 and the viewtype button 8, sets the focused viewtype name and screenshot as window properties, and removes
+     the template buttons from the generated dialog. -->
+<window type="dialog">
+    <defaultcontrol always="true">3</defaultcontrol>
+
+    <controls>
+
+        <include content="Part_Dialog_Split">
+            <control type="group">
+                <include>Size_Dialog_Pad</include>
+                <include content="Part_Dialog_Split_Left">
+                    <param name="title">$LOCALIZE[31044]</param>
+                    <param name="subline">$INFO[Window.Property(SkinVariables.ViewTypes.Total),, $LOCALIZE[31044]]</param>
+                    <control type="grouplist" id="3">
+                        <orientation>vertical</orientation>
+                        <onup>3</onup>
+                        <ondown>3</ondown>
+                        <onleft>noop</onleft>
+                        <onright>noop</onright>
+                        <include>Size_Grouplist_Pad</include>
+                    </control>
+                </include>
+                <include content="Part_Dialog_Split_Right">
+                    <param name="title">$INFO[Window.Property(SkinVariables.ViewTypes.Header)]</param>
+                    <param name="subline">$VAR[Label_ViewTypes_Subline]</param>
+                    <param name="help">$VAR[Label_ViewTypes_Description]</param>
+                    <param name="help_label2">$VAR[Label_ViewTypes_Usage]</param>
+                    <param name="help_subline">true</param>
+                    <param name="help_topline">false</param>
+                    <param name="help_height">60</param>
+                    <param name="help_centerbottom">50</param>
+                    <param name="body_bottom">100</param>
+                    <include>DialogViewTypes_Preview</include>
+                </include>
+            </control>
+        </include>
+
+        <include content="DialogViewTypes_Button_Group">
+            <param name="id">10</param>
+            <description>Group Button</description>
+        </include>
+
+        <include content="DialogViewTypes_Button_View">
+            <param name="id">8</param>
+            <description>Viewtype Button</description>
+        </include>
+
+    </controls>
+
+</window>

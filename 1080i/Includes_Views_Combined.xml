@@ -526,11 +526,11 @@
         </include>
     </include>
 
-    <!-- Combined List -->
+    <!-- Combined Sidebar -->
     <include name="View_527_List_Combined">
         <include content="View_ComboList_Include">
             <param name="id">7</param>
-            <param name="viewtype_label">$LOCALIZE[31580]</param>
+            <param name="viewtype_label">$LOCALIZE[31850]</param>
             <param name="visible">$EXP[Exp_View_527]</param>
         </include>
     </include>

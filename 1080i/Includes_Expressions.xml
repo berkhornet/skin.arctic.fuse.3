@@ -286,4 +286,6 @@
     <expression name="Exp_Shortcuts_EditedSinceOpen">!String.IsEqual(Window(Home).Property(SkinVariables.ShortcutsNode.Reload),Window(Home).Property(Shortcuts.ReloadOnOpen))</expression>
     <!-- A menu was saved since the window with Action_BuildShortcuts_OnUnLoad opened (separate from 1116, which opens on top of it) -->
     <expression name="Exp_Shortcuts_WindowEditedSinceOpen">!String.IsEqual(Window(Home).Property(SkinVariables.ShortcutsNode.Reload),Window(Home).Property(Shortcuts.WindowReloadOnOpen))</expression>
+    <!-- SkinVariables viewtype selector: a viewtype has focus. The ViewID is empty while a group has focus. -->
+    <expression name="Exp_ViewTypes_IsViewFocused">!String.IsEmpty(Window.Property(SkinVariables.ViewTypes.ViewID))</expression>
 </includes>

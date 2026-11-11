@@ -541,7 +541,7 @@
             <icon>special://skin/extras/icons/table.png</icon>
             <onclick condition="[Window.IsVisible(tvchannels) | Window.IsVisible(tvguide)]">SendClick($VAR[Action_CurrentMediaWindow],2)</onclick>
             <onclick condition="![Window.IsVisible(tvchannels) | Window.IsVisible(tvguide)]">Close</onclick>
-            <onclick condition="![Window.IsVisible(tvchannels) | Window.IsVisible(tvguide)]">Runscript(script.skinvariables,action=buildviews,contentid=$VAR[DialogView_ModeSwitch],pluginname=$INFO[Container.PluginName])</onclick>
+            <onclick condition="![Window.IsVisible(tvchannels) | Window.IsVisible(tvguide)]">Runscript(script.skinvariables,action=buildviews,selector=window,exclusive_groups=true,contentid=$VAR[DialogView_ModeSwitch],pluginname=$INFO[Container.PluginName])</onclick>
             <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
         </item>
 
