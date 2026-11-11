@@ -244,7 +244,7 @@
         
     <expression name="PVR_Hub_Visible">Window.IsVisible(10000) | Window.IsVisible(11107)</expression>
     
-    <!-- MISC353: START Custom Image_Foreground for Home Page PVR widgets -->
+    <!-- MISC353: START Custom Image_Foreground for Home Page PVR widgets (UNUSED) -->
     <variable name="Custom_Image_Foreground">
         <!-- Football: Club Streams -->
         <value condition="$EXP[Live_Football_Club_Channel]">$INFO[ListItem.Icon]</value>
