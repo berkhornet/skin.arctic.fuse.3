@@ -151,7 +151,9 @@
                             <param name="id">$PARAM[id]</param>
                         </include>
                         <pagecontrol>60</pagecontrol>
-                        <include>$PARAM[include_content]</include>
+                        <include content="$PARAM[include_content]">
+                            <param name="limit">$PARAM[content_limit]</param>
+                        </include>
                         <visible>$PARAM[visible]</visible>
                         <viewtype label="$PARAM[viewtype_label]">wrap</viewtype>
                         <onfocus>ClearProperty(TMDbHelper.WidgetContainer)</onfocus>

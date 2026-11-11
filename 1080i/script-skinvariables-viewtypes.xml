@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Template for the SkinVariables viewtype selector dialog (buildviews with selector=window). The script fills grouplist 3 with clones
-     of the group button 10 and the viewtype button 8, sets the focused viewtype name and screenshot as window properties, and removes
-     the template buttons from the generated dialog. Controls with a viewtype id are preview lists: the script fills them with up to
-     "limit" items from the window under the dialog and shows each one while its viewtype is focused. -->
+     of the group button 10 (or the group label 14 when groups are always expanded) and the viewtype button 8, sets the focused viewtype
+     name and screenshot as window properties, and removes the template buttons from the generated dialog. Controls with a viewtype id
+     are preview lists: the script fills them with up to "limit" items from the window under the dialog and shows each one while its
+     viewtype is focused. -->
 <window type="dialog">
     <defaultcontrol always="true">3</defaultcontrol>
 
@@ -30,7 +31,7 @@
                 </include>
                 <include content="Part_Dialog_Split_Right">
                     <param name="title">$INFO[Window.Property(SkinVariables.ViewTypes.Header)]</param>
-                    <param name="subline">$VAR[Label_ViewTypes_Subline]</param>
+                    <param name="subline">$VAR[Label_ViewTypes_Group] $VAR[Label_ViewTypes_Name]</param>
                     <param name="help">$VAR[Label_ViewTypes_Description]</param>
                     <param name="help_label2">$VAR[Label_ViewTypes_Usage]</param>
                     <param name="help_subline">true</param>
@@ -123,73 +124,87 @@
                             <param name="id">585</param>
                             <param name="include">View_585_Square_List</param>
                         </include>
-                        <!-- Combined rows: the limit is for the category tabs -->
+                        <!-- Combined rows: the limit is for the category tabs and content_limit for the row -->
                         <include content="DialogViewTypes_Preview_Combined_Row" limit="8">
                             <param name="id">520</param>
                             <param name="index">0</param>
+                            <param name="content_limit">7</param>
                             <param name="list">List_Square_Row</param>
                         </include>
                         <include content="DialogViewTypes_Preview_Combined_Row" limit="8">
                             <param name="id">521</param>
                             <param name="index">1</param>
+                            <param name="content_limit">4</param>
                             <param name="list">List_Landscape_Row</param>
                         </include>
                         <include content="DialogViewTypes_Preview_Combined_Row" limit="8">
                             <param name="id">522</param>
                             <param name="index">2</param>
+                            <param name="content_limit">7</param>
                             <param name="list">List_Poster_Row</param>
                         </include>
                         <include content="DialogViewTypes_Preview_Combined_Row" limit="8">
                             <param name="id">523</param>
                             <param name="index">3</param>
+                            <param name="content_limit">5</param>
                             <param name="list">List_Circle_Row</param>
                         </include>
                         <include content="DialogViewTypes_Preview_Combined_Row" limit="8">
                             <param name="id">524</param>
                             <param name="index">4</param>
+                            <param name="content_limit">3</param>
                             <param name="list">List_Board_Row</param>
                         </include>
                         <include content="DialogViewTypes_Preview_Combined_Row" limit="8">
                             <param name="id">526</param>
                             <param name="index">6</param>
+                            <param name="content_limit">9</param>
                             <param name="list">List_Flyer_Row</param>
                         </include>
-                        <!-- Combined lists -->
+                        <!-- Combined lists: content_limit is for the expanded list -->
                         <include content="DialogViewTypes_Preview_Combined_Sidebar" limit="7">
                             <param name="id">527</param>
+                            <param name="content_limit">3</param>
                         </include>
                         <include content="DialogViewTypes_Preview_Combined_Expanded" limit="8">
                             <param name="id">528</param>
+                            <param name="content_limit">3</param>
                         </include>
-                        <!-- Combined walls: the limit is for the category tabs -->
+                        <!-- Combined walls: the limit is for the category tabs and content_limit for the wall -->
                         <include content="DialogViewTypes_Preview_Combined_Wall" limit="8">
                             <param name="id">550</param>
                             <param name="index">0</param>
+                            <param name="content_limit">14</param>
                             <param name="list">List_Square_Row</param>
                         </include>
                         <include content="DialogViewTypes_Preview_Combined_Wall" limit="8">
                             <param name="id">551</param>
                             <param name="index">1</param>
+                            <param name="content_limit">8</param>
                             <param name="list">List_Landscape_Row</param>
                         </include>
                         <include content="DialogViewTypes_Preview_Combined_Wall" limit="8">
                             <param name="id">552</param>
                             <param name="index">2</param>
+                            <param name="content_limit">14</param>
                             <param name="list">List_Poster_Row</param>
                         </include>
                         <include content="DialogViewTypes_Preview_Combined_Wall" limit="8">
                             <param name="id">553</param>
                             <param name="index">3</param>
+                            <param name="content_limit">10</param>
                             <param name="list">List_Circle_Row</param>
                         </include>
                         <include content="DialogViewTypes_Preview_Combined_Wall" limit="8">
                             <param name="id">554</param>
                             <param name="index">4</param>
+                            <param name="content_limit">6</param>
                             <param name="list">List_Board_Row</param>
                         </include>
                         <include content="DialogViewTypes_Preview_Combined_Wall" limit="8">
                             <param name="id">556</param>
                             <param name="index">6</param>
+                            <param name="content_limit">18</param>
                             <param name="list">List_Flyer_Row</param>
                         </include>
                     </include>
@@ -200,6 +215,14 @@
         <include content="DialogViewTypes_Button_Group">
             <param name="id">10</param>
             <description>Group Button</description>
+        </include>
+
+        <include content="Settings_Label">
+            <param name="id">14</param>
+            <param name="control">label</param>
+            <param name="dialog">true</param>
+            <description>Group Label</description>
+            <textoffsetx>20</textoffsetx>
         </include>
 
         <include content="DialogViewTypes_Button_View">

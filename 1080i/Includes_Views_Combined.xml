@@ -407,6 +407,7 @@
                             <param name="misc">284.44</param>
                             <param name="diffuse">diffuse/landscape_w284_h160.png</param>
                             <param name="include_content">$PARAM[include_expanded_content]</param>
+                            <param name="content_limit">$PARAM[content_limit]</param>
                             <onleft>52$PARAM[id]</onleft>
                             <onfocus>SetProperty(InfoPanel.FullSwitch,List,Home)</onfocus>
                         </include>
@@ -470,6 +471,7 @@
 
                 <include content="$PARAM[include_content]">
                     <param name="id">$PARAM[id]</param>
+                    <param name="limit">$PARAM[content_limit]</param>
                 </include>
 
                 <nested />
@@ -564,6 +566,7 @@
                     <param name="misc">248.88</param>
                     <param name="diffuse">diffuse/landscape_w237_h133.png</param>
                     <param name="include_content">$PARAM[include_content]</param>
+                    <param name="content_limit">$PARAM[content_limit]</param>
                     <onup>528</onup>
                     <ondown>SetFocus(538,0,absolute)</ondown>
                     <ondown>528</ondown>

@@ -260,7 +260,7 @@
         <value condition="String.IsEmpty(Window.Property(SkinVariables.ViewTypes.ViewID)) + String.IsEqual(Window.Property(SkinVariables.ViewTypes.Name),$LOCALIZE[31626])">$LOCALIZE[31918]</value>
     </variable>
 
-    <!-- Viewtype selector: the group of the focused viewtype, which names its type of view -->
+    <!-- Viewtype selector: the group of the focused viewtype, which names its type of view, or the focused group -->
     <variable name="Label_ViewTypes_Group">
         <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),500)">$LOCALIZE[31007]</value>
         <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),501)">$LOCALIZE[31007]</value>
@@ -296,12 +296,45 @@
         <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),553)">$LOCALIZE[31626]</value>
         <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),554)">$LOCALIZE[31626]</value>
         <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),556)">$LOCALIZE[31626]</value>
+        <value>$INFO[Window.Property(SkinVariables.ViewTypes.Name)]</value>
     </variable>
 
-    <!-- Viewtype selector subline: the group and viewtype names for a viewtype, or the group name -->
-    <variable name="Label_ViewTypes_Subline">
-        <value condition="$EXP[Exp_ViewTypes_IsViewFocused]">$VAR[Label_ViewTypes_Group] $INFO[Window.Property(SkinVariables.ViewTypes.Name)]</value>
-        <value>$INFO[Window.Property(SkinVariables.ViewTypes.Name)]</value>
+    <!-- Viewtype selector: the short name of the focused viewtype -->
+    <variable name="Label_ViewTypes_Name">
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),500)">$LOCALIZE[31320]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),501)">$LOCALIZE[31045]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),502)">$LOCALIZE[31931]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),503)">$LOCALIZE[31431]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),504)">$LOCALIZE[31424]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),505)">$LOCALIZE[31423]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),506)">$LOCALIZE[31161]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),509)">$LOCALIZE[31172]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),580)">$LOCALIZE[31932]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),581)">$LOCALIZE[31931]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),582)">$LOCALIZE[31118]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),583)">$LOCALIZE[31933]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),584)">$LOCALIZE[31934]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),585)">$LOCALIZE[31320]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),510)">$LOCALIZE[31320]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),511)">$LOCALIZE[31045]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),512)">$LOCALIZE[31931]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),513)">$LOCALIZE[31431]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),514)">$LOCALIZE[31424]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),516)">$LOCALIZE[31161]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),520)">$LOCALIZE[31320]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),521)">$LOCALIZE[31045]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),522)">$LOCALIZE[31931]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),523)">$LOCALIZE[31431]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),524)">$LOCALIZE[31424]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),526)">$LOCALIZE[31161]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),527)">$LOCALIZE[31935]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),528)">$LOCALIZE[31118]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),550)">$LOCALIZE[31320]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),551)">$LOCALIZE[31045]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),552)">$LOCALIZE[31931]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),553)">$LOCALIZE[31431]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),554)">$LOCALIZE[31424]</value>
+        <value condition="String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),556)">$LOCALIZE[31161]</value>
     </variable>
 
     <variable name="Label_Setting_Hub_Mode">

@@ -139,7 +139,7 @@
         </control>
     </include>
 
-    <!-- Combined row preview: the script fills the category tabs (52 + index) and the row (53 + index) shows placeholder items -->
+    <!-- Combined row preview: the script fills the category tabs (52 + index) and the row (53 + index) loads the focused category -->
     <include name="DialogViewTypes_Preview_Combined_Row">
         <control type="group">
             <nested />
@@ -152,12 +152,13 @@
                 <param name="id">53$PARAM[index]</param>
                 <param name="include">$PARAM[list]</param>
                 <param name="visible">true</param>
-                <param name="include_content">DialogViewTypes_Preview_Placeholders</param>
+                <param name="include_content">DialogViewTypes_Preview_Content</param>
+                <param name="content_limit">$PARAM[content_limit]</param>
             </include>
         </control>
     </include>
 
-    <!-- Combined wall preview: the script fills the category tabs (55 + index) and the wall (56 + index) shows placeholder items -->
+    <!-- Combined wall preview: the script fills the category tabs (55 + index) and the wall (56 + index) loads the focused category -->
     <include name="DialogViewTypes_Preview_Combined_Wall">
         <control type="group">
             <nested />
@@ -170,12 +171,13 @@
                 <param name="id">56$PARAM[index]</param>
                 <param name="include">$PARAM[list]</param>
                 <param name="visible">true</param>
-                <param name="include_content">DialogViewTypes_Preview_Placeholders</param>
+                <param name="include_content">DialogViewTypes_Preview_Content</param>
+                <param name="content_limit">$PARAM[content_limit]</param>
             </include>
         </control>
     </include>
 
-    <!-- Combined expanded preview: the script fills the category tabs (528) and the expanded list (538) shows placeholder items -->
+    <!-- Combined expanded preview: the script fills the category tabs (528) and the expanded list (538) loads the focused category -->
     <include name="DialogViewTypes_Preview_Combined_Expanded">
         <control type="group">
             <nested />
@@ -186,19 +188,21 @@
                 <param name="include_movement">View_Combined_List_Vert_Selector_Movement</param>
             </include>
             <include content="View_528_List_Combined">
-                <param name="include_content">DialogViewTypes_Preview_Placeholders</param>
+                <param name="include_content">DialogViewTypes_Preview_Content</param>
+                <param name="content_limit">$PARAM[content_limit]</param>
             </include>
         </control>
     </include>
 
-    <!-- Combined sidebar preview: the script fills the category list (527) and the expanded list (537) shows placeholder items -->
+    <!-- Combined sidebar preview: the script fills the category list (527) and the expanded list (537) loads the focused category -->
     <include name="DialogViewTypes_Preview_Combined_Sidebar">
         <control type="group">
             <nested />
             <include content="View_ComboList_Include">
                 <param name="id">7</param>
                 <param name="visible">true</param>
-                <param name="include_expanded_content">DialogViewTypes_Preview_Placeholders</param>
+                <param name="include_expanded_content">DialogViewTypes_Preview_Content</param>
+                <param name="content_limit">$PARAM[content_limit]</param>
             </include>
         </control>
     </include>
@@ -224,28 +228,9 @@
         </definition>
     </include>
 
-    <!-- Blank items for the combined content lists. Enough to fill the largest wall. -->
-    <include name="DialogViewTypes_Preview_Placeholders">
-        <content>
-            <include content="Object_Item"><label /></include>
-            <include content="Object_Item"><label /></include>
-            <include content="Object_Item"><label /></include>
-            <include content="Object_Item"><label /></include>
-            <include content="Object_Item"><label /></include>
-            <include content="Object_Item"><label /></include>
-            <include content="Object_Item"><label /></include>
-            <include content="Object_Item"><label /></include>
-            <include content="Object_Item"><label /></include>
-            <include content="Object_Item"><label /></include>
-            <include content="Object_Item"><label /></include>
-            <include content="Object_Item"><label /></include>
-            <include content="Object_Item"><label /></include>
-            <include content="Object_Item"><label /></include>
-            <include content="Object_Item"><label /></include>
-            <include content="Object_Item"><label /></include>
-            <include content="Object_Item"><label /></include>
-            <include content="Object_Item"><label /></include>
-        </content>
+    <!-- Content of the combined lists: the folder of the focused category in list 5000, limited to the items the view shows in full -->
+    <include name="DialogViewTypes_Preview_Content">
+        <content limit="$PARAM[limit]">$INFO[Container(5000).ListItem.FolderPath]</content>
     </include>
 
     <!-- Selector button. The script adds the label, selected and visible tags. -->

@@ -117,7 +117,9 @@
                         <onright>611</onright>
                         <include>Action_View_Movement_OnLeft</include>
                         <pagecontrol>66</pagecontrol>
-                        <include>$PARAM[include_content]</include>
+                        <include content="$PARAM[include_content]">
+                            <param name="limit">$PARAM[content_limit]</param>
+                        </include>
                         <include content="Action_View_Movement_OnBack">
                             <param name="id">$PARAM[id]</param>
                             <param name="onback">True</param>
