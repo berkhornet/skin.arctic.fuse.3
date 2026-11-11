@@ -33,7 +33,7 @@
     <include name="Object_Property"><property name="$PARAM[name]">$PARAM[property]</property></include>
     <include name="Object_ItemGap"><itemgap>$PARAM[itemgap]</itemgap></include>
     <include name="Object_Texture">
-        <texture colordiffuse="$PARAM[colordiffuse]" flipx="$PARAM[flipx]" flipy="$PARAM[flipy]" background="$PARAM[background]" diffuse="$PARAM[diffuse]" border="$PARAM[border]">$PARAM[texture]</texture>
+        <texture colordiffuse="$PARAM[colordiffuse]" flipx="$PARAM[flipx]" flipy="$PARAM[flipy]" background="$PARAM[background]" diffuse="$PARAM[diffuse]" border="$PARAM[border]" fallback="$PARAM[fallback]">$PARAM[texture]</texture>
     </include>
     <include name="Object_TextureFocus">
         <texturefocus colordiffuse="$PARAM[colordiffuse]" flipx="$PARAM[flipx]" flipy="$PARAM[flipy]" border="$PARAM[border]">$PARAM[texture]</texturefocus>
@@ -538,7 +538,7 @@
                     <param name="background">true</param>
                     <param name="fallback">DefaultStudios.png</param>
                 </include>
-                <texture background="true" diffuse="defaults/watercolor.png" fallback="$VAR[Path_Stylised_Prefix]DefaultStudios.png">$INFO[ListItem.Label,resource://resource.images.studios.white/,.png]</texture>
+                <texture background="true" diffuse="defaults/watercolor.png" fallback="DefaultStudios.png">$INFO[ListItem.Label,resource://resource.images.studios.white/,.png]</texture>
                 <aspectratio scalediffuse="false">keep</aspectratio>
                 <bordersize>$PARAM[other_bordersize]</bordersize>
                 <visible>[String.IsEqual($PARAM[listitem].DBType,studio) | String.IsEqual($PARAM[listitem].Property(DBType),studio)]</visible>
@@ -553,7 +553,7 @@
                     <param name="background">true</param>
                     <param name="fallback">DefaultCountry.png</param>
                 </include>
-                <texture background="true" diffuse="defaults/watercolor.png" fallback="$VAR[Path_Stylised_Prefix]DefaultCountry.png">$INFO[ListItem.Label,resource://resource.images.moviecountryicons.maps/,.png]</texture>
+                <texture background="true" diffuse="defaults/watercolor.png" fallback="DefaultCountry.png">$INFO[ListItem.Label,resource://resource.images.moviecountryicons.maps/,.png]</texture>
                 <aspectratio scalediffuse="false">keep</aspectratio>
                 <bordersize>$PARAM[other_bordersize]</bordersize>
                 <visible>[String.IsEqual($PARAM[listitem].DBType,country) | String.IsEqual($PARAM[listitem].Property(DBType),country)]</visible>

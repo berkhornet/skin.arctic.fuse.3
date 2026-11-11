@@ -32,9 +32,7 @@
                 <include content="Part_Dialog_Split_Right">
                     <param name="title">$INFO[Window.Property(SkinVariables.ViewTypes.Header)]</param>
                     <param name="subline">$VAR[Label_ViewTypes_Group] $VAR[Label_ViewTypes_Name]</param>
-                    <param name="help">$VAR[Label_ViewTypes_Description]</param>
-                    <param name="help_label2">$VAR[Label_ViewTypes_Usage]</param>
-                    <param name="help_subline">true</param>
+                    <param name="help">$VAR[Label_ViewTypes_Description] $VAR[Label_ViewTypes_Usage]</param>
                     <param name="help_topline">false</param>
                     <param name="help_height">60</param>
                     <param name="help_centerbottom">50</param>

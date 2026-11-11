@@ -59,7 +59,7 @@
     <!-- Simplified background: the blur and foreground artwork layers of Background_Main_Standard with its overlays, at the default
          flixart size. Only the background reaches the corners, so each layer takes the rounded diffuse. The blur quadrants and the
          foreground artwork use the _preview masks in extras/diffuse/flixart/1280x720, which add the rounded corner to their own masks
-         and hide the part of the quadrants image that falls outside the screen. Views without the detailed info panel darken it, as their real views do. -->
+         and hide the part of the quadrants image that falls outside the screen. Views without the detailed info panel darken it and hide the foreground artwork, as their real views do. -->
     <include name="DialogViewTypes_Preview_Background">
         <control type="image">
             <texture colordiffuse="$VAR[ColorBackground]" diffuse="diffuse/landscape_w1040_h585.png">common/white.png</texture>
@@ -117,6 +117,7 @@
             <right>0</right>
             <width>1280</width>
             <height>720</height>
+            <visible>$EXP[Exp_ViewTypes_Preview_IsDetailed]</visible>
             <aspectratio scalediffuse="false">scale</aspectratio>
             <include content="Texture_FlixArt_Foreground_Sized">
                 <param name="variant">$PARAM[variant]</param>

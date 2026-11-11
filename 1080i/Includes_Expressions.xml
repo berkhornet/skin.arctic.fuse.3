@@ -171,9 +171,12 @@
     <expression name="Exp_View_IsMedia">[Window.IsVisible(videos) | Window.IsVisible(music) | Window.IsVisible(programs) | Window.IsVisible(pictures) | Window.IsVisible(games) | $EXP[Exp_PVRWindows]]</expression>
 
     <!-- Scrollbar -->
-    <expression name="Exp_BackgroundArtwork_IsHidden">[[![$EXP[Exp_InfoDialogs] | Window.IsVisible(1190)] + [Window.IsVisible(favouritesbrowser) | Window.IsVisible(weather) | !String.IsEmpty(Window.Property(Background.HideArtwork))]] | [[$EXP[Exp_InfoDialogs] | Window.IsVisible(1190)]]]</expression>
+    <!-- Title-only views (walls, overlay lists, wall hubs) darken the background and hide the corner flixart -->
+    <expression name="Exp_BackgroundArtwork_ShowOverlay">!String.IsEmpty(Window(Home).Property(Background.ShowOverlay))</expression>
 
-    <expression name="Exp_BackgroundArtwork_IsOverlay">[$EXP[Exp_BackgroundArtwork_IsHidden] | [!$EXP[Exp_InfoDialogs] + !String.IsEmpty(Window(Home).Property(Background.ShowOverlay))] | $EXP[Exp_InfoDialogs] | $EXP[Exp_PlainBackgroundWindows]]</expression>
+    <expression name="Exp_BackgroundArtwork_IsHidden">[[![$EXP[Exp_InfoDialogs] | Window.IsVisible(1190)] + [Window.IsVisible(favouritesbrowser) | Window.IsVisible(weather) | !String.IsEmpty(Window.Property(Background.HideArtwork)) | $EXP[Exp_BackgroundArtwork_ShowOverlay]]] | [[$EXP[Exp_InfoDialogs] | Window.IsVisible(1190)]]]</expression>
+
+    <expression name="Exp_BackgroundArtwork_IsOverlay">[$EXP[Exp_BackgroundArtwork_IsHidden] | $EXP[Exp_InfoDialogs] | $EXP[Exp_PlainBackgroundWindows]]</expression>
 
     <expression name="Exp_BackgroundArtwork_IsSimple">[$EXP[Exp_PlainBackgroundWindows] | [Window.IsMedia + [[Window.IsVisible(DialogBusy.xml) + Integer.IsEqual(Container.NumItems,0)]]]]</expression>
 
