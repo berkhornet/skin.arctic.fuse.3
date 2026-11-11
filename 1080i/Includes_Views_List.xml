@@ -238,8 +238,8 @@
                         <param name="listitem">ListItem</param>
                         <param name="aspectratio">keep</param>
                         <param name="selected">false</param>
-                        <param name="genre_bordersize">150</param>
-                        <param name="other_bordersize">150</param>
+                        <param name="genre_bordersize">180</param>
+                        <param name="other_bordersize">140</param>
                     </include>
                 </control>
                 <control type="image">
