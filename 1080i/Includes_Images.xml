@@ -75,6 +75,7 @@
     </variable>
 
     <variable name="Image_Blur_Fallback">
+        <value condition="!Skin.HasSetting(Info.EnableStylisedBackgrounds)">$VAR[Image_SimpleBackground]</value>
         <value condition="[$EXP[Exp_IsGenre] | Container.Content(genres)] + !Window.IsVisible(MyMusicNav.xml)">$VAR[Image_GenreFanart]</value>
         <value condition="String.IsEmpty(ListItem.DBType) + String.IsEqual(ListItem.Label,$LOCALIZE[1039])">special://skin/extras/backgrounds/content/fanart-watercolour-composite-pictureaddons.jpg</value>
         <value condition="String.IsEmpty(ListItem.DBType) + [String.IsEqual(ListItem.Label,$LOCALIZE[20382]) | String.IsEqual(ListItem.Label,$LOCALIZE[20386]) | String.IsEqual(ListItem.Label,$LOCALIZE[20387]) | String.IsEqual(ListItem.Label,$LOCALIZE[20390])]">special://skin/extras/backgrounds/content/fanart-watercolour-composite-recentlyadded-star.jpg</value>
@@ -132,12 +133,12 @@
         <value condition="Container.Content(videoextras)">special://skin/extras/backgrounds/content/fanart-watercolour-composite-videoextras.jpg</value>
         <value condition="Container.Content(livetv)">special://skin/extras/backgrounds/content/fanart-watercolour-composite-livetv.jpg</value>
 
-        <value condition="Skin.HasSetting(Info.EnableStylisedBackgrounds) + Window.IsVisible(MyVideoNav.xml)">special://skin/extras/backgrounds/content/fanart-watercolour-composite-videoassets.jpg</value>
-        <value condition="Skin.HasSetting(Info.EnableStylisedBackgrounds) + Window.IsVisible(MyMusicNav.xml)">special://skin/extras/backgrounds/content/fanart-watercolour-composite-artists.jpg</value>
-        <value condition="Skin.HasSetting(Info.EnableStylisedBackgrounds) + Window.IsVisible(MyPics.xml)">special://skin/extras/backgrounds/content/fanart-watercolour-composite-images.jpg</value>
-        <value condition="Skin.HasSetting(Info.EnableStylisedBackgrounds) + Window.IsVisible(MyPrograms.xml)">special://skin/extras/backgrounds/content/fanart-watercolour-composite-plugins.jpg</value>
-        <value condition="Skin.HasSetting(Info.EnableStylisedBackgrounds) + Window.IsVisible(MyGames.xml)">special://skin/extras/backgrounds/content/fanart-watercolour-composite-games.jpg</value>
-        <value condition="Skin.HasSetting(Info.EnableStylisedBackgrounds) + Window.IsVisible(MyPlaylist.xml)">special://skin/extras/backgrounds/content/fanart-watercolour-composite-playlists.jpg</value>
+        <value condition="Window.IsVisible(MyVideoNav.xml)">special://skin/extras/backgrounds/content/fanart-watercolour-composite-videoassets.jpg</value>
+        <value condition="Window.IsVisible(MyMusicNav.xml)">special://skin/extras/backgrounds/content/fanart-watercolour-composite-artists.jpg</value>
+        <value condition="Window.IsVisible(MyPics.xml)">special://skin/extras/backgrounds/content/fanart-watercolour-composite-images.jpg</value>
+        <value condition="Window.IsVisible(MyPrograms.xml)">special://skin/extras/backgrounds/content/fanart-watercolour-composite-plugins.jpg</value>
+        <value condition="Window.IsVisible(MyGames.xml)">special://skin/extras/backgrounds/content/fanart-watercolour-composite-games.jpg</value>
+        <value condition="Window.IsVisible(MyPlaylist.xml)">special://skin/extras/backgrounds/content/fanart-watercolour-composite-playlists.jpg</value>
         <value>$VAR[Image_SimpleBackground]</value>
     </variable>
 
