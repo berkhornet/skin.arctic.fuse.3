@@ -288,4 +288,8 @@
     <expression name="Exp_Shortcuts_WindowEditedSinceOpen">!String.IsEqual(Window(Home).Property(SkinVariables.ShortcutsNode.Reload),Window(Home).Property(Shortcuts.WindowReloadOnOpen))</expression>
     <!-- SkinVariables viewtype selector: a viewtype has focus. The ViewID is empty while a group has focus. -->
     <expression name="Exp_ViewTypes_IsViewFocused">!String.IsEmpty(Window.Property(SkinVariables.ViewTypes.ViewID))</expression>
+    <!-- Viewtype preview: rows, combined rows and flixart lists show the detailed info panel; the others show the title over a darkened background -->
+    <expression name="Exp_ViewTypes_Preview_IsDetailed">String.StartsWith(Window.Property(SkinVariables.ViewTypes.ViewID),50) | String.StartsWith(Window.Property(SkinVariables.ViewTypes.ViewID),583) | String.StartsWith(Window.Property(SkinVariables.ViewTypes.ViewID),584) | [String.StartsWith(Window.Property(SkinVariables.ViewTypes.ViewID),52) + !String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),527) + !String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),528)]</expression>
+    <!-- Viewtype preview: combined views with category tabs in place of the section line -->
+    <expression name="Exp_ViewTypes_Preview_IsTabs">[String.StartsWith(Window.Property(SkinVariables.ViewTypes.ViewID),52) + !String.IsEqual(Window.Property(SkinVariables.ViewTypes.ViewID),527)] | String.StartsWith(Window.Property(SkinVariables.ViewTypes.ViewID),55)</expression>
 </includes>
