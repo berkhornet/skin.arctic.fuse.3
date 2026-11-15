@@ -70,7 +70,9 @@
     </variable>
 
     <variable name="Image_Blur_Fallback">
-
+        <!-- MISC353: START Custom Image_Foreground for Home Page PVR widgets -->
+        <value condition="Window.IsVisible(10000)">$VAR[Custom_Image_Fallback]</value>
+        <!-- MISC353: END Custom Image_Foreground for Home Page PVR widgets --> 
         <value condition="Skin.String(Background.Style,simple)">$VAR[Image_SimpleBackground]</value>
 
         <value condition="$EXP[Exp_IsGenre] | Container.Content(genres)">$VAR[Image_GenreBackground]</value>
@@ -340,7 +342,8 @@
     <variable name="Image_Player_Status">
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Returning Series)">flags/$VAR[Color_Directory]/status/calendar-day.png</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Post Production)">flags/$VAR[Color_Directory]/status/calendar-day.png</value>
-        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Canceled)">flags/$VAR[Color_Directory]/status/calendar-xmark.png</value>
+        <!-- MISC341: value changed from $VAR[Info_RatingsLine_Object_Style]/status/calendar-xmark.png -->
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Canceled)">flags/$VAR[Color_Directory]/status/calendar-check.png</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Ended)">flags/$VAR[Color_Directory]/status/calendar-check.png</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),Released)">flags/$VAR[Color_Directory]/status/calendar-check.png</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Status),In Production)">flags/$VAR[Color_Directory]/status/calendar-day.png</value>
@@ -351,7 +354,8 @@
     <variable name="Image_ListItem_Status">
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Returning Series) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Returning Series)">flags/$VAR[Color_Directory]/status/calendar-day.png</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Post Production) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Post Production)">flags/$VAR[Color_Directory]/status/calendar-day.png</value>
-        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Canceled) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Canceled)">flags/$VAR[Color_Directory]/status/calendar-xmark.png</value>
+        <!-- MISC341: value changed from $VAR[Info_RatingsLine_Object_Style]/status/calendar-xmark.png -->
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Canceled) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Canceled)">flags/$VAR[Color_Directory]/status/calendar-check.png</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Ended) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Ended)">flags/$VAR[Color_Directory]/status/calendar-check.png</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Released) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Released)">flags/$VAR[Color_Directory]/status/calendar-check.png</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),In Production) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),In Production)">flags/$VAR[Color_Directory]/status/calendar-day.png</value>
@@ -844,7 +848,8 @@
     <variable name="Image_PVRGuide_Indicator">
         <value condition="ListItem.IsRecording">indicator/record.png</value>
         <value condition="ListItem.HasTimer">indicator/timer.png</value>
-        <value condition="ListItem.IsPlayable + !Skin.HasSetting(Indicator.DisablePVRGuideCatchUp)">indicator/library.png</value>
+        <!-- PVR302: Custom Catch Up Flag (was indicator/library.png) -->
+        <value condition="ListItem.IsPlayable + !Skin.HasSetting(Indicator.DisablePVRGuideCatchUp)">indicator/hasarchive.png</value>
     </variable>
 
     <variable name="Image_OSD_UpNext_Playlist_Landscape">
