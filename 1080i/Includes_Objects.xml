@@ -1143,12 +1143,16 @@
 
     <include name="Object_ContentBanner">
         <param name="listitem">ListItem</param>
+        <!-- MISC352: "selected" parameter added so banner only displays on focussed item for Kodi Library items -->
+        <param name="selected"></param>
         <definition>
             <include content="Object_MovieVersionBanner" condition="Skin.HasSetting(Indicator.MovieVersionBanner)">
                 <param name="listitem">$PARAM[listitem]</param>
             </include>
             <include content="Object_EpisodeTypeBanner" condition="Skin.HasSetting(Indicator.EpisodeTypeBanner)">
                 <param name="listitem">$PARAM[listitem]</param>
+                <!-- MISC352: "selected" parameter passed through so banner only displays on focussed item for Kodi Library items -->
+                <param name="selected">$PARAM[selected]</param>
             </include>
         </definition>
     </include>
@@ -1214,7 +1218,6 @@
             </control>
         </definition>
     </include>
-    
     <include name="Object_MovieVersionBanner">
         <param name="listitem">ListItem</param>
         <definition>
@@ -1421,7 +1424,7 @@
                     <control type="image">
                         <bordersize>20</bordersize>
                         <!-- MISC304: Fix checkmark as "yellow" to differentiate from Online Video indicator -->
-                        <texture colordiffuse="yellow">indicator/checkmark.png</texture> 
+                        <texture colordiffuse="yellow">indicator/checkmark.png</texture>
                     </control>
                     <include content="Object_Indicator_Visible">
                         <param name="include_type">Watched</param>
