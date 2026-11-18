@@ -2533,9 +2533,11 @@
                         <param name="icon_diffuse">$PARAM[diffuse]</param>
                     </include>
 
-                    <include content="Object_ProgressLine">
+                    <!-- MISC328: No progress line on Home Page widgets - "  + condition !$EXP[Home_Page]" added -->
+                    <!-- include content="Object_ProgressLine" -->                  
+                    <include content="Object_ProgressLine" condition="!$EXP[Home_Page]">
                         <param name="progress">ListItem.$PARAM[progress]</param>
-                    </include>
+                    </include>                    
                     <include content="Object_Indicator" condition="!$PARAM[selected] + ![$PARAM[detailed]]">
                         <param name="affix">$PARAM[affix]</param>
                     </include>
@@ -2545,7 +2547,9 @@
                         <param name="focusbounce">true</param>
                     </include>
                 </control>
-                <include content="Layout_Labels" condition="![$PARAM[variation]]">
+                <!-- MISC328: No labels on Icon/Square Home Page widgets - "  + condition !$EXP[Home_Page]" added -->
+                <!-- include content="Layout_Labels" condition="![$PARAM[variation]]" -->               
+                <include content="Layout_Labels" condition="![$PARAM[variation]] + !$EXP[Home_Page]">                
                     <param name="top">10</param>
                     <param name="item_h">$PARAM[item_h]</param>
                     <param name="affix">$PARAM[affix]</param>
@@ -2759,7 +2763,9 @@
                     <visible>[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)] + String.IsEmpty(ListItem.Art(landscape)) + String.IsEmpty(ListItem.Art(tvshow.landscape))</visible>
                 </include>
 
-                <include content="Object_ProgressLine">
+                <!-- MISC328: No progress line on Home Page widgets - "  + condition !$EXP[Home_Page]" added -->
+                <!-- include content="Object_ProgressLine" -->                
+                <include content="Object_ProgressLine" condition="!$EXP[Home_Page]">
                     <param name="progress">ListItem.$PARAM[progress]</param>
                 </include>
 
@@ -2775,7 +2781,10 @@
                 <include content="Object_TraktOverlays" condition="$PARAM[indicator] + [Skin.HasSetting(Indicator.TraktWatchlist) | Skin.HasSetting(Indicator.TraktFavourites)]">
                 </include>
 
-                <include content="Layout_Labels" condition="![$PARAM[detailed]]">
+                <!-- MISC328: No labels on Landscape Home Page widgets -->
+                <!-- MISC328: " + !$EXP[Home_Page]"  added to condition -->
+                <!-- include content="Layout_Labels" condition="![$PARAM[detailed -->               
+                <include content="Layout_Labels" condition="[![$PARAM[detailed]] + !$EXP[Home_Page]]">
                     <param name="top">10</param>
                     <param name="item_h">$PARAM[item_h]</param>
                     <param name="affix">$PARAM[affix]</param>
