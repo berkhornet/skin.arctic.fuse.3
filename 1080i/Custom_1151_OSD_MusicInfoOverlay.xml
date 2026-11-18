@@ -6,7 +6,16 @@
     <animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
     <animation effect="fade" end="0" start="100" time="300">WindowClose</animation>
     <controls>
-
+        
+        <!-- MISC367: START include Time and Weather on Music Info Overlay -->
+        <control type="group">
+            <include content="Custom_Furniture_Header">
+                <param name="include_left">false</param>
+                <param name="include_right">true</param>
+            </include>
+        </control>
+        <!-- MISC367: END include Time and Weather on Music Info Overlay -->
+        
         <control type="group">
             <include content="Animation_ConditionalFade">
                 <param name="condition">![Window.IsActive(VideoFullScreen.xml) | Window.IsActive(MusicVisualisation.xml)]</param>
