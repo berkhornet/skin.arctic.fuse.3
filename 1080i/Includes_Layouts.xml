@@ -2727,12 +2727,16 @@
                 <width>$PARAM[item_w]</width>
                 <height>$PARAM[item_h]</height>
 
-                <include content="Object_ItemBack">
+                <!-- MISC369: Custom highlights for PVR widgets: condition added -->
+                <!-- include content="Object_ItemBack" -->
+                <include content="Object_ItemBack" condition="!$EXP[PVR_Hub_Visible]"> 
                     <param name="selected">$PARAM[selected]</param>
                     <param name="shadow_colordiffuse">$PARAM[shadow_colordiffuse]</param>
                 </include>
 
-                <include content="Object_Control" condition="$PARAM[selected]">
+                <!-- MISC369: Custom highlights for PVR widgets: + !$EXP[PVR_Hub_Visible] added to condition -->
+                <!-- include content="Object_Control" condition="$PARAM[selected]" -->
+                <include content="Object_Control" condition="$PARAM[selected] + !$EXP[PVR_Hub_Visible]">
                     <param name="control">image</param>
                     <include content="Texture_Box_Highlight_V">
                         <param name="variant">-backing</param>
