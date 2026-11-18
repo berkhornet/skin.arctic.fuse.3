@@ -86,7 +86,9 @@
     </variable>
     <variable name="ColorBanner_video_version">
         <value condition="!String.IsEmpty(Skin.String(video_version_color.name))">$INFO[Skin.String(video_version_color.name)]</value>
-        <value>ff181818</value>
+        <!-- MISC357: Use Highlight colour for Video Versions -->
+        <!-- value>ff181818</value -->       
+        <value>$VAR[ColorHighlight]</value>        
     </variable>
 
     <!-- EPG Progress Color -->
