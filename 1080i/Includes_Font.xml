@@ -27,7 +27,16 @@
                 <size>24</size>
                 <style>uppercase</style>
             </font>
-
+            
+            <!-- MISC363: START Custom Home Page menu font -->
+            <font>
+                <name>font_homemenu</name>
+                <filename>LeagueSpartan-ExtraBold.ttf</filename>
+                <size>34</size>
+                <style>uppercase</style>
+            </font>
+            
+            <!-- MISC363: END Custom Home Page menu font -->
             <!-- Keyboard Symbol Font -->
             <font>
                 <name>font_midi_iconic</name>
