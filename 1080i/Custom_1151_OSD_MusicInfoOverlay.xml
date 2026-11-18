@@ -46,7 +46,8 @@
                     </control>
                     <control type="group">
                         <left>340</left>
-                        <width>1080</width>
+                        <!-- MISC368: width changed from 1080 (consistent with MISC364) -->
+                        <width>1400</width>
                         <visible>![Window.IsVisible(script-cu-lrclyrics-main.xml) | [!String.IsEmpty(Window(Home).Property(OSDArtistDetails)) + !Window.IsVisible(1142)]]</visible>
                         <animation type="Visible" reversible="false">
                             <effect type="slide" end="0" start="-340" time="400" tween="cubic" easing="out" reversible="false" />
