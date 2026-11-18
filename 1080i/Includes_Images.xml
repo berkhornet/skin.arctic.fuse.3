@@ -77,7 +77,10 @@
     </variable>
 
     <variable name="Image_Blur_Fallback">
-
+        <!-- MISC353: START Custom Image_Foreground for Home Page PVR widgets -->
+        <value condition="Window.IsVisible(10000)">$VAR[Custom_Image_Fallback]</value>
+        <!-- MISC353: END Custom Image_Foreground for Home Page PVR widgets --> 
+        
         <value condition="Skin.String(Background.Style,simple)">$VAR[Image_SimpleBackground]</value>
 
         <value condition="$EXP[Exp_IsGenre] | Container.Content(genres)">$VAR[Image_GenreBackground]</value>
