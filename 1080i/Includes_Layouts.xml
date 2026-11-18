@@ -1274,6 +1274,8 @@
                             <param name="aspectratio">scale</param>
                         </include>
                         <include content="Object_ContentBanner" condition="$PARAM[indicator]">
+                            <!-- MISC352: "selected" parameter added so banner only displays on focussed item for Kodi Library items -->
+                            <param name="selected">$PARAM[selected]</param>
                         </include>
 
                         <include content="Object_TraktOverlays" condition="$PARAM[indicator] + [Skin.HasSetting(Indicator.TraktWatchlist) | Skin.HasSetting(Indicator.TraktFavourites)]">
@@ -2766,6 +2768,8 @@
                 </include>
 
                 <include content="Object_ContentBanner" condition="$PARAM[indicator]">
+                    <!-- MISC352: "selected" parameter added so banner only displays on focussed item for Kodi Library items -->
+                    <param name="selected">$PARAM[selected]</param>                
                 </include>
 
                 <include content="Object_TraktOverlays" condition="$PARAM[indicator] + [Skin.HasSetting(Indicator.TraktWatchlist) | Skin.HasSetting(Indicator.TraktFavourites)]">
