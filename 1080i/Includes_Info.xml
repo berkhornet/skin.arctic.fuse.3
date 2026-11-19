@@ -789,8 +789,9 @@
             </include>
 
             <!-- MISC370: START add PVR Provider Name -->
-            <include content="Info_Line_Label">
+            <include content="$PARAM[item]">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="font">$PARAM[font]</param>               
                 <param name="label">[UPPERCASE]$INFO[$PARAM[container]$PARAM[listitem].MediaProviders][/UPPERCASE]</param>
                 <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[listitem].ChannelName)</param>
             </include>
