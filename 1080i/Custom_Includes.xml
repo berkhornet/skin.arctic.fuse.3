@@ -27,12 +27,12 @@
     <expression name="Live_Football_Anova_EFLC_Club">[Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,521) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,544)]</expression>
     <expression name="Live_Football_Anova_EFL1_Club">[Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,545) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,568)]</expression>
     <expression name="Live_Football_Anova_EFL2_Club">[Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,569) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,592)]</expression>
-    <expression name="Live_Football_Anova_EPL_Fixture">[Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,593) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,602)]</expression>
-    <expression name="Live_Football_Anova_EFL_Fixture">[Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,603) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,638)]</expression>    
+    <expression name="Live_Football_Anova_EPL_Fixture">[Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,593) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,699) + String.StartsWith(ListItem.ChannelName,"EPL"]</expression>
+    <expression name="Live_Football_Anova_EFL_Fixture">[Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,593) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,699) + String.StartsWith(ListItem.ChannelName,"EFL"]</expression>    
     <expression name="Live_Football_Anova_EFLC_Fixture">$EXP[Live_Football_Anova_EFL_Fixture] + String.Contains(ListItem.ChannelName,"(CH)")</expression>
     <expression name="Live_Football_Anova_EFL1_Fixture">$EXP[Live_Football_Anova_EFL_Fixture] + String.Contains(ListItem.ChannelName,"(L1)")</expression>
     <expression name="Live_Football_Anova_EFL2_Fixture">$EXP[Live_Football_Anova_EFL_Fixture] + String.Contains(ListItem.ChannelName,"(L2)")</expression>
-    <expression name="Live_Football_Anova_EFL_Fixture">$EXP[Live_Football_Anova_EFL_Fixture] + String.Contains(ListItem.ChannelName,"(EFL)")</expression>
+    <!-- expression name="Live_Football_Anova_EFL_Fixture">$EXP[Live_Football_Anova_EFL_Fixture] + String.Contains(ListItem.ChannelName,"(EFL)")</expression -->
     <expression name="Live_Football_Anova_SPL_Club">[Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,639) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,650)]</expression>
     <expression name="Live_Football_Anova_SPL_Fixture">[Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,651) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,656)]</expression>
     <expression name="Live_Football_Anova_SPFLC_Fixture">[Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,657) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,661)]</expression>
@@ -220,6 +220,10 @@
     <!-- MISC353: START Custom Image_Foreground for Home Page PVR widgets (UNUSED) -->
     <variable name="Custom_Image_Fallback">
         <!-- Football: Club Streams -->
+        
+        <value condition="[Integer.IsGreaterOrEqual(ListItem.ChannelNumberLabel,501) + Integer.IsLessOrEqual(ListItem.ChannelNumberLabel,799)]">special://userdata/customisations\PVR\EPG Artwork\Live Football.jpg</value>
+       
+        
         <value condition="$EXP[Live_Football_Club_Channel]">$INFO[ListItem.Icon]</value>
         <!-- Football: Fixture Streams -->
         <value condition="$EXP[Live_Football_Anova_EPL_Fixture]">special://userdata/customisations\PVR\EPG Artwork\EPL.jpg</value>
