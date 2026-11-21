@@ -245,7 +245,7 @@
             <include content="Animation_Fade_Out">
                 <param name="type">Hidden</param>
             </include>
-            <texture colordiffuse="shadow_back">common/white.png</texture>
+            <texture colordiffuse="shadow_hard">common/white.png</texture>
         </control>
         <control type="group">
             <visible>!String.IsEmpty(Window(Home).Property(HomeSwitcher.IsVisible))</visible>
@@ -300,7 +300,7 @@
             <include content="Animation_Fade_Out">
                 <param name="type">Hidden</param>
             </include>
-            <texture colordiffuse="shadow_back">common/white.png</texture>
+            <texture colordiffuse="shadow_hard">common/white.png</texture>
         </control>
         <control type="group">
             <animation type="Conditional" reversible="false" condition="!String.IsEmpty(Window(Home).Property(HomeSwitcher.IsVisible))">
