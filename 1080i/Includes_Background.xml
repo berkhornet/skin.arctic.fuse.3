@@ -74,15 +74,15 @@
     <include name="Background_Artwork">
         <param name="fadetime">background_fadetime</param>
         <definition>
-            <include content="Background_FlixArt_FullScreen" condition="Skin.String(Skin.FlixArt.Size,FullScreen)">
-                <param name="fadetime">$PARAM[fadetime]</param>
-            </include>
-            <include content="Background_FlixArt" condition="!Skin.String(Skin.FlixArt.Size,FullScreen)">
-                <param name="fadetime">$PARAM[fadetime]</param>
-            </include>
-            <!-- PVR306: START No artwork on EPG -->
-            <visible>!Window.IsVisible(10702)</visible> 
-            <!-- PVR306: END No artwork on EPG -->              
+            <control type="group">
+                <visible>!$EXP[Exp_FlixArt_IsOff]</visible>
+                <include content="Background_FlixArt_FullScreen" condition="Skin.String(Skin.FlixArt.Size,FullScreen)">
+                    <param name="fadetime">$PARAM[fadetime]</param>
+                </include>
+                <include content="Background_FlixArt" condition="!Skin.String(Skin.FlixArt.Size,FullScreen)">
+                    <param name="fadetime">$PARAM[fadetime]</param>
+                </include>
+            </control>
         </definition>
     </include>
 
@@ -216,14 +216,6 @@
             <animation effect="fade" start="100" end="0" time="background_fadetime">Hidden</animation>
             <include>Background_Blur</include>
             <include>Background_Artwork</include>
-            <!-- MISC364: START ensure consistent overlays on Home Page (copied from Home_Control) -->
-            <control type="image">
-                <include>Home_Fade_Animation</include>
-                <texture colordiffuse="main_bg_70">special://skin/extras/backgrounds/overlay/combined_topmenu.png</texture>
-                <bottom>0</bottom>
-                <visible>$EXP[Home_Page] + !String.IsEqual(System.CurrentControlID,300)</visible>
-            </control>
-            <!-- MISC364: END ensure consistent overlays on Home Page (copied from Home_Control) -->             
         </control>
     </include>
 
