@@ -1599,42 +1599,42 @@
                     <param name="colordiffuse">$VAR[ColorBanner_series_premiere]</param>
                     <!-- MISC352 add condition for Kodi Library items -->
                     <!-- param name="visible">String.IsEqual(ListItem.Property(episode_type),series_premiere)</param -->
-                    <param name="visible">String.IsEqual(ListItem.Property(episode_type),series_premiere) | [String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Episode_type),series_premiere)]</param>                                                           
+                    <param name="visible">String.IsEqual(ListItem.Property(episode_type),series_premiere) | [String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Episode_type),series_premiere) + $PARAM[selected]]</param>                                                           
                     <param name="label">$LOCALIZE[31210]</param>
                 </include>
                 <include content="Object_BannerOverlay">
                     <param name="colordiffuse">$VAR[ColorBanner_season_premiere]</param>
                     <!-- MISC352 add condition for Kodi Library items -->
                     <!-- param name="visible">String.IsEqual(ListItem.Property(episode_type),season_premiere)</param -->
-                    <param name="visible">String.IsEqual(ListItem.Property(episode_type),season_premiere) | [String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Episode_type),season_premiere)]</param>                    
+                    <param name="visible">String.IsEqual(ListItem.Property(episode_type),season_premiere) | [String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Episode_type),season_premiere) + $PARAM[selected]]</param>                    
                     <param name="label">$LOCALIZE[31211]</param>
                 </include>
                 <include content="Object_BannerOverlay">
                     <param name="colordiffuse">$VAR[ColorBanner_mid_season_premiere]</param>
                     <!-- MISC352 add condition for Kodi Library items -->                    
                     <!-- param name="visible">String.IsEqual(ListItem.Property(episode_type),mid_season_premiere)</param -->
-                    <param name="visible">String.IsEqual(ListItem.Property(episode_type),mid_season_premiere) | [String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Episode_type),mid_season_premiere)]</param>                    
+                    <param name="visible">String.IsEqual(ListItem.Property(episode_type),mid_season_premiere) | [String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Episode_type),mid_season_premiere) + $PARAM[selected]]</param>                    
                     <param name="label">$LOCALIZE[31212]</param>
                 </include>
                 <include content="Object_BannerOverlay">
                     <param name="colordiffuse">$VAR[ColorBanner_series_finale]</param>
                     <!-- MISC352 add condition for Kodi Library items -->                    
                     <!-- param name="visible">String.IsEqual(ListItem.Property(episode_type),series_finale)</param -->
-                    <param name="visible">String.IsEqual(ListItem.Property(episode_type),series_finale) | [String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Episode_type),series_finale)]</param>                                        
+                    <param name="visible">String.IsEqual(ListItem.Property(episode_type),series_finale) | [String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Episode_type),series_finale) + $PARAM[selected]]</param>                                        
                     <param name="label">$LOCALIZE[31214]</param>
                 </include>
                 <include content="Object_BannerOverlay">
                     <param name="colordiffuse">$VAR[ColorBanner_season_finale]</param>
                     <!-- MISC352 add condition for Kodi Library items -->                    
                     <!-- param name="visible">String.IsEqual(ListItem.Property(episode_type),season_finale)</param -->
-                    <param name="visible">String.IsEqual(ListItem.Property(episode_type),season_finale) | [String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Episode_type),season_finale)]</param>                    
+                    <param name="visible">String.IsEqual(ListItem.Property(episode_type),season_finale) | [String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Episode_type),season_finale) + $PARAM[selected]]</param>                    
                     <param name="label">$LOCALIZE[31215]</param>
                 </include>
                 <include content="Object_BannerOverlay">
                     <param name="colordiffuse">$VAR[ColorBanner_mid_season_finale]</param>
                     <!-- MISC352 add condition for Kodi Library items -->                   
                     <!-- param name="visible">String.IsEqual(ListItem.Property(episode_type),mid_season_finale)</param -->
-                    <param name="visible">String.IsEqual(ListItem.Property(episode_type),mid_season_finale) | [String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Episode_type),mid_season_finale)]</param>                   
+                    <param name="visible">String.IsEqual(ListItem.Property(episode_type),mid_season_finale) | [String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Episode_type),mid_season_finale) + $PARAM[selected]]</param>                   
                     <param name="label">$LOCALIZE[31218]</param>
                 </include>
             </control>
