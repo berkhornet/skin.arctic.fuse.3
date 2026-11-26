@@ -1,0 +1,10 @@
+{
+    "list": [
+        ["movie", {"dbtype": "movie", "match": "[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],movie)] | [$PARAM[player] + VideoPlayer.Content(movies)]]"}],
+        ["tvshow", {"dbtype": "tvshow", "match": "[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],tvshow)]]"}],
+        ["season", {"dbtype": "season", "match": "[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],season)]]"}],
+        ["set", {"dbtype": "set", "match": "[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],set)]]"}],
+        ["episode", {"dbtype": "episode", "match": "[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],episode)] | [$PARAM[player] + VideoPlayer.Content(episodes)]]"}],
+        ["video", {"dbtype": "video", "match": "[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],video)] | [$PARAM[player] + [!VideoPlayer.Content(movies) + !VideoPlayer.Content(episodes) + !VideoPlayer.Content(livetv)]]]"}]
+    ]
+}

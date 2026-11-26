@@ -1,0 +1,50 @@
+{
+    "list": [
+        [
+            "badges",
+            {
+                "part": "badges",
+                "name": "InfoLine_Badges"
+            }
+        ],
+        [
+            "labels",
+            {
+                "part": "labels",
+                "name": "Info_Line_Labels"
+            }
+        ]
+    ],
+    "for_each": [
+        {
+            "template": "<include name=\"{name}\"><definition>{objects}</definition></include>",
+            "objects": {
+                "datafile": "generator/data/infoline/items.json",
+                "for_each": [
+                    {
+                        "template": "generator/data/infoline/object.xmltemplate",
+                        "condition": "{section}=={part}",
+                        "conditions": {
+                            "datafile": "generator/data/infoline/types.json",
+                            "for_each": [
+                                {
+                                    "template": "| [{match} + {enabled}]",
+                                    "condition": "{dbtype}>>{types}",
+                                    "datafile": "generator/data/infoline/state.json",
+                                    "object": "{parent_item}"
+                                }
+                            ]
+                        },
+                        "available": [
+                            {
+                                "condition": "{available}!=",
+                                "value": "{available}"
+                            },
+                            "true"
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

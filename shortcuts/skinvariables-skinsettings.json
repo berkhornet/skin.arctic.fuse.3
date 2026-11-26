@@ -1123,51 +1123,105 @@
                 }
             ]
         },
-        "details_star_rating": {
-            "label": "$LOCALIZE[33067]",
-            "control": "radiobutton",
+        "details_infoline_movie": {
+            "label": "$LOCALIZE[342]",
+            "control": "button",
             "group": "details_information",
-            "description": "$LOCALIZE[31700]",
-            "selected": "!Skin.HasSetting(InfoTags.DisableStarRating)",
+            "label2": "$LOCALIZE[31938]",
             "onclick": [
                 {
-                    "action": "Skin.ToggleSetting(InfoTags.DisableStarRating)"
+                    "action": "SetProperty(InfoLine.Type,movie,Home)"
+                },
+                {
+                    "action": "SetProperty(CustomDialogSettingsTitle,$LOCALIZE[31938] - $LOCALIZE[342],Home)"
+                },
+                {
+                    "action": "ActivateWindow(1162)"
                 }
             ]
         },
-        "details_audio_channels": {
-            "label": "$LOCALIZE[21444]",
-            "control": "radiobutton",
+        "details_infoline_tvshow": {
+            "label": "$LOCALIZE[20343]",
+            "control": "button",
             "group": "details_information",
-            "description": "$LOCALIZE[31701]",
-            "selected": "Skin.HasSetting(InfoTags.EnableAudioChannels)",
+            "label2": "$LOCALIZE[31938]",
             "onclick": [
                 {
-                    "action": "Skin.ToggleSetting(InfoTags.EnableAudioChannels)"
+                    "action": "SetProperty(InfoLine.Type,tvshow,Home)"
+                },
+                {
+                    "action": "SetProperty(CustomDialogSettingsTitle,$LOCALIZE[31938] - $LOCALIZE[20343],Home)"
+                },
+                {
+                    "action": "ActivateWindow(1162)"
                 }
             ]
         },
-        "details_hdr_type": {
-            "label": "$LOCALIZE[20474]",
-            "control": "radiobutton",
+        "details_infoline_season": {
+            "label": "$LOCALIZE[20373]",
+            "control": "button",
             "group": "details_information",
-            "description": "$LOCALIZE[31702]",
-            "selected": "Skin.HasSetting(InfoTags.EnableHDR)",
+            "label2": "$LOCALIZE[31938]",
             "onclick": [
                 {
-                    "action": "Skin.ToggleSetting(InfoTags.EnableHDR)"
+                    "action": "SetProperty(InfoLine.Type,season,Home)"
+                },
+                {
+                    "action": "SetProperty(CustomDialogSettingsTitle,$LOCALIZE[31938] - $LOCALIZE[20373],Home)"
+                },
+                {
+                    "action": "ActivateWindow(1162)"
                 }
             ]
         },
-        "details_3d": {
-            "label": "$LOCALIZE[14232]",
-            "control": "radiobutton",
+        "details_infoline_set": {
+            "label": "$LOCALIZE[20434]",
+            "control": "button",
             "group": "details_information",
-            "description": "$LOCALIZE[31906]",
-            "selected": "Skin.HasSetting(InfoTags.Enable3D)",
+            "label2": "$LOCALIZE[31938]",
             "onclick": [
                 {
-                    "action": "Skin.ToggleSetting(InfoTags.Enable3D)"
+                    "action": "SetProperty(InfoLine.Type,set,Home)"
+                },
+                {
+                    "action": "SetProperty(CustomDialogSettingsTitle,$LOCALIZE[31938] - $LOCALIZE[20434],Home)"
+                },
+                {
+                    "action": "ActivateWindow(1162)"
+                }
+            ]
+        },
+        "details_infoline_episode": {
+            "label": "$LOCALIZE[20360]",
+            "control": "button",
+            "group": "details_information",
+            "label2": "$LOCALIZE[31938]",
+            "onclick": [
+                {
+                    "action": "SetProperty(InfoLine.Type,episode,Home)"
+                },
+                {
+                    "action": "SetProperty(CustomDialogSettingsTitle,$LOCALIZE[31938] - $LOCALIZE[20360],Home)"
+                },
+                {
+                    "action": "ActivateWindow(1162)"
+                }
+            ]
+        },
+        "details_infoline_video": {
+            "label": "$LOCALIZE[3]",
+            "control": "button",
+            "group": "details_information",
+            "label2": "$LOCALIZE[31938]",
+            "onclick": [
+                {
+                    "action": "SetProperty(InfoLine.Type,video,Home)"
+                },
+                {
+                    "action": "SetProperty(CustomDialogSettingsTitle,$LOCALIZE[31938] - $LOCALIZE[3],Home)"
+                },
+                {
+                    "action": "ActivateWindow(1162)"
                 }
             ]
         },
