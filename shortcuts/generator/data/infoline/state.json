@@ -1,0 +1,48 @@
+{
+    "object": "{item}",
+    "prefix": [
+        {
+            "condition": "{default_enabled}==true",
+            "value": "Disable"
+        },
+        "Enable"
+    ],
+    "flag": [
+        {
+            "condition": "{global_flag}!=",
+            "value": "{global_flag}"
+        },
+        "InfoLine.{dbtype}.{prefix}{object}"
+    ],
+    "negate": [
+        {
+            "condition": "{default_enabled}==true",
+            "value": "!"
+        },
+        ""
+    ],
+    "disable": [
+        {
+            "condition": "{default_enabled}==true",
+            "value": "Skin.SetBool({flag})"
+        },
+        "Skin.Reset({flag})"
+    ],
+    "enable": [
+        {
+            "condition": "{default_enabled}==true",
+            "value": "Skin.Reset({flag})"
+        },
+        "Skin.SetBool({flag})"
+    ],
+    "enabled": [
+        {
+            "condition": [
+                "{default_enabled}==true",
+                "{exclusive}!="
+            ],
+            "value": "[{negate}Skin.HasSetting({flag}) + !Skin.HasSetting(InfoLine.{dbtype}.Enable{exclusive})]"
+        },
+        "{negate}Skin.HasSetting({flag})"
+    ]
+}

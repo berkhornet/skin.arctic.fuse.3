@@ -1,0 +1,11 @@
+{
+    "template": "<include name=\"InfoLine_SelectType\">{editors}</include>",
+    "editors": {
+        "datafile": "generator/data/infoline/types.json",
+        "for_each": [
+            {
+                "template": "<include content=\"InfoLine_Editor\" condition=\"String.IsEqual(Window(Home).Property(InfoLine.Type),{dbtype})\"><param name=\"dbtype\">{dbtype}</param></include>"
+            }
+        ]
+    }
+}
