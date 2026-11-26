@@ -3,7 +3,7 @@
     "output": "script-skinvariables-generator-includes-{skinuser}.xml",
     "header": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<includes>",
     "footer": "</includes>",
-    "buildv": "0.3.26",
+    "buildv": "0.3.18",
     "skinid": "skin.arctic.fuse.3",
     "getnfo": {},
     "global": {
@@ -20,10 +20,6 @@
         {"datafile": "generator/data/base/power_tray.xml"},
         {"datafile": "generator/data/base/power_load.xml"},
         {"datafile": "generator/data/base/ratings_includes.xml"},
-        {"datafile": "generator/data/base/ratings_monitor.xml"},
-        {"datafile": "generator/data/infoline/render.json"},
-        {"datafile": ["generator/data/infoline/types.json", "generator/data/infoline/picker.json"]},
-        {"datafile": ["generator/data/infoline/items.json", "generator/data/infoline/global-budgets.json"]},
-        {"datafile": "generator/data/infoline/dialog.json"}
+        {"datafile": "generator/data/base/ratings_monitor.xml"}
     ]
 }

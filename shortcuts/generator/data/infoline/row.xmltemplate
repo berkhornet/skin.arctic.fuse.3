@@ -1,7 +1,0 @@
-<item>
-    <label>$LOCALIZE[{label}] [{pips}]</label>
-    <icon>special://skin/extras/icons/{icon}.png</icon>
-    <property name="disabled">{disabled}</property>
-    <visible>{row_visible}</visible>
-    {toggle}
-</item>
