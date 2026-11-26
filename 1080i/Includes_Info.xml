@@ -828,6 +828,7 @@
                 <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[listitem].Premiered) + [String.IsEqual($PARAM[container]$PARAM[listitem].DBType,movie) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,episode) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,season) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,video) | !String.IsEmpty($PARAM[container]$PARAM[listitem].ChannelNumberLabel) | $PARAM[override]]</param>
             </include>
 
+<<<<<<< HEAD
             <!-- MISC370: START add PVR Provider Name -->
             <include content="$PARAM[item]">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
@@ -837,6 +838,8 @@
             </include>
             <!-- MISC370: END add PVR Provider Name -->
 
+=======
+>>>>>>> parent of e7b758d (:sparkles: Info line picker)
             <!-- Channel Name -->
             <include content="$PARAM[item]">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
