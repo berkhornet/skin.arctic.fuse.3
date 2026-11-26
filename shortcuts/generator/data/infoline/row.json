@@ -1,0 +1,67 @@
+{
+    "condition": "{dbtype}>>{types}",
+    "template": "generator/data/infoline/row.xmltemplate",
+    "object": "{parent_item}",
+    "pips": {
+        "datafile": "generator/data/infoline/units.json",
+        "for_each": [
+            {
+                "template": "{pips}",
+                "condition": "{cost}=={unit}"
+            }
+        ]
+    },
+    "peer": "{exclusive}",
+    "peer_action": {
+        "datafile": "generator/data/infoline/items.json",
+        "for_each": [
+            {
+                "datafile": "generator/data/infoline/state.json",
+                "condition": "{item}=={peer}",
+                "template": "{disable}"
+            }
+        ]
+    },
+    "clear_peer": [
+        {
+            "condition": "{peer_action}!=",
+            "value": "<onclick>{peer_action}</onclick>"
+        },
+        ""
+    ],
+    "layout": [
+        {
+            "condition": "{global_flag}!=",
+            "value": "Global_{object}"
+        },
+        "{dbtype}"
+    ],
+    "row_visible": [
+        {
+            "condition": "{disabled}==true",
+            "value": "![{enabled}]"
+        },
+        "{enabled}"
+    ],
+    "peer_args": [
+        {
+            "condition": "{peer}!=",
+            "value": ",disable_peer={peer_action}"
+        },
+        ""
+    ],
+    "reserved": [
+        {
+            "condition": "{peer}!=",
+            "value": "{object}|{peer}"
+        },
+        "{object}"
+    ],
+    "toggle": [
+        {
+            "condition": "{disabled}==true",
+            "value": "<onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout={layout},reserved={reserved},room=$MATH[9 - {cost}],enable_item={enable}{peer_args})</onclick>"
+        },
+        "{clear_peer}<onclick>{disable}</onclick>"
+    ]
+}
